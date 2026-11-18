@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unidad IV · Redes, plataformas y política de la competencia — Organización Industrial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' },
+  startup: { typeset: true }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+:root{
+  --bg:#FBFAF7; --paper:#FFFFFF; --ink:#1F2328; --ink2:#4A5059; --muted:#6B717A; --line:#E6E2DA; --soft:#F3F0EA;
+  --b1:#0F6B5C; --b2:#B4532A; --b3:#3D4FA8; --b4:#8A3B78; --accent:#0F6B5C;
+  --serif:'Source Serif 4', Georgia, serif; --sans:'Source Sans 3', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,250,247,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:1120px;margin:0 auto;padding:10px 20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px}
+.brand .sq{display:grid;grid-template-columns:repeat(4,7px);gap:2px}
+.brand .sq i{width:7px;height:7px;border-radius:1px;display:block}
+.brand small{font-family:var(--sans);color:var(--muted);font-size:13px;margin-left:auto}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:6px}
+nav.tabs a{padding:8px 12px;font-weight:600;font-size:15px;color:var(--ink2);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs a.on{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+section.view{display:none}
+section.view.on{display:block}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:clamp(32px,5vw,48px)}
+h2{font-size:32px}
+h3{font-size:24px;margin-top:1.6em}
+h4{font-size:19px;font-weight:600;margin-top:1.4em}
+p{margin:.6em 0}
+.lead{font-size:20px;color:var(--ink2);max-width:760px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-family:var(--sans)}
+.btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.drive{background:#fff;border-color:#C9D7F2;color:#1A56B8}
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0}
+.blocks button{border:0;border-radius:8px;color:#fff;font-family:var(--serif);font-size:30px;padding:16px 0;cursor:pointer;text-align:center}
+.list4 .row{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);cursor:pointer}
+.list4 .num{font-family:var(--serif);font-size:34px;line-height:1}
+.list4 .t{font-weight:700;font-size:19px}
+.list4 .s{color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin-top:0}
+.card.link{cursor:pointer}
+.card.link:hover{border-color:var(--accent)}
+.q{border-left:4px solid var(--b2);padding:6px 16px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ink2);margin:18px 0}
+ol.ideas{counter-reset:i;list-style:none;padding:0}
+ol.ideas li{counter-increment:i;position:relative;padding:6px 0 6px 38px}
+ol.ideas li::before{content:counter(i);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--b2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.map .card{border-top:5px solid var(--c)}
+.map ul{padding-left:18px;margin:.3em 0}
+.map li{margin:.2em 0}
+.conn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.conn .card .u{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* lectura */
+.readwrap{display:grid;grid-template-columns:240px 1fr;gap:36px}
+aside.toc{position:sticky;top:110px;align-self:start;font-size:14.5px;max-height:calc(100vh - 130px);overflow:auto}
+aside.toc b{display:block;margin:14px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+aside.toc a{display:block;color:var(--ink2);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+aside.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
+article.read{max-width:760px;font-family:var(--serif);font-size:18.5px;line-height:1.7}
+article.read h3{border-top:1px solid var(--line);padding-top:26px}
+article.read h3 .tag{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;border-radius:4px;padding:2px 8px;vertical-align:middle;margin-right:8px}
+.box{font-family:var(--sans);font-size:16px;background:var(--soft);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box.res{background:#EEF6F3;border-left:4px solid var(--b1)}
+.box.int{background:#FBF1EB;border-left:4px solid var(--b2)}
+.box b.h{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--ink2)}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+table.t{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:15px;margin:12px 0}
+table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+table.t th{background:var(--soft);font-weight:700}
+/* simuladores */
+.sim{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.simgrid{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:start}
+.ctrl label{display:block;font-size:14.5px;font-weight:600;margin-top:12px}
+.ctrl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctrl .v{float:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctrl select{width:100%;padding:6px;font-family:var(--sans);font-size:15px;border-radius:6px;border:1px solid var(--line)}
+.chk{display:flex;gap:8px;align-items:center;font-weight:400!important}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px}
+.out div{background:var(--soft);border-radius:8px;padding:6px 10px}
+.out small{display:block;color:var(--muted);font-size:12px}
+.out b{font-variant-numeric:tabular-nums;font-size:17px}
+.note{font-size:15px;color:var(--ink2);background:#F7F5F0;border-radius:8px;padding:10px 14px;margin-top:12px}
+svg.plot{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+svg.plot text{font-family:var(--sans);font-size:12px;fill:#4A5059}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+/* glosario */
+#gsearch{width:100%;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;font-family:var(--sans);margin-bottom:14px}
+dl.gl dt{font-weight:700;margin-top:14px;font-size:17px}
+dl.gl dd{margin:2px 0 0;color:var(--ink2)}
+dl.gl .bk{font-size:12px;font-weight:700;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+/* simulacro */
+.quiz .qi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.quiz .qi p.st{font-weight:600}
+.quiz .op{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:6px 0;font-family:var(--sans);font-size:16px;cursor:pointer}
+.quiz .op:hover{border-color:var(--accent)}
+.quiz .op.ok{background:#E6F4EE;border-color:#2E8B6A}
+.quiz .op.bad{background:#FBE9E5;border-color:#C2553A}
+.quiz .ex{display:none;margin-top:8px;font-size:15.5px;background:var(--soft);border-radius:8px;padding:10px 12px}
+.score{position:sticky;top:110px;float:right;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700}
+details.dev{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+details.dev summary{cursor:pointer;font-weight:700}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px;text-align:center}
+@media (max-width:860px){
+  .readwrap,.simgrid{grid-template-columns:1fr}
+  aside.toc{position:static;max-height:none}
+  .grid2,.grid3,.map,.conn{grid-template-columns:1fr}
+  .score{position:static;float:none;display:inline-block}
+}
+</style>
+</head>
+<body>
+<style>
+.firms{display:grid;gap:6px;margin-top:10px;max-height:420px;overflow:auto;padding-right:4px}
+.firm{display:grid;grid-template-columns:62px 1fr 58px 22px;gap:6px;align-items:center;font-size:14px}
+.firm input[type=number]{width:100%;padding:3px 4px;border:1px solid var(--line);border-radius:6px;font-family:var(--sans);font-size:14px;text-align:right}
+.firm input[type=range]{width:100%;accent-color:var(--b2)}
+.firm button,.mini{border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-family:var(--sans);font-size:13px;padding:3px 8px}
+.firm button{padding:0;height:22px;color:var(--muted)}
+.mini:hover,.firm button:hover{border-color:var(--accent)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.presets .mini.on{background:var(--b2);color:#fff;border-color:var(--b2)}
+.sumline{font-size:13.5px;color:var(--muted);margin-top:6px}
+.sumline.warn{color:#B4532A;font-weight:600}
+.verd{display:grid;gap:8px;margin-top:10px}
+.verd div{border-radius:8px;padding:8px 12px;font-size:14.5px}
+.verd .ok{background:#E6F4EE;border-left:4px solid #2E8B6A}
+.verd .no{background:#FBE9E5;border-left:4px solid #C2553A}
+.verd .mid{background:#FBF4E4;border-left:4px solid #C99A2E}
+.mrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+table.ix{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:10px}
+table.ix td,table.ix th{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left}
+table.ix td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.wide{grid-template-columns:330px 1fr!important}
+@media (max-width:860px){.wide{grid-template-columns:1fr!important}}
+</style>
+<header class="top"><div class="topin">
+  <div class="brand"><span class="sq"><i style="background:var(--b1)"></i><i style="background:var(--b2)"></i><i style="background:var(--b3)"></i><i style="background:var(--b4)"></i></span><a href="../" style="color:inherit;text-decoration:none">Organización Industrial</a>&nbsp;· Unidad IV<small><a href="../" style="color:var(--muted)">← Todas las unidades</a></small></div>
+  <nav class="tabs" id="tabs">
+    <a href="#inicio">Inicio</a><a href="#esquema">Esquema</a><a href="#lectura">Lectura</a><a href="#simuladores">Simuladores</a><a href="#glosario">Glosario</a><a href="#simulacro">Simulacro</a><a href="#bibliografia">Bibliografía</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ================= INICIO ================= -->
+<section class="view" id="v-inicio">
+  <div class="eyebrow">Apuntes de cátedra · Daniel Hoyos Maldonado, con Belleflamme y Peitz (<i>The Economics of Platforms</i>) y la normativa argentina de defensa de la competencia</div>
+  <h1>Redes, plataformas y política de la competencia</h1>
+  <p class="lead">Hay mercados en los que el valor de un producto depende de cuántos lo usan, y empresas cuyo negocio es justamente reunir a grupos que se necesitan entre sí. Esta unidad estudia esos mercados, las herramientas con que se mide y controla el poder de mercado, las estrategias de las empresas establecidas para limitar la entrada y las subastas como mecanismo de asignación.</p>
+  <div class="btns">
+    <a class="btn pri" href="#esquema">Empezar por el esquema</a>
+    <a class="btn" href="#simuladores">Abrir los simuladores</a>
+    <a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Bibliografía recomendada (Drive)</a>
+  </div>
+  <div class="blocks">
+    <button style="background:var(--b1)" data-go="b1">1</button>
+    <button style="background:var(--b2)" data-go="b2">2</button>
+    <button style="background:var(--b3)" data-go="b3">3</button>
+    <button style="background:var(--b4)" data-go="b4">4</button>
+  </div>
+  <h2>Los cuatro bloques</h2>
+  <div class="list4">
+    <div class="row" data-go="b1"><div class="num" style="color:var(--b1)">1</div><div><div class="t">Mercados con efectos de red y plataformas</div><div class="s">Efectos de red dentro y entre grupos · espiral de atracción · demanda con expectativas cumplidas y masa crítica · el problema del huevo y la gallina · precios de plataformas de dos lados</div></div></div>
+    <div class="row" data-go="b2"><div class="num" style="color:var(--b2)">2</div><div><div class="t">Concentración y política de la competencia</div><div class="s">Mercado relevante · índices de concentración · HHI y márgenes · Ley 27.442 y la Autoridad Nacional de la Competencia · control de fusiones · cárteles y clemencia · plataformas digitales</div></div></div>
+    <div class="row" data-go="b3"><div class="num" style="color:var(--b3)">3</div><div><div class="t">Limitación a la entrada</div><div class="s">Barreras estructurales y estratégicas · precio límite · compromiso y capacidad (Dixit) · taxonomía de Fudenberg y Tirole · predación · mercados disputables</div></div></div>
+    <div class="row" data-go="b4"><div class="num" style="color:var(--b4)">4</div><div><div class="t">Subastas</div><div class="s">Formatos · estrategias de equilibrio · teorema de equivalencia de ingresos · precio de reserva · valor común y maldición del ganador · colusión en licitaciones</div></div></div>
+  </div>
+  <h2 style="margin-top:36px">Cómo estudiar la unidad</h2>
+  <div class="grid2">
+    <div class="card"><h4>1 · Mirá el esquema</h4>Las cinco ideas esenciales, el mapa de la unidad y sus conexiones con el resto del programa.</div>
+    <div class="card"><h4>2 · Leé el desarrollo</h4>Los modelos de cada bloque, con las lecciones del libro de plataformas y la normativa vigente. El índice lateral te lleva a cada tema.</div>
+    <div class="card"><h4>3 · Experimentá</h4>Cinco simuladores: masa crítica, precios de plataformas, concentración y fusiones (adaptado del simulador de la cátedra), disuasión de la entrada y subastas.</div>
+    <div class="card"><h4>4 · Hacé el simulacro</h4>Doce preguntas de opción múltiple con corrección inmediata y dos preguntas de desarrollo con su guion.</div>
+  </div>
+</section>
+
+<!-- ================= ESQUEMA ================= -->
+<section class="view" id="v-esquema">
+  <div class="eyebrow">Antes de leer</div>
+  <h2>Lo esencial en cinco ideas</h2>
+  <ol class="ideas">
+    <li><b>Las expectativas son parte de la demanda.</b> Cuando el valor de un bien depende de cuántos lo adoptan, lo que cada usuario cree que harán los demás determina su decisión. Por eso puede haber varios equilibrios, y una masa crítica que separa el fracaso del éxito.</li>
+    <li><b>Una plataforma fija precios mirando el otro lado.</b> Subsidia al grupo que más atrae al otro y cobra al grupo atraído. Un precio por debajo del costo en un lado no es, por sí mismo, prueba de predación.</li>
+    <li><b>La concentración se mide, pero no se interpreta sola.</b> El HHI resume la estructura y se vincula con el margen promedio en Cournot, pero el análisis requiere definir bien el mercado relevante y mirar barreras, contrapoder y eficiencias.</li>
+    <li><b>Una amenaza solo disuade si es creíble.</b> Las empresas establecidas limitan la entrada con compromisos que alteran sus propios incentivos futuros, como la capacidad instalada, y no con anuncios.</li>
+    <li><b>El diseño de la subasta importa menos y más de lo que parece.</b> Con valores privados independientes, los formatos habituales recaudan lo mismo; el precio de reserva, la aversión al riesgo, los valores comunes y la colusión rompen esa equivalencia.</li>
+  </ol>
+  <div class="eyebrow" style="margin-top:28px">Pregunta central</div>
+  <div class="q">¿Cómo se forman y se sostienen las posiciones de dominio en mercados con efectos de red, barreras a la entrada y mecanismos de asignación estratégicos, y con qué herramientas puede la política de la competencia evaluarlas?</div>
+  <h2>Mapa de la unidad</h2>
+  <div class="map">
+    <div class="card" style="--c:var(--b1)"><h4 style="color:var(--b1)">1 · Redes y plataformas</h4><ul>
+      <li>Efectos de red directos (dentro del grupo) e indirectos (entre grupos)</li><li>Espiral de atracción: multiplicador \(1/(1-\beta_A\beta_B)\)</li><li>Demanda con expectativas cumplidas: \(p=(1-n)(\alpha+\beta n)\)</li><li>Masa crítica y equilibrios inestables</li><li>Divide y vencerás: \(p_i=c+n_i-\gamma_j n_j\)</li></ul></div>
+    <div class="card" style="--c:var(--b2)"><h4 style="color:var(--b2)">2 · Concentración y competencia</h4><ul>
+      <li>Mercado relevante y prueba del monopolista hipotético</li><li>\(CR_k\), HHI, número equivalente, dominancia, entropía</li><li>Cowling–Waterson: \(\frac{\bar p-\bar c}{\bar p}=\frac{HHI}{|\eta|}\)</li><li>Ley 27.442: conductas, abuso y control previo de fusiones</li><li>\(\Delta HHI=2s_is_j\) y umbrales de las autoridades</li></ul></div>
+    <div class="card" style="--c:var(--b3)"><h4 style="color:var(--b3)">3 · Limitación a la entrada</h4><ul>
+      <li>Barreras según Bain y según Stigler</li><li>Precio límite y su problema de credibilidad</li><li>Capacidad como compromiso: entrada bloqueada, disuadida o acomodada</li><li>Top dog, puppy dog, fat cat, lean and hungry</li><li>Predación, proliferación de productos, disputabilidad</li></ul></div>
+    <div class="card" style="--c:var(--b4)"><h4 style="color:var(--b4)">4 · Subastas</h4><ul>
+      <li>Inglesa, holandesa, primer y segundo precio</li><li>Puja veraz en Vickrey; \(b(v)=\frac{n-1}{n}v\) en primer precio</li><li>Equivalencia de ingresos: \(E[R]=\frac{n-1}{n+1}\)</li><li>Precio de reserva óptimo (Myerson)</li><li>Maldición del ganador y colusión</li></ul></div>
+  </div>
+  <h2 style="margin-top:32px">Conexiones con otras unidades</h2>
+  <div class="conn">
+    <div class="card"><div class="u">Unidad I</div><b>Monopolio y estructura.</b> Los índices de concentración y el poder de mercado retoman el índice de Lerner y el paradigma estructura–conducta–desempeño.</div>
+    <div class="card"><div class="u">Unidad II</div><b>Oligopolio y colusión.</b> El HHI se deriva del equilibrio de Cournot; el modelo de Stackelberg es la base de la disuasión de la entrada, y la colusión tácita explica los efectos coordinados de una fusión.</div>
+    <div class="card"><div class="u">Unidad III</div><b>Estrategias.</b> El bundling y el tying como prácticas exclusorias, la publicidad como barrera a la entrada y los precios de las plataformas como forma de discriminación entre grupos.</div>
+  </div>
+  <div class="btns"><a class="btn pri" href="#lectura">Leer el desarrollo →</a></div>
+</section>
+
+<!-- ================= LECTURA ================= -->
+<section class="view" id="v-lectura">
+<div class="readwrap">
+<aside class="toc" id="toc">
+  <b style="color:var(--b1)">1 · Redes y plataformas</b>
+  <a data-s="s11">Efectos de red</a><a data-s="s12">Espiral de atracción</a><a data-s="s13">Qué es una plataforma</a><a data-s="s14">Demanda y masa crítica</a><a data-s="s15">Precio de un bien de red</a><a data-s="s16">El huevo y la gallina</a><a data-s="s17">Precios de dos lados</a>
+  <b style="color:var(--b2)">2 · Concentración y competencia</b>
+  <a data-s="s21">Mercado relevante</a><a data-s="s22">Índices de concentración</a><a data-s="s23">Concentración y márgenes</a><a data-s="s24">Ley 27.442</a><a data-s="s25">Control de fusiones</a><a data-s="s26">Cárteles y clemencia</a><a data-s="s27">Plataformas y competencia</a>
+  <b style="color:var(--b3)">3 · Limitación a la entrada</b>
+  <a data-s="s31">Barreras a la entrada</a><a data-s="s32">Precio límite</a><a data-s="s33">Capacidad como compromiso</a><a data-s="s34">Taxonomía estratégica</a><a data-s="s35">Otras prácticas</a>
+  <b style="color:var(--b4)">4 · Subastas</b>
+  <a data-s="s41">Formatos</a><a data-s="s42">Estrategias</a><a data-s="s43">Equivalencia de ingresos</a><a data-s="s44">Precio de reserva</a><a data-s="s45">Valor común y colusión</a>
+</aside>
+<article class="read">
+  <div class="eyebrow">Desarrollo completo</div>
+  <h2>Unidad IV · Redes, plataformas y otros tópicos</h2>
+  <p>El bloque 1 se apoya en Belleflamme y Peitz, <i>The Economics of Platforms: Concepts and Strategy</i> (2021, cap. 1, 3 y 4). El bloque 2 incorpora el simulador de concentración de la cátedra y la normativa argentina y estadounidense vigente. Los bloques 3 y 4 siguen la literatura estándar de organización industrial (Belleflamme y Peitz, <i>Organización industrial</i>; Lipczynski, Wilson y Goddard, cap. 8 y 11).</p>
+
+  <!-- BLOQUE 1 -->
+  <h3 id="s11"><span class="tag" style="background:var(--b1)">1.1</span>Efectos de red</h3>
+  <p>Hay <b>efecto de red</b> cuando el valor que un usuario obtiene de un bien o servicio depende del número (o del tipo) de usuarios que lo utilizan. Belleflamme y Peitz distinguen dos clases:</p>
+  <ul>
+    <li><b>Efectos dentro del grupo</b> (directos): la utilidad de un usuario depende de cuántos usuarios <i>de su mismo grupo</i> hay. El teléfono, las aplicaciones de mensajería o un videojuego en línea son ejemplos. Generan un <b>bucle de atracción</b>: más usuarios atraen más usuarios.</li>
+    <li><b>Efectos entre grupos</b> (indirectos o cruzados): la utilidad de un usuario depende de cuántos participan <i>del otro grupo</i>. Compradores y vendedores en un mercado electrónico, conductores y pasajeros en una aplicación de transporte, lectores y anunciantes en un medio.</li>
+  </ul>
+  <p>Los efectos pueden ser <b>positivos</b> o <b>negativos</b>. Los vendedores de una plataforma compiten entre sí (efecto negativo dentro del grupo), y los lectores de un medio pueden preferir menos avisos (efecto negativo de anunciantes sobre lectores, mientras que los anunciantes valoran más lectores). Esa combinación genera un <b>péndulo de atracción y repulsión</b> que la plataforma debe gestionar.</p>
+  <div class="box"><b class="h">Desde el libro de plataformas (cap. 2)</b>Las calificaciones y reseñas son una fuente de efectos de red propios de cada plataforma. Más compradores que califican vuelven más informativas las calificaciones, lo que atrae más compradores y vendedores: un mecanismo que refuerza a las plataformas exitosas frente a las rivales más pequeñas (Lección 2.1). Los datos funcionan de manera parecida: más usuarios generan más datos, que mejoran el servicio y atraen más usuarios (Lección 2.11).</div>
+
+  <h3 id="s12"><span class="tag" style="background:var(--b1)">1.2</span>La espiral de atracción</h3>
+  <p>Supongamos dos grupos, \(A\) y \(B\). Cada usuario adicional de \(B\) atrae \(\beta_A\) usuarios de \(A\), y cada usuario de \(A\) atrae \(\beta_B\) usuarios de \(B\). Si un shock exógeno suma \(\Delta\) usuarios al grupo \(A\), estos atraen \(\beta_B\Delta\) usuarios de \(B\), que a su vez atraen \(\beta_A\beta_B\Delta\) usuarios de \(A\), y así sucesivamente:</p>
+  \[ \Delta n_A=\Delta\left[1+\beta_A\beta_B+(\beta_A\beta_B)^2+\dots\right]=\frac{\Delta}{1-\beta_A\beta_B},\qquad \Delta n_B=\frac{\beta_B\,\Delta}{1-\beta_A\beta_B}. \]
+  <div class="box"><b class="h">Ejemplo</b>Con \(\beta_A=\tfrac13\), \(\beta_B=\tfrac12\) y un shock de 10 usuarios en \(A\), el multiplicador es \(1/(1-\tfrac16)=1{,}2\): el grupo \(A\) crece 12 usuarios y el grupo \(B\), 6. Cuanto más fuertes los efectos cruzados, mayor la amplificación, y lo mismo vale hacia abajo: la espiral también puede acelerar la caída de una plataforma que pierde usuarios.</div>
+
+  <h3 id="s13"><span class="tag" style="background:var(--b1)">1.3</span>Qué es (y qué no es) una plataforma</h3>
+  <p>Para Belleflamme y Peitz, una plataforma es una organización que facilita las interacciones entre usuarios y que gestiona los efectos de red que esas interacciones generan. La distinción clave es entre el <b>modo habilitante</b> (la plataforma conecta a profesionales independientes con usuarios, como un mercado electrónico) y el <b>modo de control</b> (la empresa compra y revende, como un minorista tradicional). El modo habilitante rinde más en motivación y adaptación, porque los profesionales usan su información privada; el modo de control coordina mejor las externalidades entre ellos (Lección 4.1). Muchas empresas combinan ambos: Amazon revende productos propios y, a la vez, aloja vendedores de terceros.</p>
+
+  <h3 id="s14"><span class="tag" style="background:var(--b1)">1.4</span>Demanda de un bien de red y masa crítica</h3>
+  <p>Hay una masa unitaria de consumidores con un parámetro de gusto \(\theta\sim U[0,1]\). Un consumidor que espera que la red tenga \(n^e\) usuarios obtiene</p>
+  \[ u(\theta)=\theta\,(\alpha+\beta n^e)-p, \]
+  <p>donde \(\alpha\) es el valor autónomo del bien y \(\beta\) la intensidad del efecto de red. Compran quienes tienen \(\theta\ge p/(\alpha+\beta n^e)\), de modo que \(n=1-p/(\alpha+\beta n^e)\). En un <b>equilibrio con expectativas cumplidas</b>, las expectativas coinciden con el resultado, \(n^e=n\), y la demanda inversa queda</p>
+  \[ p(n)=(1-n)(\alpha+\beta n). \]
+  <div class="box res"><b class="h">Lecciones 3.2 y 3.3</b>La demanda de un bien de red puede tener un <b>tramo creciente</b>: más usuarios elevan la disposición a pagar de todos y el efecto de red domina a la ley de la demanda. Para un mismo precio puede haber tres niveles de demanda autocumplidos. La red nula y la red grande son equilibrios estables; la red pequeña es inestable, y su tamaño es la <b>masa crítica</b> que hay que superar para que la red despegue.</div>
+  <p>Con \(\alpha=0\), la demanda es \(p=n(1-n)\), una U invertida con máximo \(p=\tfrac14\) en \(n=\tfrac12\). Para \(p=0{,}16\), las expectativas cumplidas dan \(n=0\), \(n=0{,}2\) y \(n=0{,}8\). Si los usuarios esperan una red de más de 0,2, la red crece hacia 0,8; si esperan menos, se vacía. El simulador 1 muestra la dinámica.</p>
+
+  <h3 id="s15"><span class="tag" style="background:var(--b1)">1.5</span>Precio de un bien de red, compatibilidad y estándares</h3>
+  <ul>
+    <li><b>Provisión insuficiente</b> (Lección 3.4): un monopolista que no puede discriminar sostiene una red más pequeña y cobra más que una industria competitiva, y ambas proveen menos de lo socialmente deseable. Cada usuario ignora el beneficio que su adopción genera a los demás.</li>
+    <li><b>Compatibilidad</b> (Lecciones 3.5 y 3.6): frente a una red gratuita ya instalada, una nueva plataforma prefiere ser compatible si su calidad es parecida, pero puede preferir la incompatibilidad si su ventaja de calidad es grande, aunque los usuarios preferirían colectivamente la compatibilidad.</li>
+    <li><b>Guerras de estándares</b>: los efectos de red generan <i>tipping</i> (el mercado se inclina hacia un único estándar) y dependencia de la trayectoria. Quien llega primero tiene ventaja, pero un rival con mejor tecnología y precios de penetración agresivos puede revertirla.</li>
+  </ul>
+
+  <h3 id="s16"><span class="tag" style="background:var(--b1)">1.6</span>El problema del huevo y la gallina</h3>
+  <p>Una plataforma de dos lados enfrenta un problema de coordinación: los usuarios de un grupo no participan si no esperan que participen los del otro grupo, y viceversa (Lección 4.2). Si todos esperan que nadie se sume, nadie se suma, aunque todos estarían mejor en la plataforma.</p>
+  <p><b>Divide y vencerás.</b> Con utilidades \(v_b=r_b+\beta_b n_s-A_b\) y \(v_s=r_s+\beta_s n_b-A_s\), la plataforma puede fijar un precio tan bajo para un grupo que este se sume aun esperando que el otro no lo haga (\(A_b\le r_b\)), y cobrar al otro grupo, que ya sabe que encontrará al primero, \(A_s=r_s+\beta_s\). La Lección 4.4 resume el resultado: <b>se subsidia al grupo que ejerce el mayor efecto de red sobre el otro y se monetiza al otro, cualquiera sea el tamaño relativo de los grupos</b>. Las discotecas que dejan entrar gratis a un grupo para cobrar al otro son el ejemplo clásico del libro.</p>
+  <ul>
+    <li><b>Siembra</b> (Lección 4.6): incorporar usuarios en secuencia, empezando por los que tienen la mayor relación entre el efecto de red que generan y el costo de atraerlos.</li>
+    <li><b>Producción propia inicial</b>: la plataforma ofrece ella misma el primer contenido o servicio (un sistema operativo con aplicaciones propias, una consola con juegos de la casa) para asegurar el valor del lado de la demanda.</li>
+    <li><b>Competencia entre plataformas no diferenciadas</b> (Lección 4.5): ambas aplican divide y vencerás, el mercado se inclina hacia una sola y la ganadora puede quedar sin beneficios.</li>
+  </ul>
+
+  <h3 id="s17"><span class="tag" style="background:var(--b1)">1.7</span>Precios de una plataforma de dos lados</h3>
+  <p>Un modelo lineal sencillo, en la línea de Armstrong (2006), permite ver la lógica. La participación de compradores y vendedores es</p>
+  \[ n_b=v_b-p_b+\gamma_b n_s,\qquad n_s=v_s-p_s+\gamma_s n_b, \]
+  <p>donde \(\gamma_b\) mide cuánto valora un comprador a cada vendedor y \(\gamma_s\) cuánto valora un vendedor a cada comprador. Con costo \(c\) por usuario, la plataforma maximiza \((p_b-c)n_b+(p_s-c)n_s\). Las condiciones de primer orden dan</p>
+  \[ p_b=c+n_b-\gamma_s n_s,\qquad p_s=c+n_s-\gamma_b n_b. \]
+  <div class="box res"><b class="h">Interpretación</b>El precio de cada lado es el costo más un margen de monopolio (\(n_i\), que en la demanda lineal es la inversa de la semielasticidad) <b>menos el beneficio externo</b> que un usuario de ese lado genera a la plataforma a través del otro lado (\(\gamma_j n_j\)). Si los vendedores valoran mucho a los compradores (\(\gamma_s\) alto), los compradores pagan menos que el costo y hasta pueden recibir el servicio gratis. Es la estructura de precios «sesgada» de las tarjetas de crédito, los buscadores o las consolas de videojuegos.</div>
+  <p>Dos implicancias de política. Primero, un precio por debajo del costo en un lado puede ser simplemente la estructura óptima y no prueba predación; el análisis debe mirar el precio total de la plataforma. Segundo, el «nivel» de precios y la «estructura» de precios son decisiones distintas: una regulación que fija el precio de un lado (por ejemplo, las comisiones de intercambio de tarjetas) modifica el del otro lado.</p>
+
+  <!-- BLOQUE 2 -->
+  <h3 id="s21"><span class="tag" style="background:var(--b2)">2.1</span>El mercado relevante</h3>
+  <p>Todo análisis de concentración empieza por definir el mercado. El criterio estándar es la <b>prueba del monopolista hipotético</b> (prueba SSNIP): el mercado relevante es el menor conjunto de productos y zonas geográficas en el que un monopolista hipotético podría imponer de forma rentable un aumento de precio pequeño pero significativo y no transitorio (habitualmente entre 5 % y 10 %). Si los consumidores sustituyen hacia otros productos lo suficiente para que el aumento no sea rentable, el mercado debe ampliarse.</p>
+  <div class="box int"><b class="h">La falacia del celofán</b>Aplicada a precios que ya son de monopolio, la prueba exagera la sustituibilidad: un monopolista ya fijó el precio donde la demanda es elástica, de modo que cualquier aumento parece no rentable y el mercado se define demasiado amplio. En plataformas, además, hay que decidir si se define un mercado por lado o uno solo para la plataforma, y un precio cero en un lado vuelve inaplicable la prueba basada en precios.</div>
+
+  <h3 id="s22"><span class="tag" style="background:var(--b2)">2.2</span>Índices de concentración</h3>
+  <p>Sean \(s_1\ge s_2\ge\dots\ge s_N\) las participaciones de mercado. Los índices más usados son:</p>
+  <table class="t">
+    <tr><th>Índice</th><th>Fórmula</th><th>Rango y lectura</th></tr>
+    <tr><td>Razón de concentración</td><td>\(CR_k=\sum_{i=1}^{k}s_i\)</td><td>De \(k/N\) a 1. Fácil de calcular, pero ignora el resto del mercado y la distribución entre las \(k\) mayores.</td></tr>
+    <tr><td>Herfindahl–Hirschman</td><td>\(HHI=\sum_i s_i^2\)</td><td>De \(1/N\) a 1 (o de \(10.000/N\) a 10.000 si las cuotas se expresan en porcentaje). Pondera cada firma por su propia cuota.</td></tr>
+    <tr><td>Número equivalente</td><td>\(N^*=1/HHI\)</td><td>Cantidad de firmas iguales que darían el mismo HHI.</td></tr>
+    <tr><td>HHI normalizado</td><td>\(HHI^*=\dfrac{HHI-1/N}{1-1/N}\)</td><td>De 0 a 1: mide la desigualdad para un número dado de firmas.</td></tr>
+    <tr><td>Dominancia (García Alba)</td><td>\(ID=\sum_i\left(\dfrac{s_i^2}{HHI}\right)^2\)</td><td>De \(1/N\) a 1. Aplicado a la contribución de cada firma al HHI, capta si la concentración se debe a una firma dominante. Fue usado por la autoridad mexicana.</td></tr>
+    <tr><td>Rosenbluth (Hall–Tideman)</td><td>\(R=\dfrac{1}{2\sum_i i\,s_i-1}\)</td><td>De \(1/N\) a 1. Pondera por el rango de cada firma; es sensible al número de firmas pequeñas.</td></tr>
+    <tr><td>Entropía (Theil)</td><td>\(E=-\sum_i s_i\ln s_i\)</td><td>De 0 a \(\ln N\); es un índice de <i>desconcentración</i>. Normalizado, \(E/\ln N\in[0,1]\).</td></tr>
+  </table>
+  <p>Hannah y Kay propusieron criterios que un buen índice debería cumplir: aumentar ante transferencias de cuota de una firma pequeña a una grande, disminuir con la entrada de firmas pequeñas, aumentar con las fusiones. El HHI los cumple; el \(CR_k\) no responde a cambios fuera de las \(k\) primeras firmas.</p>
+
+  <h3 id="s23"><span class="tag" style="background:var(--b2)">2.3</span>Concentración y márgenes</h3>
+  <p>La justificación económica del HHI viene del oligopolio de Cournot con costos marginales \(c_i\) (Unidad II). La condición de primer orden de cada firma es \(\frac{p-c_i}{p}=\frac{s_i}{|\eta|}\). Promediando con las cuotas como ponderadores:</p>
+  \[ \frac{p-\bar c}{p}=\sum_i s_i\frac{p-c_i}{p}=\frac{\sum_i s_i^2}{|\eta|}=\frac{HHI}{|\eta|}. \]
+  <p>Es el resultado de <b>Cowling y Waterson</b> (1976): el margen promedio de la industria es proporcional al HHI. La relación sostiene el uso del índice, pero no es causal: en Cournot tanto la concentración como los márgenes resultan de las diferencias de costos, y una industria concentrada porque las firmas eficientes crecieron no es lo mismo que una concentrada por barreras. Esa es la crítica de Demsetz al paradigma estructura–conducta–desempeño.</p>
+
+  <h3 id="s24"><span class="tag" style="background:var(--b2)">2.4</span>La Ley 27.442 de Defensa de la Competencia</h3>
+  <p>La ley argentina, sancionada en 2018, sigue el modelo internacional y tiene tres pilares:</p>
+  <ul>
+    <li><b>Conductas anticompetitivas</b>: los acuerdos y prácticas que restrinjan la competencia o abusen de una posición dominante, en perjuicio del interés económico general. Los acuerdos entre competidores para fijar precios, restringir la producción, repartirse mercados o concertar posturas en licitaciones se consideran <b>prácticas absolutamente restringidas</b>: se presumen dañinas y son nulas.</li>
+    <li><b>Abuso de posición dominante</b>: tiene posición dominante quien no está expuesto a una competencia sustancial. La posición dominante no es ilegal; sí lo es abusar de ella (precios predatorios, ventas atadas, negativas a contratar, discriminación injustificada).</li>
+    <li><b>Control de concentraciones</b>: las fusiones y adquisiciones que superan los umbrales de volumen de negocios deben notificarse.</li>
+  </ul>
+  <p>La ley creó la <b>Autoridad Nacional de la Competencia</b> (ANC), organismo descentralizado y autárquico integrado por el Tribunal de Defensa de la Competencia y las secretarías de Conductas Anticompetitivas y de Concentraciones Económicas. La ANC quedó constituida en noviembre de 2025 (Decreto 810/2025) y reemplazó al esquema de la Comisión Nacional de Defensa de la Competencia (CNDC) y la Secretaría de Comercio. Su constitución activó la cláusula de transición de la ley: <b>desde el 17 de noviembre de 2026 rige el control previo y suspensivo</b> de concentraciones, por el cual las operaciones alcanzadas deben ser autorizadas antes de concretarse. Hasta esa fecha, desde 1999, el control era posterior al cierre.</p>
+
+  <h3 id="s25"><span class="tag" style="background:var(--b2)">2.5</span>Control de fusiones</h3>
+  <p>Una fusión horizontal puede dañar la competencia por dos vías:</p>
+  <ul>
+    <li><b>Efectos unilaterales</b>: la firma fusionada internaliza la competencia entre los productos que antes eran rivales y le conviene subir precios, aun sin coordinación con terceros. En Cournot con costos simétricos, la fusión puede incluso no ser rentable para los participantes (paradoja de Salant, Switzer y Reynolds), salvo que genere eficiencias.</li>
+    <li><b>Efectos coordinados</b>: con menos firmas y más simétricas, la colusión tácita se vuelve más fácil de sostener (Unidad II).</li>
+  </ul>
+  <p>Si las firmas \(i\) y \(j\) se fusionan y se supone que conservan la suma de sus cuotas, el HHI aumenta en</p>
+  \[ \Delta HHI=(s_i+s_j)^2-s_i^2-s_j^2=2\,s_is_j. \]
+  <p>Por ejemplo, la fusión de firmas con 20 % y 15 % eleva el HHI en \(2\times20\times15=600\) puntos. Las autoridades usan el HHI posterior y su variación como filtro inicial:</p>
+  <table class="t">
+    <tr><th>Autoridad</th><th>Criterio</th></tr>
+    <tr><td>Argentina: Lineamientos para el control de concentraciones (Res. SC 208/2018)</td><td>En fusiones horizontales, es poco probable que haya preocupación si la participación conjunta es menor al 20 %, si el HHI posterior es menor a 2.000, o si la variación del HHI es menor a 150 con una participación conjunta inferior al 50 %. En relaciones verticales, si las participaciones son menores al 30 % o el HHI es menor a 3.000.</td></tr>
+    <tr><td>Estados Unidos: Merger Guidelines (2023)</td><td>Se presume que una fusión aumenta sustancialmente el poder de mercado si el HHI posterior supera 1.800 y la variación supera 100, o si la firma fusionada tiene más del 30 % y la variación supera 100. Las guías de 2010 usaban umbrales más laxos: mercado muy concentrado por encima de 2.500 con variación mayor a 200.</td></tr>
+  </table>
+  <div class="box int"><b class="h">Más allá del índice</b>Superar un umbral no prohíbe una fusión; abre un análisis más profundo de las barreras a la entrada, el contrapoder de los compradores, la cercanía de los productos como sustitutos, la probabilidad de coordinación, las <b>eficiencias</b> verificables y trasladables a los consumidores y la defensa de la <b>empresa en crisis</b>. Las autoridades pueden autorizar con <b>condicionamientos</b>, como la desinversión de activos o compromisos de conducta. El simulador 3 aplica ambos criterios a fusiones entre cualquier par de firmas.</div>
+
+  <h3 id="s26"><span class="tag" style="background:var(--b2)">2.6</span>Cárteles y programas de clemencia</h3>
+  <p>Los cárteles son el daño más claro a la competencia y el más difícil de probar, porque los acuerdos se ocultan. La Ley 27.442 incorporó un <b>programa de clemencia</b>: la primera empresa que aporta información sobre un cártel del que participó puede obtener la exención de la sanción, y las siguientes, reducciones. La lógica es la del dilema del prisionero: la clemencia agrega la tentación de delatar a la de desviarse, y debilita la confianza en la que se apoya el cártel. La ley también elevó las multas y habilitó a los perjudicados a reclamar daños.</p>
+
+  <h3 id="s27"><span class="tag" style="background:var(--b2)">2.7</span>Plataformas digitales y política de la competencia</h3>
+  <p>Los efectos de red, las economías de escala en datos y los costos de cambio llevan a mercados que se inclinan hacia uno o dos ganadores: hay competencia <i>por</i> el mercado más que <i>en</i> el mercado. Esto plantea dificultades nuevas: definir el mercado con precios cero, evaluar adquisiciones de empresas emergentes pequeñas que podrían haberse convertido en rivales (<i>killer acquisitions</i>), y controlar la autopreferencia de una plataforma que compite con los vendedores que aloja. La Unión Europea respondió con una regulación <i>ex ante</i>, la Ley de Mercados Digitales (2022), que impone obligaciones a los «guardianes de acceso» sin esperar a probar un abuso.</p>
+
+  <!-- BLOQUE 3 -->
+  <h3 id="s31"><span class="tag" style="background:var(--b3)">3.1</span>Barreras a la entrada</h3>
+  <p>Hay dos definiciones clásicas. Para <b>Bain</b>, una barrera es cualquier factor que permite a las empresas establecidas fijar precios por encima del nivel competitivo sin atraer entrada: economías de escala, ventajas absolutas de costo y diferenciación de producto. Para <b>Stigler</b>, solo es barrera un costo que debe pagar el entrante y que el establecido no pagó; con esa definición, las economías de escala no son barrera si ambos acceden a la misma tecnología.</p>
+  <ul>
+    <li><b>Barreras estructurales</b>: escala mínima eficiente grande respecto del mercado, costos hundidos, acceso a insumos o licencias, regulación, efectos de red.</li>
+    <li><b>Barreras estratégicas</b>: acciones deliberadas del establecido para elevar el costo o reducir el beneficio esperado del entrante, como la capacidad excedente, la proliferación de marcas, la publicidad, los contratos de exclusividad o los costos de cambio.</li>
+  </ul>
+  <p>El análisis distingue tres situaciones: la entrada está <b>bloqueada</b> si las condiciones del mercado alcanzan para impedirla aunque el establecido actúe como monopolista; <b>disuadida</b> si el establecido la impide modificando su conducta; y <b>acomodada</b> si le conviene aceptarla y adaptarse.</p>
+
+  <h3 id="s32"><span class="tag" style="background:var(--b3)">3.2</span>El precio límite y su problema de credibilidad</h3>
+  <p>El modelo de Bain y Sylos-Labini supone que el entrante cree que el establecido mantendrá su producción después de la entrada. Entonces el establecido elige el <b>precio límite</b>: la mayor producción tal que la demanda residual no le deje al entrante un beneficio positivo. El problema es que esa creencia no es creíble: una vez que el entrante está adentro, al establecido le conviene acomodarse. Un precio previo a la entrada no compromete la conducta futura. Milgrom y Roberts mostraron que el precio límite puede recuperarse como <b>señal</b>: si el entrante no conoce el costo del establecido, un precio bajo comunica que el costo es bajo.</p>
+
+  <h3 id="s33"><span class="tag" style="background:var(--b3)">3.3</span>La capacidad como compromiso</h3>
+  <p>Para disuadir hace falta un <b>compromiso</b>: una acción irreversible que cambie los incentivos futuros del establecido. Spence y Dixit lo modelan con la capacidad instalada: una vez hundida, el establecido producirá mucho después de la entrada porque su costo marginal es bajo.</p>
+  <p>Una versión simple con la demanda \(P=1-Q\), costo marginal nulo y un costo fijo de entrada \(F\): el establecido se compromete con \(q_1\) y el entrante responde con \(q_2=(1-q_1)/2\), con beneficio \(\left(\frac{1-q_1}{2}\right)^2-F\). El entrante se queda afuera si \(q_1\ge q_L=1-2\sqrt F\).</p>
+  <ul>
+    <li><b>Entrada bloqueada</b> si la producción de monopolio ya alcanza, \(q_L\le\tfrac12\), es decir, \(F\ge\tfrac1{16}=0{,}0625\).</li>
+    <li><b>Disuasión</b>: producir \(q_L\) da \(q_L(1-q_L)\). Acomodar como líder de Stackelberg da \(\tfrac18\). Conviene disuadir si \(q_L(1-q_L)\ge\tfrac18\), lo que ocurre con \(F\ge0{,}0054\).</li>
+    <li><b>Acomodar</b> si \(F\lt 0{,}0054\): el costo de entrada es tan bajo que impedir la entrada exige producir demasiado.</li>
+  </ul>
+  <p>El simulador 4 permite recorrer las tres regiones. En el modelo de Dixit con capacidad, el establecido nunca instala capacidad ociosa en equilibrio: la amenaza de usarla basta.</p>
+
+  <h3 id="s34"><span class="tag" style="background:var(--b3)">3.4</span>Taxonomía de Fudenberg y Tirole</h3>
+  <p>Una inversión previa tiene un efecto directo sobre el beneficio del establecido y un efecto estratégico sobre la conducta del rival. Que convenga invertir más o menos depende de si la inversión vuelve al establecido «duro» o «blando» y de si las variables de competencia son sustitutos estratégicos (cantidades) o complementos estratégicos (precios):</p>
+  <table class="t">
+    <tr><th></th><th>La inversión vuelve duro al establecido</th><th>La inversión lo vuelve blando</th></tr>
+    <tr><td><b>Disuadir</b></td><td><i>Top dog</i>: sobreinvertir para mostrarse agresivo.</td><td><i>Lean and hungry</i>: subinvertir para mostrarse agresivo.</td></tr>
+    <tr><td><b>Acomodar, sustitutos estratégicos</b></td><td><i>Top dog</i>.</td><td><i>Lean and hungry</i>.</td></tr>
+    <tr><td><b>Acomodar, complementos estratégicos</b></td><td><i>Puppy dog</i>: subinvertir para no provocar una guerra de precios.</td><td><i>Fat cat</i>: sobreinvertir (por ejemplo, en publicidad que fideliza) para ablandar la competencia.</td></tr>
+  </table>
+
+  <h3 id="s35"><span class="tag" style="background:var(--b3)">3.5</span>Predación, proliferación y disputabilidad</h3>
+  <ul>
+    <li><b>Precios predatorios</b>: bajar el precio por debajo del costo para expulsar a un rival y recuperar las pérdidas después. La «paradoja de la cadena de tiendas» de Selten muestra que, con información completa, la amenaza no es creíble; la predación se vuelve racional con información incompleta (reputación) o con restricciones financieras del rival (<i>long purse</i>). Las autoridades suelen usar la prueba de Areeda–Turner: precio por debajo del costo variable medio.</li>
+    <li><b>Proliferación de productos</b>: llenar el espacio de características con variedades propias para que no quede un nicho rentable (el caso de los cereales para el desayuno en Estados Unidos).</li>
+    <li><b>Contratos y costos de cambio</b>: la exclusividad, los descuentos por fidelidad y las penalidades por rescisión elevan el costo de cambiar de proveedor.</li>
+    <li><b>Mercados disputables</b> (Baumol, Panzar y Willig): si la entrada y la salida son libres y sin costos hundidos, incluso un monopolista debe fijar precios iguales al costo medio, por la amenaza de entrada relámpago (<i>hit and run</i>). La teoría muestra que lo que importa no es el número de firmas sino los costos hundidos.</li>
+  </ul>
+
+  <!-- BLOQUE 4 -->
+  <h3 id="s41"><span class="tag" style="background:var(--b4)">4.1</span>Formatos de subasta</h3>
+  <p>Las subastas asignan bienes cuando el vendedor no conoce la valoración de los compradores: licencias de espectro, bonos del Tesoro, energía eléctrica, obras públicas, publicidad en buscadores. Los cuatro formatos básicos son:</p>
+  <table class="t">
+    <tr><th>Formato</th><th>Mecánica</th><th>Equivalencia estratégica</th></tr>
+    <tr><td>Inglesa (ascendente)</td><td>El precio sube hasta que queda un solo postor.</td><td>Con valores privados, equivale a segundo precio.</td></tr>
+    <tr><td>Holandesa (descendente)</td><td>El precio baja hasta que alguien acepta.</td><td>Equivale a primer precio en sobre cerrado.</td></tr>
+    <tr><td>Primer precio en sobre cerrado</td><td>Gana la oferta más alta y paga lo que ofreció.</td><td>Conviene ofrecer menos que la valoración.</td></tr>
+    <tr><td>Segundo precio (Vickrey)</td><td>Gana la oferta más alta y paga la segunda.</td><td>Ofrecer la propia valoración es estrategia dominante.</td></tr>
+  </table>
+  <p>Se distinguen los <b>valores privados</b> (cada uno conoce su valoración, que no depende de la información ajena, como un cuadro para colgar en casa) y los <b>valores comunes</b> (el bien vale lo mismo para todos, pero nadie lo conoce con certeza, como un yacimiento de petróleo).</p>
+
+  <h3 id="s42"><span class="tag" style="background:var(--b4)">4.2</span>Estrategias de equilibrio</h3>
+  <p>En la subasta de <b>segundo precio</b>, la oferta no determina cuánto se paga, solo si se gana. Ofrecer más que la valoración arriesga ganar pagando de más; ofrecer menos arriesga perder un bien que convenía comprar. Por eso ofrecer la valoración verdadera es una estrategia débilmente dominante.</p>
+  <p>En la de <b>primer precio</b> hay un dilema entre la probabilidad de ganar y el margen. Con \(n\) postores cuyas valoraciones son independientes y uniformes en \([0,1]\), el equilibrio simétrico es</p>
+  \[ b(v)=\frac{n-1}{n}\,v. \]
+  <p>Cada postor «sombrea» su oferta en una fracción \(1/n\): con más competidores, la oferta se acerca a la valoración.</p>
+
+  <h3 id="s43"><span class="tag" style="background:var(--b4)">4.3</span>El teorema de equivalencia de ingresos</h3>
+  <div class="box res"><b class="h">Teorema (Vickrey; Myerson; Riley y Samuelson)</b>Con postores neutrales al riesgo, valores privados independientes y simétricos, todo formato que asigne el bien al de mayor valoración y en el que un postor con la valoración mínima obtenga beneficio nulo genera el mismo ingreso esperado para el vendedor.</div>
+  <p>En el caso uniforme, el ingreso esperado de segundo precio es el valor esperado de la segunda valoración más alta, y el de primer precio es \(\tfrac{n-1}{n}\) veces el valor esperado de la más alta. Ambos coinciden:</p>
+  \[ E[R]=\frac{n-1}{n+1}. \]
+  <p>Con 2 postores, 1/3; con 4, 0,6; con 8, 0,78. La recaudación crece con la competencia, y el simulador 5 lo verifica con miles de subastas simuladas.</p>
+
+  <h3 id="s44"><span class="tag" style="background:var(--b4)">4.4</span>El precio de reserva</h3>
+  <p>El vendedor puede fijar un <b>precio de reserva</b> \(r\) por debajo del cual no vende. Con valoraciones uniformes, el ingreso esperado es</p>
+  \[ E[R](r)=\frac{n-1}{n+1}+r^n-\frac{2n}{n+1}\,r^{n+1}, \]
+  <p>que se maximiza en \(r^*=\tfrac12\), cualquiera sea \(n\) (Myerson, 1981). Con dos postores, el ingreso sube de 0,333 a 0,417. El precio de reserva funciona como un postor ficticio: aumenta el ingreso cuando la segunda valoración es baja, a costa de no vender a veces aunque alguien valore el bien por encima del costo del vendedor. Es la misma disyuntiva entre extracción de renta y eficiencia del monopolista.</p>
+
+  <h3 id="s45"><span class="tag" style="background:var(--b4)">4.5</span>Valor común, maldición del ganador y colusión</h3>
+  <ul>
+    <li><b>Maldición del ganador</b>: con valores comunes, gana quien tiene la estimación más optimista, que probablemente sobreestima el valor. Un postor racional descuenta ese sesgo y oferta con más cautela cuantos más competidores hay.</li>
+    <li><b>Cuando la equivalencia falla</b>: con aversión al riesgo, la subasta de primer precio recauda más, porque los postores ofrecen más para no perder. Con postores asimétricos, los formatos difieren en ingreso y eficiencia. Con valores afiliados, la subasta inglesa recauda más porque revela información durante la puja (Milgrom y Weber).</li>
+    <li><b>Colusión</b>: las subastas abiertas facilitan la coordinación, porque los participantes pueden castigar desvíos en el acto. En las licitaciones públicas, la concertación de posturas es una práctica absolutamente restringida en la Ley 27.442. Las señales de alerta incluyen ofertas de cobertura, rotación de ganadores y precios que no responden a los costos.</li>
+    <li><b>Diseño en la práctica</b>: las subastas de espectro en Estados Unidos y el Reino Unido mostraron que los detalles importan (Klemperer): reglas de actividad, precios de reserva y prevención de la colusión pueden cambiar la recaudación en miles de millones.</li>
+  </ul>
+  <div class="btns"><a class="btn pri" href="#simuladores">Experimentar con los simuladores →</a><a class="btn" href="#simulacro">Hacer el simulacro</a></div>
+</article>
+</div>
+</section>
+
+<!-- ================= SIMULADORES ================= -->
+<section class="view" id="v-simuladores">
+  <div class="eyebrow">Aprender manipulando</div>
+  <h2>Simuladores</h2>
+  <p class="lead">Cinco herramientas para explorar los modelos de la lectura. El tercero es el simulador de concentración de la cátedra, adaptado y ampliado con el análisis de fusiones.</p>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b1)">1 · Demanda de un bien de red y masa crítica</h3>
+    <p style="font-size:15px;color:var(--ink2)">Utilidad \(u=\theta(\alpha+\beta n^e)-p\) con \(\theta\sim U[0,1]\). Demanda con expectativas cumplidas: \(p=(1-n)(\alpha+\beta n)\). La trayectoria muestra cómo se ajusta la red si los usuarios revisan sus expectativas período a período, partiendo de la expectativa inicial \(n_0\).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Valor autónomo, \(\alpha\)<span class="v" id="alv"></span></label><input type="range" id="al" min="0" max="0.3" step="0.01" value="0">
+        <label>Intensidad del efecto de red, \(\beta\)<span class="v" id="bev"></span></label><input type="range" id="be" min="0.2" max="1.5" step="0.01" value="1">
+        <label>Precio, \(p\)<span class="v" id="pnv"></span></label><input type="range" id="pn" min="0" max="0.5" step="0.005" value="0.16">
+        <label>Expectativa inicial, \(n_0\)<span class="v" id="n0v"></span></label><input type="range" id="n0" min="0" max="1" step="0.01" value="0.25">
+        <div class="out" id="o1"></div><div class="note" id="n1"></div>
+      </div>
+      <div><svg class="plot" id="p1a" viewBox="0 0 520 330"></svg><svg class="plot" id="p1b" viewBox="0 0 520 200" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b1)"></i>Demanda con expectativas cumplidas</span><span><i style="background:var(--b2)"></i>Precio</span><span><i style="background:var(--b3)"></i>Trayectoria \(n_t\)</span><span>● estable · ○ inestable (masa crítica)</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b1)">2 · Precios de una plataforma de dos lados</h3>
+    <p style="font-size:15px;color:var(--ink2)">Participación \(n_b=v_b-p_b+\gamma_b n_s\) y \(n_s=v_s-p_s+\gamma_s n_b\); costo por usuario \(c\). Precios óptimos: \(p_i=c+n_i-\gamma_j n_j\).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Valor que un comprador asigna a cada vendedor, \(\gamma_b\)<span class="v" id="gbv"></span></label><input type="range" id="gb" min="0" max="0.8" step="0.01" value="0.1">
+        <label>Valor que un vendedor asigna a cada comprador, \(\gamma_s\)<span class="v" id="gsv"></span></label><input type="range" id="gs" min="0" max="0.8" step="0.01" value="0.9">
+        <label>Valor autónomo de los compradores, \(v_b\)<span class="v" id="vbv"></span></label><input type="range" id="vb" min="0.4" max="1.5" step="0.01" value="0.5">
+        <label>Valor autónomo de los vendedores, \(v_s\)<span class="v" id="vsv"></span></label><input type="range" id="vs" min="0.4" max="1.5" step="0.01" value="1">
+        <label>Costo por usuario, \(c\)<span class="v" id="ccv"></span></label><input type="range" id="cc" min="0" max="0.35" step="0.01" value="0.3">
+        <div class="out" id="o2"></div><div class="note" id="n2"></div>
+      </div>
+      <div><svg class="plot" id="p2" viewBox="0 0 520 340"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Margen de monopolio, \(n_i\)</span><span><i style="background:var(--b2)"></i>Descuento por atracción del otro lado, \(-\gamma_j n_j\)</span><span><i style="background:var(--b1)"></i>Precio final</span><span><i style="background:#9aa0a6"></i>Costo</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim" id="simconc">
+    <h3 style="margin-top:0;color:var(--b2)">3 · Concentración de mercados y análisis de fusiones</h3>
+    <p style="font-size:15px;color:var(--ink2)">Adaptación del simulador de concentración de la cátedra. Cargá participaciones (en %) a mano o con los escenarios predefinidos; los índices y el gráfico se actualizan en el momento. Abajo, elegí dos firmas para simular su fusión y compararla con los umbrales argentinos y estadounidenses.</p>
+    <div class="simgrid wide">
+      <div class="ctrl">
+        <label>Escenarios</label>
+        <div class="presets" id="presets"></div>
+        <label class="chk"><input type="checkbox" id="norm" checked> Normalizar las participaciones a 100 %</label>
+        <div class="sumline" id="sumline"></div>
+        <div class="firms" id="firms"></div>
+        <div class="btns" style="margin:10px 0 0"><button class="mini" id="addf">+ Agregar firma</button><button class="mini" id="eqf">Igualar cuotas</button><button class="mini" id="copyc">Copiar resultados</button></div>
+      </div>
+      <div>
+        <svg class="plot" id="p3" viewBox="0 0 560 300"></svg>
+        <svg class="plot" id="p3g" viewBox="0 0 560 92" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b2)"></i>Cuatro mayores (\(CR_4\))</span><span><i style="background:#C9B8AE"></i>Resto</span><span><i style="background:#2E8B6A"></i>HHI actual en la escala 0–10.000</span></div>
+        <table class="ix" id="ixt"></table>
+        <div class="note" id="n3"></div>
+      </div>
+    </div>
+    <h4 style="color:var(--b2)">Simular una fusión</h4>
+    <div class="simgrid wide">
+      <div class="ctrl">
+        <div class="mrow"><div><label>Firma A</label><select id="ma"></select></div><div><label>Firma B</label><select id="mb"></select></div></div>
+        <div class="out" id="o3m"></div>
+      </div>
+      <div><div class="verd" id="verd"></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b3)">4 · Disuasión de la entrada con compromiso de producción</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda \(P=1-Q\), costo marginal nulo. El establecido se compromete con \(q_1\); el entrante paga \(F\) para entrar y responde con \(q_2=(1-q_1)/2\). La curva muestra el beneficio del establecido para cada \(q_1\), anticipando si habrá entrada.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Costo fijo de entrada, \(F\)<span class="v" id="Fv"></span></label><input type="range" id="F" min="0" max="0.09" step="0.0005" value="0.02">
+        <div class="out" id="o4"></div><div class="note" id="n4"></div>
+      </div>
+      <div><svg class="plot" id="p4" viewBox="0 0 520 330"></svg><svg class="plot" id="p4b" viewBox="0 0 520 110" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Beneficio del establecido</span><span><i style="background:var(--b2)"></i>Producción límite \(q_L\)</span><span><i style="background:#9aa0a6"></i>Regiones según \(F\)</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b4)">5 · Subastas: equivalencia de ingresos y precio de reserva</h3>
+    <p style="font-size:15px;color:var(--ink2)">\(n\) postores con valoraciones independientes uniformes en \([0,1]\). En primer precio se ofrece \(b(v)=\frac{n-1}{n}v+\frac{r^n}{n\,v^{n-1}}\) si \(v\ge r\); en segundo precio, la propia valoración.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Número de postores, \(n\)<span class="v" id="nav"></span></label><input type="range" id="na" min="2" max="10" step="1" value="3">
+        <label>Precio de reserva, \(r\)<span class="v" id="rav"></span></label><input type="range" id="ra" min="0" max="0.9" step="0.01" value="0">
+        <div class="btns" style="margin:12px 0 0"><button class="mini" id="one">Simular una subasta</button><button class="mini" id="many">Simular 5.000 subastas</button></div>
+        <div class="out" id="o5"></div><div class="note" id="n5"></div>
+      </div>
+      <div><svg class="plot" id="p5" viewBox="0 0 520 300"></svg><svg class="plot" id="p5b" viewBox="0 0 520 220" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b4)"></i>Ingreso esperado teórico según \(r\)</span><span><i style="background:var(--b1)"></i>Simulado, primer precio</span><span><i style="background:var(--b3)"></i>Simulado, segundo precio</span><span><i style="background:#C9B8AE"></i>Valoración</span><span><i style="background:var(--b2)"></i>Oferta en primer precio</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GLOSARIO ================= -->
+<section class="view" id="v-glosario">
+  <div class="eyebrow">Conceptos clave</div>
+  <h2>Glosario de la unidad</h2>
+  <input id="gsearch" type="search" placeholder="Buscar un concepto…">
+  <dl class="gl" id="gl"></dl>
+</section>
+
+<!-- ================= SIMULACRO ================= -->
+<section class="view" id="v-simulacro">
+  <div class="score" id="score">0 / 12</div>
+  <div class="eyebrow">Autoevaluación</div>
+  <h2>Simulacro de examen</h2>
+  <p>Doce preguntas de opción múltiple con corrección inmediata, seguidas de dos preguntas de desarrollo con su guion de respuesta.</p>
+  <div class="quiz" id="quiz"></div>
+  <button class="btn" id="reset">Reiniciar el simulacro</button>
+  <h3>Preguntas de desarrollo</h3>
+  <details class="dev"><summary>A. Plataformas, precios y defensa de la competencia</summary>
+    <p><b>Consigna.</b> Explique por qué una plataforma de dos lados puede cobrar un precio nulo o negativo a uno de los grupos. ¿Qué dificultades plantea esa estructura de precios para definir el mercado relevante y para evaluar una denuncia por precios predatorios? Ilustre con un caso.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Efectos de red dentro y entre grupos; espiral de atracción y multiplicador.</li>
+      <li>Problema del huevo y la gallina y estrategia de divide y vencerás (Lecciones 4.2 a 4.4).</li>
+      <li>Modelo de precios: \(p_i=c+n_i-\gamma_j n_j\); subsidio al lado que atrae.</li>
+      <li>Mercado relevante: precio cero, prueba SSNIP inaplicable, mercado por lado o por plataforma.</li>
+      <li>Predación: comparar el precio total con el costo total, no un lado aislado.</li>
+      <li>Tipping, killer acquisitions y regulación ex ante (Ley de Mercados Digitales).</li>
+      <li>Caso: buscadores, tarjetas de crédito, mercados electrónicos o aplicaciones de transporte.</li>
+    </ol>
+  </details>
+  <details class="dev"><summary>B. Concentración, fusiones y barreras a la entrada</summary>
+    <p><b>Consigna.</b> Una autoridad de competencia analiza la fusión entre la segunda y la tercera firma de un mercado. Explique qué información aportan el HHI y su variación, cómo se comparan con los umbrales de la autoridad argentina y estadounidense, y por qué el análisis no puede detenerse allí. Discuta el papel de las barreras a la entrada.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Definición del mercado relevante (monopolista hipotético) y sus límites.</li>
+      <li>HHI, \(\Delta HHI=2s_is_j\) y la relación de Cowling–Waterson con los márgenes.</li>
+      <li>Umbrales: Lineamientos argentinos (2018) y guías de Estados Unidos (2023); control previo desde noviembre de 2026.</li>
+      <li>Efectos unilaterales y coordinados; paradoja de la fusión en Cournot.</li>
+      <li>Eficiencias, empresa en crisis y condicionamientos.</li>
+      <li>Barreras: si la entrada es fácil, una fusión no puede sostener precios altos (disputabilidad); barreras estratégicas y compromiso.</li>
+    </ol>
+  </details>
+</section>
+
+<!-- ================= BIBLIOGRAFÍA ================= -->
+<section class="view" id="v-bibliografia">
+  <div class="eyebrow">Para profundizar</div>
+  <h2>Bibliografía recomendada</h2>
+  <p class="lead">Los textos están disponibles en la carpeta de la cátedra.</p>
+  <div class="btns"><a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Abrir la carpeta de bibliografía en Google Drive</a></div>
+  <table class="t">
+    <tr><th>Texto</th><th>Capítulos para esta unidad</th><th>Bloques</th></tr>
+    <tr><td>Belleflamme, P. y Peitz, M. (2021). <i>The Economics of Platforms: Concepts and Strategy</i>. Cambridge University Press.</td><td>Cap. 1 (definiciones y tipología), cap. 2 (calificaciones, recomendaciones y datos), cap. 3 (bienes de red), cap. 4 (cómo hacer crecer una plataforma), cap. 5 (precios de plataformas).</td><td>1 · 2</td></tr>
+    <tr><td>Belleflamme, P. y Peitz, M. <i>Organización industrial: mercados y estrategias</i> (2.ª ed.)</td><td>Cap. 14 (cárteles y colusión tácita), cap. 15 (fusiones horizontales), cap. 16 (empresas establecidas estratégicas y entrada), cap. 20 y 21 (bienes de red y estrategias).</td><td>1 · 2 · 3</td></tr>
+    <tr><td>Lipczynski, J., Wilson, J. y Goddard, J. <i>Industrial Organization: Competition, Strategy, Policy</i> (2.ª ed.)</td><td>Cap. 6 (medición de la concentración), cap. 8 (barreras a la entrada), cap. 11 (subastas), cap. 17 (política de la competencia), cap. 18 (regulación).</td><td>2 · 3 · 4</td></tr>
+    <tr><td>Normativa</td><td>Ley 27.442 de Defensa de la Competencia (2018) y Decreto 480/2018; Decreto 810/2025 (constitución de la ANC); Lineamientos para el control de concentraciones económicas (Res. SC 208/2018); U.S. DOJ y FTC, <i>Merger Guidelines</i> (2023).</td><td>2</td></tr>
+  </table>
+  <p style="font-size:15px;color:var(--muted)">Artículos citados: Armstrong (2006), <i>Competition in two-sided markets</i>; Rochet y Tirole (2003); Cowling y Waterson (1976); Demsetz (1973); Salant, Switzer y Reynolds (1983); Bain (1956); Sylos-Labini (1962); Dixit (1980); Spence (1977); Milgrom y Roberts (1982); Fudenberg y Tirole (1984); Baumol, Panzar y Willig (1982); Vickrey (1961); Myerson (1981); Riley y Samuelson (1981); Milgrom y Weber (1982); Klemperer (2002), <i>What really matters in auction design</i>.</p>
+</section>
+</main>
+<footer>Organización Industrial · FCE-UNICEN · Unidad IV — Apuntes elaborados a partir del material de la cátedra, de Belleflamme y Peitz (2021) y de la normativa vigente.</footer>
+
+
+<script>
+/* ---------- router ---------- */
+const views=['inicio','esquema','lectura','simuladores','glosario','simulacro','bibliografia'];
+function route(){
+  let h=(location.hash||'#inicio').slice(1); if(!views.includes(h)) h='inicio';
+  views.forEach(v=>document.getElementById('v-'+v).classList.toggle('on',v===h));
+  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+  window.scrollTo(0,0);
+  if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise().catch(()=>{});}
+}
+window.addEventListener('hashchange',route); route();
+const firstSec={b1:'s11',b2:'s21',b3:'s31',b4:'s41'};
+document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{location.hash='#lectura';setTimeout(()=>document.getElementById(firstSec[el.dataset.go]).scrollIntoView({behavior:'smooth'}),60);}));
+document.querySelectorAll('#toc a').forEach(a=>a.addEventListener('click',()=>document.getElementById(a.dataset.s).scrollIntoView({behavior:'smooth'})));
+
+/* ---------- helpers ---------- */
+const NS='http://www.w3.org/2000/svg';
+const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const lab=(v,r)=>{const d=r[1]-r[0];const s=d<0.5?3:d<5?2:d<50?1:0;return (+v.toFixed(s)).toLocaleString('es-AR');};
+function frame(svg,W,H,xr,yr,xl,yl,ticks){
+  svg.innerHTML=''; const m={l:52,r:18,t:16,b:44};
+  const X=v=>m.l+(v-xr[0])/(xr[1]-xr[0])*(W-m.l-m.r), Y=v=>H-m.b-(v-yr[0])/(yr[1]-yr[0])*(H-m.t-m.b);
+  const g=(tag,at,txt)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  const tx=ticks&&ticks.x||5, ty=ticks&&ticks.y||5;
+  for(let i=0;i<=tx;i++){const v=xr[0]+(xr[1]-xr[0])*i/tx;g('line',{x1:X(v),x2:X(v),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#EEEBE5'});g('text',{x:X(v),y:H-m.b+16,'text-anchor':'middle'},lab(v,xr));}
+  for(let i=0;i<=ty;i++){const v=yr[0]+(yr[1]-yr[0])*i/ty;g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(v),y2:Y(v),stroke:'#EEEBE5'});g('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end'},lab(v,yr));}
+  g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(yr[0]),y2:Y(yr[0]),stroke:'#9AA0A6'});g('line',{x1:X(xr[0]),x2:X(xr[0]),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#9AA0A6'});
+  g('text',{x:(m.l+W-m.r)/2,y:H-8,'text-anchor':'middle','font-weight':'700'},xl);
+  g('text',{x:14,y:(m.t+H-m.b)/2,'text-anchor':'middle','font-weight':'700',transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`},yl);
+  return {X,Y,g,xr,yr};
+}
+function path(P,pts,stroke,w=2.5,dash){const v=pts.filter(p=>isFinite(p[1])&&p[1]>=P.yr[0]-1e-9&&p[1]<=P.yr[1]+1e-9);if(v.length<2)return;const d=v.map((p,i)=>(i?'L':'M')+P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join('');const at={d,fill:'none',stroke,'stroke-width':w};if(dash)at['stroke-dasharray']=dash;return P.g('path',at);}
+function poly(P,pts,fill){P.g('polygon',{points:pts.map(p=>P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join(' '),fill,opacity:.85});}
+function dot(P,x,y,fill,r=6,label){P.g('circle',{cx:P.X(x),cy:P.Y(y),r,fill,stroke:'#fff','stroke-width':2});if(label)P.g('text',{x:P.X(x)+9,y:P.Y(y)-9,'font-weight':'700',fill},label);}
+const f=(v,d=2)=>(Math.abs(v)<1e-12?0:v).toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const out=(id,arr)=>document.getElementById(id).innerHTML=arr.map(([k,v])=>`<div><small>${k}</small><b>${v}</b></div>`).join('');
+const $=id=>document.getElementById(id);
+const tset=el=>{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]).catch(()=>{});};
+
+/* ---------- bar helper ---------- */
+function bars(svgId,W,H,groups,series,ymax,ylab){
+  const G=frame($(svgId),W,H,[0,groups.length],[0,ymax],'',ylab,{x:groups.length,y:4});
+  // remove x tick labels: overwrite with group names
+  [...$(svgId).querySelectorAll('text')].forEach(t=>{if(+t.getAttribute('y')===H-44+16)t.remove();});
+  const bw=0.8/series.length;
+  groups.forEach((gname,i)=>{
+    series.forEach((s,j)=>{const v=s.vals[i];if(!isFinite(v))return;const x0=i+0.1+j*bw,x1=x0+bw*0.92;const y=Math.max(0,Math.min(v,ymax));
+      G.g('rect',{x:G.X(x0),y:G.Y(y),width:G.X(x1)-G.X(x0),height:G.Y(0)-G.Y(y),fill:s.color,rx:2});
+      G.g('text',{x:(G.X(x0)+G.X(x1))/2,y:G.Y(y)-5,'text-anchor':'middle','font-size':'11'},s.fmt?s.fmt(v):f(v,0));});
+    G.g('text',{x:G.X(i+0.5),y:H-44+18,'text-anchor':'middle','font-weight':'700'},gname);
+  });
+  return G;
+}
+
+
+const nice=(lo,hi,n=5)=>{const raw=(hi-lo)/n||1;const p=10**Math.floor(Math.log10(raw));const st=[1,2,2.5,5,10].map(k=>k*p).find(x=>x>=raw-1e-12);const a=Math.floor(lo/st+1e-9)*st,b=Math.ceil(hi/st-1e-9)*st;return [a,b,Math.round((b-a)/st)];};
+/* ================= Sim 1: demanda de red y masa crítica ================= */
+function sim1(){
+  const al=+$('al').value,be=+$('be').value,p=+$('pn').value,n0=+$('n0').value;
+  $('alv').textContent=f(al);$('bev').textContent=f(be);$('pnv').textContent=f(p,3);$('n0v').textContent=f(n0);
+  const P=n=>(1-n)*(al+be*n);
+  const nm=Math.min(1,Math.max(0,(be-al)/(2*be))), Pmax=P(nm);
+  const [,ymax,ty]=nice(0,Math.max(0.1,Pmax*1.15,p*1.1));
+  const G=frame($('p1a'),520,330,[0,1],[0,ymax],'Usuarios (n)','Disposición a pagar / precio',{x:5,y:ty});
+  const pts=[];for(let i=0;i<=200;i++){const n=i/200;pts.push([n,P(n)]);}
+  path(G,pts,col('--b1'),3);
+  path(G,[[0,p],[1,p]],col('--b2'),2,'6 4');
+  // equilibria
+  const eq=[];
+  if(p>=al-1e-12) eq.push({n:0,st:p>al+1e-12});
+  const disc=(be-al)**2+4*be*(al-p);
+  if(disc>=0){[(be-al-Math.sqrt(disc))/(2*be),(be-al+Math.sqrt(disc))/(2*be)].forEach(r=>{if(r>1e-9&&r<=1+1e-9&&!eq.some(e=>Math.abs(e.n-r)<1e-6))eq.push({n:r,st:(be-al-2*be*r)<0});});}
+  eq.sort((a,b)=>a.n-b.n);
+  eq.forEach(e=>{if(e.st)dot(G,e.n,p,col('--b1'),7);else G.g('circle',{cx:G.X(e.n),cy:G.Y(p),r:7,fill:'#fff',stroke:col('--b1'),'stroke-width':2.5});});
+  path(G,[[n0,0],[n0,ymax]],col('--b3'),1.5,'3 3');
+  G.g('text',{x:G.X(n0)+5,y:G.Y(ymax)+14,fill:col('--b3'),'font-weight':'700'},'n₀');
+  // trajectory
+  const T=25,traj=[[0,n0]];let n=n0;
+  for(let t=1;t<=T;t++){const d=al+be*n;n=d>0?Math.max(0,1-p/d):0;traj.push([t,n]);}
+  const H=frame($('p1b'),520,200,[0,T],[0,1],'Período (t)','n_t',{x:5,y:4});
+  path(H,traj,col('--b3'),2.5);traj.forEach(q=>H.g('circle',{cx:H.X(q[0]),cy:H.Y(q[1]),r:2.5,fill:col('--b3')}));
+  const unst=eq.filter(e=>!e.st&&e.n>0), stab=eq.filter(e=>e.st);
+  out('o1',[['Equilibrios',eq.length?eq.map(e=>f(e.n)).join(' · '):'—'],['Masa crítica',unst.length?f(unst[0].n):'—'],['Red final (t = 25)',f(n)],['Precio máximo sostenible',f(Pmax,3)]]);
+  let msg;
+  if(!eq.length) msg='El precio supera la máxima disposición a pagar con cualquier tamaño de red: el bien no se adopta.';
+  else if(unst.length && stab.some(e=>e.n>0)) msg=`Hay masa crítica en n = ${f(unst[0].n)}. Si los usuarios esperan una red mayor, la adopción converge a ${f(stab[stab.length-1].n)}; si esperan menos, la red se vacía. Mové la expectativa inicial a uno y otro lado de la masa crítica.`;
+  else if(stab.length===1&&stab[0].n>0) msg=`Con un valor autónomo suficiente (\\(p\\lt\\alpha\\)), la red nula deja de ser equilibrio y la adopción converge a ${f(stab[0].n)} desde cualquier expectativa inicial.`;
+  else msg='Solo la red nula es un equilibrio estable a este precio.';
+  $('n1').innerHTML=msg;tset($('n1'));
+}
+['al','be','pn','n0'].forEach(id=>$(id).addEventListener('input',sim1));
+
+/* ================= Sim 2: plataforma de dos lados ================= */
+function sim2(){
+  const gb=+$('gb').value,gs=+$('gs').value,vb=+$('vb').value,vs=+$('vs').value,c=+$('cc').value;
+  $('gbv').textContent=f(gb);$('gsv').textContent=f(gs);$('vbv').textContent=f(vb);$('vsv').textContent=f(vs);$('ccv').textContent=f(c);
+  const g=gb+gs,D=4-g*g;
+  const nb=(2*(vb-c)+g*(vs-c))/D, ns=(2*(vs-c)+g*(vb-c))/D;
+  const pb=c+nb-gs*ns, ps=c+ns-gb*nb, pi=(pb-c)*nb+(ps-c)*ns;
+  const S=[{n:'Compradores',c,m:nb,d:-gs*ns,p:pb},{n:'Vendedores',c,m:ns,d:-gb*nb,p:ps}];
+  const vals=S.flatMap(s=>[s.c,s.m,s.d,s.p]);
+  const [ymin,ymax,ty]=nice(Math.min(0,...vals)*1.15-0.02,Math.max(...vals)*1.15+0.02,6);
+  const G=frame($('p2'),520,340,[0,2],[ymin,ymax],'','Valor por usuario',{x:2,y:ty});
+  [...$('p2').querySelectorAll('text')].forEach(t=>{if(+t.getAttribute('y')===340-44+16)t.remove();});
+  G.g('line',{x1:G.X(0),x2:G.X(2),y1:G.Y(0),y2:G.Y(0),stroke:'#4A5059'});
+  const cols=['#9aa0a6',col('--b3'),col('--b2'),col('--b1')], bw=0.19;
+  S.forEach((s,i)=>{[s.c,s.m,s.d,s.p].forEach((v,j)=>{const x0=i+0.12+j*bw,x1=x0+bw*0.9;const y0=G.Y(Math.max(0,v)),y1=G.Y(Math.min(0,v));
+      G.g('rect',{x:G.X(x0),y:y0,width:G.X(x1)-G.X(x0),height:Math.max(1,y1-y0),fill:cols[j],rx:2});
+      G.g('text',{x:(G.X(x0)+G.X(x1))/2,y:v>=0?y0-5:y1+13,'text-anchor':'middle','font-size':'11'},f(v));});
+    G.g('text',{x:G.X(i+0.5),y:340-44+20,'text-anchor':'middle','font-weight':'700'},s.n);});
+  out('o2',[['Compradores, \\(n_b\\)',f(nb)],['Vendedores, \\(n_s\\)',f(ns)],['Precio comprador',f(pb)],['Precio vendedor',f(ps)],['Beneficio',f(pi)],['Multiplicador',f(1/(1-gb*gs))]]);
+  tset($('o2'));
+  const sub=[];if(pb<c)sub.push('los compradores');if(ps<c)sub.push('los vendedores');
+  let msg=sub.length?`La plataforma cobra por debajo del costo a ${sub.join(' y ')}${(pb<0||ps<0)?' (incluso un precio negativo: un subsidio)':''}: cada usuario de ese lado vale por la disposición a pagar que genera en el otro.`:'Ambos lados pagan por encima del costo.';
+  msg+= gs>gb? ' Como los vendedores valoran a los compradores más que a la inversa, la plataforma subsidia relativamente a los compradores y monetiza a los vendedores (Lección 4.4).': gb>gs? ' Como los compradores valoran a los vendedores más que a la inversa, el subsidio relativo va a los vendedores.':' Con efectos cruzados simétricos, la estructura de precios solo refleja los valores autónomos.';
+  msg+=` Un shock de 10 usuarios en un lado se amplifica a ${f(10/(1-gb*gs),1)} por la espiral de atracción.`;
+  $('n2').innerHTML=msg;
+}
+['gb','gs','vb','vs','cc'].forEach(id=>$(id).addEventListener('input',sim2));
+
+/* ================= Sim 3: concentración y fusiones (adaptado del simulador de la cátedra) ================= */
+const PRESETS={
+  'Monopolio':[100],'Duopolio asimétrico':[70,30],'Duopolio simétrico':[50,50],
+  'Oligopolio (4)':[42,28,18,12],'Oligopolio (5)':[38,25,18,12,7],
+  'Competitivo (10)':[18,14,12,11,10,9,8,7,6,5],'Atomizado (20)':Array(20).fill(5),'Dominante + franja':[60,15,10,8,4,2,1]
+};
+let firms=[],curPreset='Oligopolio (5)',fid=0;
+const mk=(s,i)=>({id:++fid,name:'Firma '+(i+1),s});
+function loadPreset(k){curPreset=k;firms=PRESETS[k].map(mk);renderFirms();renderPresets();}
+function renderPresets(){$('presets').innerHTML=Object.keys(PRESETS).map(k=>`<button class="mini${k===curPreset?' on':''}" data-k="${k}">${k}</button>`).join('');
+  $('presets').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>loadPreset(b.dataset.k)));}
+function renderFirms(){
+  $('firms').innerHTML=firms.map(F=>`<div class="firm" data-id="${F.id}"><input type="text" value="${F.name}" class="fn" style="width:100%;padding:3px 4px;border:1px solid var(--line);border-radius:6px;font-size:13px;font-family:var(--sans)"><input type="range" min="0" max="100" step="0.5" value="${F.s}" class="fr"><input type="number" min="0" max="100" step="0.1" value="${F.s}" class="fv"><button title="Quitar">×</button></div>`).join('');
+  $('firms').querySelectorAll('.firm').forEach(row=>{const F=firms.find(x=>x.id===+row.dataset.id);
+    const r=row.querySelector('.fr'),v=row.querySelector('.fv');
+    r.addEventListener('input',()=>{F.s=+r.value;v.value=F.s;curPreset='';renderPresetsLite();sim3();});
+    v.addEventListener('input',()=>{F.s=Math.max(0,Math.min(100,+v.value||0));r.value=F.s;curPreset='';renderPresetsLite();sim3();});
+    row.querySelector('.fn').addEventListener('input',e=>{F.name=e.target.value||'Firma';fillSelects();sim3();});
+    row.querySelector('button').addEventListener('click',()=>{if(firms.length>1){firms=firms.filter(x=>x!==F);renderFirms();}});});
+  fillSelects(true);sim3();
+}
+function renderPresetsLite(){$('presets').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===curPreset));}
+function fillSelects(reset){
+  const a=$('ma').value,b=$('mb').value;
+  const ord=[...firms].sort((x,y)=>y.s-x.s);
+  const opts=firms.map(F=>`<option value="${F.id}">${F.name}</option>`).join('');
+  $('ma').innerHTML=opts;$('mb').innerHTML=opts;
+  if(!reset&&firms.some(F=>F.id==a)&&firms.some(F=>F.id==b)){$('ma').value=a;$('mb').value=b;}
+  else{$('ma').value=(ord[1]||ord[0]).id;$('mb').value=(ord[2]||ord[1]||ord[0]).id;}
+}
+$('ma').addEventListener('change',sim3);$('mb').addEventListener('change',sim3);
+$('norm').addEventListener('change',sim3);
+$('addf').addEventListener('click',()=>{if(firms.length>=25)return;firms.push(mk(5,firms.length));curPreset='';renderFirms();renderPresetsLite();});
+$('eqf').addEventListener('click',()=>{const v=+(100/firms.length).toFixed(2);firms.forEach(F=>F.s=v);curPreset='';renderFirms();renderPresetsLite();});
+
+function shares(){ // devuelve participaciones como fracción, y si hay franja
+  const S=firms.reduce((a,F)=>a+F.s,0); const norm=$('norm').checked||S>100;
+  const list=firms.map(F=>({id:F.id,name:F.name,s:S>0?(norm?F.s/S:F.s/100):0}));
+  return {list,S,norm,fringe:norm?0:Math.max(0,1-S/100)};
+}
+function indices(list,fringe){
+  const s=list.map(x=>x.s).filter(x=>x>0), N=s.length, sorted=[...s].sort((a,b)=>b-a);
+  const H=s.reduce((a,x)=>a+x*x,0), cr=k=>sorted.slice(0,k).reduce((a,x)=>a+x,0);
+  const full=fringe<1e-9;
+  return {N,H,cr1:cr(1),cr4:cr(4),cr8:cr(8),neq:H>0?1/H:NaN,
+    hn:(full&&N>1)?(H-1/N)/(1-1/N):(full?1:NaN),
+    id:H>0?s.reduce((a,x)=>a+(x*x/H)**2,0):NaN,
+    ir:full?1/(2*sorted.reduce((a,x,i)=>a+(i+1)*x,0)-1):NaN,
+    E:full?-s.reduce((a,x)=>a+x*Math.log(x),0):NaN, En:(full&&N>1)?-s.reduce((a,x)=>a+x*Math.log(x),0)/Math.log(N):NaN};
+}
+const pts=h=>Math.round(h*10000).toLocaleString('es-AR');
+const pc=(x,d=1)=>isFinite(x)?f(100*x,d)+' %':'—';
+function sim3(){
+  const {list,S,norm,fringe}=shares(), I=indices(list,fringe);
+  const sl=$('sumline');
+  if(S>100.05){sl.className='sumline warn';sl.textContent=`La suma es ${f(S,1)} %: se normaliza automáticamente.`;}
+  else if(Math.abs(S-100)>0.05&&!norm){sl.className='sumline warn';sl.textContent=`La suma es ${f(S,1)} %: el ${f(100-S,1)} % restante se trata como una franja atomizada de firmas muy pequeñas (aporte nulo al HHI).`;}
+  else sl.className='sumline',sl.textContent=`Suma de participaciones: ${f(S,1)} %${Math.abs(S-100)>0.05?' (normalizada a 100 %)':''}.`;
+  // bars
+  const ord=[...list].sort((a,b)=>b.s-a.s); const items=ord.map(x=>({n:x.name,s:x.s}));if(fringe>0)items.push({n:'Franja',s:fringe,fr:1});
+  const M=items.length, [,ymax,ty]=nice(0,Math.max(0.1,Math.max(...items.map(x=>x.s))*1.12),5);
+  const G=frame($('p3'),560,300,[0,M],[0,ymax],'','Participación de mercado',{x:M,y:ty});
+  [...$('p3').querySelectorAll('text')].forEach(t=>{if(+t.getAttribute('y')===300-44+16)t.remove();
+    else if(t.getAttribute('text-anchor')==='end')t.textContent=f(100*+t.textContent.replace(/\./g,'').replace(',','.'),0)+' %';});
+  items.forEach((x,i)=>{const x0=G.X(i+0.12),x1=G.X(i+0.88);
+    G.g('rect',{x:x0,y:G.Y(x.s),width:x1-x0,height:G.Y(0)-G.Y(x.s),fill:x.fr?'#E4E0D8':(i<4?col('--b2'):'#C9B8AE'),rx:2});
+    if(M<=14)G.g('text',{x:(x0+x1)/2,y:G.Y(x.s)-5,'text-anchor':'middle','font-size':'11'},f(100*x.s,M>9?0:1));
+    if(M<=12)G.g('text',{x:(x0+x1)/2,y:300-44+16,'text-anchor':'middle','font-size':'11'},x.n.length>10?x.n.slice(0,9)+'…':x.n);});
+  // gauge
+  const g=$('p3g');g.innerHTML='';const W=560,L=20,R=540,X=v=>L+(R-L)*v/10000;
+  const add=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;g.appendChild(e);return e;};
+  [[0,1500,'#EAF4EF'],[1500,2500,'#FBF4E4'],[2500,10000,'#FBE9E5']].forEach(z=>add('rect',{x:X(z[0]),y:30,width:X(z[1])-X(z[0]),height:22,fill:z[2]}));
+  [[1500,'1.500',68,'end'],[1800,'1.800 EE.UU. 2023',20,'end'],[2000,'2.000 Argentina',68,'start'],[2500,'2.500',20,'start']].forEach(m=>{add('line',{x1:X(m[0]),x2:X(m[0]),y1:26,y2:56,stroke:'#9AA0A6','stroke-dasharray':'3 2'});add('text',{x:X(m[0])+(m[3]==='end'?-3:3),y:m[2],'text-anchor':m[3],'font-size':'11',fill:'#4A5059'},m[1]);});
+  [0,5000,10000].forEach(v=>add('text',{x:X(v),y:86,'text-anchor':v?v===10000?'end':'middle':'start','font-size':'11',fill:'#6B717A'},v.toLocaleString('es-AR')));
+  const hp=Math.min(10000,I.H*10000);add('rect',{x:X(0),y:36,width:X(hp)-X(0),height:10,fill:'#2E8B6A',rx:3});
+  add('text',hp>8000?{x:L+8,y:45,'font-size':'12','font-weight':'700',fill:'#fff'}:{x:R-6,y:45,'text-anchor':'end','font-size':'12','font-weight':'700',fill:'#1F2328'},'HHI actual: '+pts(I.H));
+  // table
+  const hhi=I.H*10000;
+  const lect=hhi<1500?'No concentrado (guías de EE.UU. 2010)':hhi<=1800?'Moderadamente concentrado':hhi<=2500?'Muy concentrado según las guías de EE.UU. 2023 (> 1.800)':'Muy concentrado con ambos criterios de EE.UU.';
+  const rows=[
+    ['HHI (puntos)',pts(I.H),lect],
+    ['HHI normalizado',isFinite(I.hn)?f(I.hn,3):'—',isFinite(I.hn)?'Desigualdad para N dado: 0 = cuotas iguales':'Requiere normalizar (sin franja)'],
+    ['Número equivalente, 1/HHI',f(I.neq,1),`Equivale a ${f(I.neq,1)} firmas iguales`],
+    ['CR₁ · CR₄ · CR₈',`${pc(I.cr1,0)} · ${pc(I.cr4,0)} · ${pc(I.cr8,0)}`,I.cr4>0.6?'CR₄ alto: oligopolio concentrado':I.cr4>0.4?'CR₄ intermedio':'CR₄ bajo'],
+    ['Dominancia (ID)',f(I.id,3),`Rango [1/N, 1] = [${f(1/Math.max(1,I.N),3)}, 1]; valores altos: concentración explicada por una firma`],
+    ['Rosenbluth (Hall–Tideman)',isFinite(I.ir)?f(I.ir,3):'—',isFinite(I.ir)?'Rango [1/N, 1]; pondera por el rango de cada firma':'No definido con franja atomizada'],
+    ['Entropía de Theil (normalizada)',isFinite(I.E)?`${f(I.E,3)} (${isFinite(I.En)?f(I.En,3):'—'})`:'—',isFinite(I.E)?'Índice de desconcentración: 0 = monopolio; ln N = cuotas iguales':'No definido con franja atomizada']];
+  $('ixt').innerHTML='<tr><th>Índice</th><th style="text-align:right">Valor</th><th>Lectura</th></tr>'+rows.map(r=>`<tr><td>${r[0]}</td><td class="n" style="white-space:nowrap">${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+  $('n3').innerHTML=`Con ${I.N} firma${I.N>1?'s':''} activas, el HHI de ${pts(I.H)} puntos equivale a un mercado de ${f(I.neq,1)} firmas iguales. `+
+    (I.N>1&&isFinite(I.hn)&&I.hn<0.02?'Las cuotas son prácticamente iguales: la concentración se explica solo por el número de firmas.':
+     I.id>0.6?'El índice de dominancia es alto: buena parte del HHI proviene de una sola firma.':
+     'La concentración combina el número de firmas y la desigualdad de sus cuotas.')+
+    ` Por la relación de Cowling–Waterson, con una elasticidad de la demanda de 1,5 el margen promedio en Cournot sería ${pc(I.H/1.5)}.`;
+  merger(list,I);
+  window._conc={list,I,S,fringe};
+}
+function merger(list,I){
+  const a=list.find(x=>x.id==$('ma').value), b=list.find(x=>x.id==$('mb').value);
+  if(!a||!b||a===b){out('o3m',[['Elegí','dos firmas distintas']]);$('verd').innerHTML='';window._mrg=null;return;}
+  const d=2*a.s*b.s, post=I.H+d, js=a.s+b.s, D=d*10000, P=post*10000;
+  out('o3m',[['HHI previo',pts(I.H)],['ΔHHI = 2·sᵢ·sⱼ',Math.round(D).toLocaleString('es-AR')],['HHI posterior',pts(post)],['Cuota conjunta',pc(js)]]);
+  const ar=js<0.2||P<2000||(D<150&&js<0.5);
+  const us23=(P>1800&&D>100)||(js>0.3&&D>100);
+  const us10=P>2500&&D>200?2:((P>1500&&D>100)?1:0);
+  const why=[];if(js<0.2)why.push('cuota conjunta menor al 20 %');if(P<2000)why.push('HHI posterior menor a 2.000');if(D<150&&js<0.5)why.push('ΔHHI menor a 150 con cuota conjunta menor al 50 %');
+  $('verd').innerHTML=
+   `<div class="${ar?'ok':'no'}"><b>Argentina, Lineamientos 2018:</b> ${ar?'poco probable que genere preocupación ('+why.join('; ')+').':'no encuadra en ningún puerto seguro: la ANC debería analizar en profundidad sus efectos.'}</div>`+
+   `<div class="${us23?'no':'ok'}"><b>EE.UU., Merger Guidelines 2023:</b> ${us23?'se presume que aumenta sustancialmente el poder de mercado'+((P>1800&&D>100)?' (HHI > 1.800 y ΔHHI > 100)':' (cuota > 30 % y ΔHHI > 100)')+'.':'no activa la presunción estructural.'}</div>`+
+   `<div class="${us10===2?'no':us10===1?'mid':'ok'}"><b>EE.UU., guías 2010 (referencia histórica):</b> ${us10===2?'mercado muy concentrado y ΔHHI > 200: se presumía probable el aumento del poder de mercado.':us10===1?'ΔHHI > 100 en un mercado al menos moderadamente concentrado: potenciales preocupaciones.':'improbable que tuviera efectos adversos.'}</div>`+
+   `<div class="mid" style="background:#F7F5F0;border-left-color:#9AA0A6">Los umbrales son filtros iniciales. El análisis completo considera barreras a la entrada, contrapoder de compradores, cercanía de los sustitutos, riesgo de coordinación y eficiencias.</div>`;
+  window._mrg={a,b,D,P,js,ar,us23};
+}
+$('copyc').addEventListener('click',e=>{
+  const C=window._conc;if(!C)return;const I=C.I,M=window._mrg;
+  let t='Concentración de mercado\n'+[...C.list].sort((a,b)=>b.s-a.s).map(x=>`${x.name}\t${f(100*x.s,2)} %`).join('\n')+(C.fringe>0?`\nFranja atomizada\t${f(100*C.fringe,2)} %`:'')+
+    `\n\nHHI\t${pts(I.H)}\nHHI normalizado\t${isFinite(I.hn)?f(I.hn,3):'—'}\nNúmero equivalente\t${f(I.neq,2)}\nCR1\t${pc(I.cr1)}\nCR4\t${pc(I.cr4)}\nCR8\t${pc(I.cr8)}\nDominancia\t${f(I.id,3)}\nRosenbluth\t${isFinite(I.ir)?f(I.ir,3):'—'}\nEntropía\t${isFinite(I.E)?f(I.E,3):'—'}`;
+  if(M)t+=`\n\nFusión ${M.a.name} + ${M.b.name}\nΔHHI\t${Math.round(M.D)}\nHHI posterior\t${Math.round(M.P)}\nCuota conjunta\t${pc(M.js)}\nLineamientos AR 2018\t${M.ar?'puerto seguro':'requiere análisis'}\nEE.UU. 2023\t${M.us23?'presunción de daño':'sin presunción'}`;
+  const btn=e.currentTarget,done=()=>{btn.textContent='¡Copiado!';setTimeout(()=>btn.textContent='Copiar resultados',1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(done,()=>fallback());else fallback();
+  function fallback(){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(_){}ta.remove();}
+});
+
+/* ================= Sim 4: disuasión de la entrada ================= */
+function sim4(){
+  const F=+$('F').value;$('Fv').textContent=f(F,4);
+  const qL=1-2*Math.sqrt(F), enters=q=>((1-q)/2)**2-F>1e-12;
+  const pi1=q=>enters(q)?q*(1-q)/2:q*(1-q);
+  let reg,q1,q2;
+  if(qL<=0.5){reg='Entrada bloqueada';q1=0.5;q2=0;}
+  else if(qL*(1-qL)>=0.125){reg='Entrada disuadida';q1=qL;q2=0;}
+  else{reg='Entrada acomodada';q1=0.5;q2=0.25;}
+  const P=1-q1-q2, p1=q1*P, p2=q2>0?q2*P-F:0;
+  const G=frame($('p4'),520,330,[0,1],[0,0.3],'Compromiso de producción del establecido (q₁)','Beneficio del establecido',{x:5,y:6});
+  const A=[],B=[];for(let i=0;i<=400;i++){const q=i/400;(enters(q)?A:B).push([q,pi1(q)]);}
+  path(G,A,col('--b3'),3);path(G,B,col('--b3'),3);
+  if(qL>0&&qL<1){path(G,[[qL,0],[qL,0.3]],col('--b2'),2,'6 4');G.g('text',{x:G.X(qL)+5,y:G.Y(0.012),fill:col('--b2'),'font-weight':'700'},'q_L = '+f(qL));}
+  const qc=Math.min(1,Math.max(0,qL));if(qc>0.08)G.g('text',{x:G.X(qc/2),y:G.Y(0.275),fill:'#6B717A','font-size':'12','text-anchor':'middle'},'el rival entra');
+  if(qc<0.92)G.g('text',{x:G.X((qc+1)/2),y:G.Y(0.275),fill:'#6B717A','font-size':'12','text-anchor':'middle'},'el rival no entra');
+  dot(G,q1,p1,col('--b1'),7,'óptimo');
+  // regiones
+  const H=frame($('p4b'),520,110,[0,0.09],[0,1],'Costo de entrada (F)','',{x:6,y:1});
+  [...$('p4b').querySelectorAll('text')].forEach(t=>{if(t.getAttribute('text-anchor')==='end')t.remove();});
+  const fd=((1-Math.sqrt(0.5))/2)**2;
+  [[0,fd,'#EEF0F8','Acomoda'],[fd,1/16,'#FBF1EB','Disuade'],[1/16,0.09,'#EEF6F3','Bloqueada']].forEach(z=>{H.g('rect',{x:H.X(z[0]),y:H.Y(1),width:H.X(z[1])-H.X(z[0]),height:H.Y(0)-H.Y(1),fill:z[2]});H.g('text',{x:(H.X(z[0])+H.X(z[1]))/2,y:H.Y(0.45),'text-anchor':'middle','font-weight':'700','font-size':'12'},z[3]);});
+  H.g('line',{x1:H.X(F),x2:H.X(F),y1:H.Y(0),y2:H.Y(1),stroke:col('--b2'),'stroke-width':3});
+  out('o4',[['Régimen',reg],['q_L',f(Math.max(0,qL),3)],['q₁*',f(q1,3)],['q₂*',f(q2,3)],['Precio',f(P,3)],['π establecido',f(p1,4)],['π entrante',f(p2,4)]]);
+  $('n4').innerHTML=reg==='Entrada bloqueada'?'Con F ≥ 1/16 el entrante no cubre su costo fijo ni siquiera frente a la producción de monopolio: el establecido actúa como monopolista sin preocuparse por la entrada.':
+    reg==='Entrada disuadida'?`El establecido produce q_L = ${f(qL,3)}, por encima de la producción de monopolio (0,5), y sacrifica beneficio corriente (${f(p1,4)} frente a 0,25) para que al entrante no le convenga entrar. Le conviene porque acomodar le daría solo 0,125.`:
+    'El costo de entrada es tan bajo que disuadir exigiría producir demasiado. El establecido acomoda como líder de Stackelberg: q₁ = 0,5 y q₂ = 0,25.';
+}
+$('F').addEventListener('input',sim4);
+
+/* ================= Sim 5: subastas ================= */
+const ER=(n,r)=>(n-1)/(n+1)+r**n-2*n/(n+1)*r**(n+1);
+const bidFP=(v,n,r)=>v<r?null:(n-1)/n*v+(r**n)/(n*v**(n-1));
+let simRes=null;
+function runMany(){const n=+$('na').value,r=+$('ra').value,K=5000;let a=0,b=0,ns=0;
+  for(let k=0;k<K;k++){const v=Array.from({length:n},Math.random).sort((x,y)=>y-x);
+    if(v[0]<r){ns++;continue;} a+=bidFP(v[0],n,r); b+=Math.max(v[1],r);}
+  simRes={fp:a/K,sp:b/K,ns:ns/K};}
+function runOne(){const n=+$('na').value,r=+$('ra').value;const v=Array.from({length:n},Math.random);drawOne(v,n,r);}
+function drawOne(v,n,r){
+  const G=frame($('p5b'),520,220,[0,n],[0,1],'Postores','Valoración / oferta',{x:n,y:4});
+  [...$('p5b').querySelectorAll('text')].forEach(t=>{if(+t.getAttribute('y')===220-44+16)t.remove();});
+  const bids=v.map(x=>bidFP(x,n,r)); const w=v.indexOf(Math.max(...v)); const sorted=[...v].sort((a,b)=>b-a);
+  v.forEach((x,i)=>{const x0=G.X(i+0.15),x1=G.X(i+0.85),xm=(x0+x1)/2;
+    G.g('rect',{x:x0,y:G.Y(x),width:xm-x0-1,height:G.Y(0)-G.Y(x),fill:'#C9B8AE',rx:2});
+    if(bids[i]!=null)G.g('rect',{x:xm+1,y:G.Y(bids[i]),width:x1-xm-1,height:G.Y(0)-G.Y(bids[i]),fill:col('--b2'),rx:2});
+    G.g('text',{x:xm,y:220-44+16,'text-anchor':'middle','font-weight':i===w&&sorted[0]>=r?'700':'400'},(i===w&&sorted[0]>=r?'★ ':'')+(i+1));});
+  if(r>0)path(G,[[0,r],[n,r]],col('--b4'),2,'6 4');
+  const sold=sorted[0]>=r;
+  if(sold)path(G,[[0,Math.max(sorted[1],r)],[n,Math.max(sorted[1],r)]],col('--b3'),1.5,'2 3');
+  $('n5').innerHTML=sold?`Gana el postor ${w+1}. En primer precio paga su oferta, ${f(bids[w],3)}; en segundo precio pagaría ${f(Math.max(sorted[1],r),3)} (la segunda valoración${sorted[1]<r?', elevada al precio de reserva':''}). En una realización los ingresos difieren; en promedio coinciden.`:
+    `Ninguna valoración alcanza el precio de reserva ${f(r,2)}: el bien no se vende. Ocurre con probabilidad rⁿ = ${f(r**n,3)}.`;
+}
+function sim5(newSim){
+  const n=+$('na').value,r=+$('ra').value;$('nav').textContent=n;$('rav').textContent=f(r);
+  if(newSim!==false)runMany();
+  const G=frame($('p5'),520,300,[0,1],[0,1],'Precio de reserva (r)','Ingreso esperado del vendedor',{x:5,y:5});
+  const pts=[];for(let i=0;i<=200;i++){const x=i/200;pts.push([x,ER(n,x)]);}
+  path(G,pts,col('--b4'),3);
+  path(G,[[0.5,0],[0.5,1]],'#9aa0a6',1.2,'4 3');G.g('text',{x:G.X(0.5)+4,y:G.Y(0.97),fill:'#6B717A','font-size':'11'},'r* = 1/2');
+  dot(G,r,ER(n,r),col('--b4'),6);
+  if(simRes){G.g('circle',{cx:G.X(r)-7,cy:G.Y(simRes.fp),r:5,fill:col('--b1'),stroke:'#fff','stroke-width':1.5});G.g('circle',{cx:G.X(r)+7,cy:G.Y(simRes.sp),r:5,fill:col('--b3'),stroke:'#fff','stroke-width':1.5});}
+  out('o5',[['E[R] teórico',f(ER(n,r),3)],['Simulado, 1.er precio',simRes?f(simRes.fp,3):'—'],['Simulado, 2.º precio',simRes?f(simRes.sp,3):'—'],['Sin r: (n−1)/(n+1)',f((n-1)/(n+1),3)],['Con r* = 0,5',f(ER(n,0.5),3)],['Prob. de no vender',f(r**n,3)]]);
+  runOne();
+}
+$('na').addEventListener('input',()=>sim5());$('ra').addEventListener('input',()=>sim5());
+$('many').addEventListener('click',()=>sim5());$('one').addEventListener('click',runOne);
+
+/* ================= Glosario ================= */
+const GL=[
+['Efecto de red',1,'Situación en la que el valor de un bien para un usuario depende del número o del tipo de usuarios que lo utilizan.'],
+['Efecto de red dentro del grupo',1,'Efecto directo: la utilidad depende de cuántos usuarios del mismo grupo participan (telefonía, mensajería).'],
+['Efecto de red entre grupos',1,'Efecto indirecto o cruzado: la utilidad de un grupo depende de la participación del otro (compradores y vendedores).'],
+['Espiral de atracción',1,'Amplificación de un shock por los efectos cruzados: un aumento Δ en un grupo termina en Δ/(1 − β_Aβ_B).'],
+['Plataforma',1,'Organización que facilita las interacciones entre usuarios y gestiona los efectos de red que se generan entre ellos.'],
+['Expectativas cumplidas',1,'Equilibrio en el que el tamaño de red que esperan los usuarios coincide con el que resulta de sus decisiones.'],
+['Masa crítica',1,'Tamaño de red del equilibrio inestable: por encima, la adopción crece hacia la red grande; por debajo, se vacía.'],
+['Tipping',1,'Tendencia de un mercado con efectos de red a inclinarse hacia un único estándar o plataforma.'],
+['Problema del huevo y la gallina',1,'Problema de coordinación de una plataforma: ningún grupo se suma si no espera que se sume el otro.'],
+['Divide y vencerás',1,'Estrategia que subsidia al grupo que más atrae al otro y monetiza al grupo atraído.'],
+['Mercado relevante',2,'Menor conjunto de productos y áreas en que un monopolista hipotético podría subir rentablemente el precio (prueba SSNIP).'],
+['Índice de Herfindahl–Hirschman (HHI)',2,'Suma de los cuadrados de las participaciones de mercado; entre 1/N y 1, o entre 10.000/N y 10.000 en puntos.'],
+['Razón de concentración (CRk)',2,'Suma de las participaciones de las k mayores firmas.'],
+['Número equivalente',2,'Inversa del HHI: cantidad de firmas iguales que darían la misma concentración.'],
+['Índice de dominancia',2,'Suma de los cuadrados de las contribuciones de cada firma al HHI; entre 1/N y 1.'],
+['Cowling–Waterson',2,'Resultado de Cournot según el cual el margen promedio ponderado es HHI/|η|.'],
+['Autoridad Nacional de la Competencia',2,'Organismo creado por la Ley 27.442 y constituido en 2025; integra el Tribunal de Defensa de la Competencia y las secretarías de conductas y de concentraciones.'],
+['Control previo de concentraciones',2,'Régimen suspensivo, vigente en Argentina desde el 17 de noviembre de 2026: las operaciones alcanzadas deben autorizarse antes de concretarse.'],
+['Efectos unilaterales',2,'Aumento de precios que la firma fusionada encuentra rentable sin coordinarse con terceros.'],
+['Efectos coordinados',2,'Mayor probabilidad de colusión tácita después de una fusión.'],
+['Programa de clemencia',2,'Exención o reducción de sanciones a quien aporta información sobre un cártel del que participó.'],
+['Barrera a la entrada',3,'Según Bain, factor que permite precios supracompetitivos sin atraer entrada; según Stigler, costo que soporta el entrante y no soportó el establecido.'],
+['Precio límite',3,'Precio que el establecido fija antes de la entrada para hacerla no rentable; requiere que la amenaza sea creíble.'],
+['Compromiso',3,'Acción irreversible, como la capacidad instalada, que modifica los incentivos futuros de quien la toma y vuelve creíble una amenaza.'],
+['Entrada bloqueada, disuadida o acomodada',3,'Bloqueada: el monopolio no atrae entrada; disuadida: el establecido la impide alterando su conducta; acomodada: la acepta.'],
+['Precios predatorios',3,'Precios por debajo del costo para expulsar a un rival y recuperar las pérdidas después.'],
+['Mercado disputable',3,'Mercado sin costos hundidos de entrada ni salida, en el que la amenaza de entrada disciplina incluso a un monopolista.'],
+['Subasta de segundo precio (Vickrey)',4,'Gana la oferta más alta y paga la segunda; ofrecer la propia valoración es estrategia dominante.'],
+['Subasta de primer precio',4,'Gana la oferta más alta y paga lo ofrecido; en equilibrio se ofrece menos que la valoración.'],
+['Equivalencia de ingresos',4,'Con valores privados independientes y neutralidad al riesgo, los formatos estándar generan el mismo ingreso esperado.'],
+['Precio de reserva',4,'Precio mínimo por debajo del cual el vendedor no vende; con valoraciones uniformes, el óptimo es 1/2.'],
+['Maldición del ganador',4,'Con valores comunes, quien gana tiende a ser quien más sobreestimó el valor del bien.']];
+function renderGL(q=''){q=q.toLowerCase();const cols=['','--b1','--b2','--b3','--b4'];
+  $('gl').innerHTML=GL.filter(r=>(r[0]+r[2]).toLowerCase().includes(q)).sort((a,b)=>a[0].localeCompare(b[0],'es')).map(r=>`<dt>${r[0]}<span class="bk" style="background:var(${cols[r[1]]})">${r[1]}</span></dt><dd>${r[2]}</dd>`).join('')||'<p>Sin resultados.</p>';}
+$('gsearch').addEventListener('input',e=>renderGL(e.target.value)); renderGL();
+
+/* ================= Simulacro ================= */
+const QZ=[
+{q:'En una plataforma de compraventa, que los vendedores valoren más la plataforma cuantos más compradores haya es un ejemplo de:',o:['Efecto de red dentro del grupo','Efecto de red entre grupos','Economías de escala','Costos de cambio'],a:1,e:'La utilidad de un grupo (vendedores) depende de la participación del otro (compradores): es un efecto cruzado o indirecto.'},
+{q:'Con β_A = 1/3 y β_B = 1/2, un shock de 10 usuarios en el grupo A termina aumentando el grupo A en:',o:['10','12','15','20'],a:1,e:'Multiplicador 1/(1 − β_Aβ_B) = 1/(1 − 1/6) = 1,2; el grupo A crece 12 y el grupo B, 6.'},
+{q:'En la demanda con expectativas cumplidas p = n(1 − n), al precio p = 0,16 la masa crítica es:',o:['0','0,2','0,5','0,8'],a:1,e:'n(1 − n) = 0,16 da n = 0,2 y n = 0,8. El equilibrio de 0,2 es inestable: es la masa crítica. El de 0,8 es estable.'},
+{q:'Según la Lección 4.4 de Belleflamme y Peitz, con una estrategia de divide y vencerás la plataforma subsidia:',o:['Al grupo más numeroso','Al grupo que ejerce el mayor efecto de red sobre el otro','Al grupo con mayor disposición a pagar','A ambos grupos por igual'],a:1,e:'Se subsidia al grupo que más atrae al otro y se monetiza al grupo atraído, cualquiera sea el tamaño relativo de los grupos.'},
+{q:'En el modelo lineal de plataforma, p_b = c + n_b − γ_s n_s. Si γ_s es muy alto, el precio a los compradores:',o:['Sube','Puede quedar por debajo del costo','No cambia','Iguala al de los vendedores'],a:1,e:'Cada comprador vale para la plataforma por lo que los vendedores están dispuestos a pagar por él; ese beneficio externo se descuenta del precio.'},
+{q:'Un mercado con cuotas de 40 %, 30 %, 20 % y 10 % tiene un HHI de:',o:['2.500','3.000','3.500','10.000'],a:1,e:'1.600 + 900 + 400 + 100 = 3.000 puntos. El número equivalente es 10.000/3.000 ≈ 3,3 firmas.'},
+{q:'Si se fusionan la segunda y la tercera firma de ese mercado (30 % y 20 %), el HHI aumenta en:',o:['500','600','1.200','2.500'],a:2,e:'ΔHHI = 2 · 30 · 20 = 1.200 puntos; el HHI posterior es 4.200.'},
+{q:'Según la relación de Cowling–Waterson en Cournot, con HHI = 0,25 y |η| = 2, el margen promedio (p − c̄)/p es:',o:['8 %','12,5 %','25 %','50 %'],a:1,e:'(p − c̄)/p = HHI/|η| = 0,25/2 = 0,125.'},
+{q:'Desde el 17 de noviembre de 2026, el control de concentraciones económicas en Argentina:',o:['Es posterior al cierre de la operación','Es previo y suspensivo','Fue derogado','Solo alcanza a empresas extranjeras'],a:1,e:'La constitución de la ANC (Decreto 810/2025) activó la transición prevista en la Ley 27.442: un año después rige el control previo, que exige autorización antes de concretar la operación.'},
+{q:'El problema del modelo de precio límite de Bain y Sylos-Labini es que:',o:['Supone costos marginales crecientes','La amenaza de mantener la producción tras la entrada no es creíble','Ignora los costos fijos','Supone que el entrante es más eficiente'],a:1,e:'Una vez producida la entrada, al establecido le conviene acomodarse. Para disuadir hace falta un compromiso irreversible, como la capacidad instalada.'},
+{q:'En una subasta de segundo precio con valores privados, la estrategia dominante es:',o:['Ofrecer la mitad de la valoración','Ofrecer la propia valoración','Ofrecer (n − 1)/n de la valoración','Ofrecer el precio de reserva'],a:1,e:'La oferta solo determina si se gana, no cuánto se paga; ofrecer la valoración verdadera nunca es peor que otra estrategia.'},
+{q:'Con 4 postores de valoraciones uniformes en [0, 1] y sin precio de reserva, el ingreso esperado de una subasta de primer precio es:',o:['0,25','0,5','0,6','0,8'],a:2,e:'Por la equivalencia de ingresos, E[R] = (n − 1)/(n + 1) = 3/5 = 0,6, igual que en segundo precio.'}
+];
+let answered={},right=0;
+function renderQZ(){answered={};right=0;$('score').textContent='0 / '+QZ.length;
+  $('quiz').innerHTML=QZ.map((x,i)=>`<div class="qi"><p class="st">${i+1}. ${x.q}</p>${x.o.map((o,j)=>`<button class="op" data-i="${i}" data-j="${j}">${String.fromCharCode(97+j)}) ${o}</button>`).join('')}<div class="ex" id="ex${i}">${x.e}</div></div>`).join('');
+  document.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,j=+b.dataset.j;if(answered[i]!=null)return;answered[i]=j;
+    const qq=QZ[i];document.querySelectorAll(`.op[data-i="${i}"]`).forEach(o=>{if(+o.dataset.j===qq.a)o.classList.add('ok');else if(+o.dataset.j===j)o.classList.add('bad');});
+    if(j===qq.a)right++; $('score').textContent=right+' / '+QZ.length; const ex=$('ex'+i); ex.style.display='block'; ex.insertAdjacentHTML('afterbegin',`<b>${j===qq.a?'¡Correcto! ':'No es correcta. '}</b>`);}));}
+$('reset').addEventListener('click',renderQZ); renderQZ();
+
+/* ================= init ================= */
+sim1();sim2();renderPresets();loadPreset('Oligopolio (5)');sim4();sim5();
+
+</script></body></html>
