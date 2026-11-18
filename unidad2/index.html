@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unidad II · Análisis estructural de los mercados — Organización Industrial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' },
+  startup: { typeset: true }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+:root{
+  --bg:#FBFAF7; --paper:#FFFFFF; --ink:#1F2328; --ink2:#4A5059; --muted:#6B717A; --line:#E6E2DA; --soft:#F3F0EA;
+  --b1:#0F6B5C; --b2:#B4532A; --b3:#3D4FA8; --b4:#8A3B78; --accent:#0F6B5C;
+  --serif:'Source Serif 4', Georgia, serif; --sans:'Source Sans 3', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,250,247,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:1120px;margin:0 auto;padding:10px 20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px}
+.brand .sq{display:grid;grid-template-columns:repeat(4,7px);gap:2px}
+.brand .sq i{width:7px;height:7px;border-radius:1px;display:block}
+.brand small{font-family:var(--sans);color:var(--muted);font-size:13px;margin-left:auto}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:6px}
+nav.tabs a{padding:8px 12px;font-weight:600;font-size:15px;color:var(--ink2);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs a.on{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+section.view{display:none}
+section.view.on{display:block}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:clamp(32px,5vw,48px)}
+h2{font-size:32px}
+h3{font-size:24px;margin-top:1.6em}
+h4{font-size:19px;font-weight:600;margin-top:1.4em}
+p{margin:.6em 0}
+.lead{font-size:20px;color:var(--ink2);max-width:760px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-family:var(--sans)}
+.btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.drive{background:#fff;border-color:#C9D7F2;color:#1A56B8}
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0}
+.blocks button{border:0;border-radius:8px;color:#fff;font-family:var(--serif);font-size:30px;padding:16px 0;cursor:pointer;text-align:center}
+.list4 .row{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);cursor:pointer}
+.list4 .num{font-family:var(--serif);font-size:34px;line-height:1}
+.list4 .t{font-weight:700;font-size:19px}
+.list4 .s{color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin-top:0}
+.card.link{cursor:pointer}
+.card.link:hover{border-color:var(--accent)}
+.q{border-left:4px solid var(--b2);padding:6px 16px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ink2);margin:18px 0}
+ol.ideas{counter-reset:i;list-style:none;padding:0}
+ol.ideas li{counter-increment:i;position:relative;padding:6px 0 6px 38px}
+ol.ideas li::before{content:counter(i);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--b2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.map .card{border-top:5px solid var(--c)}
+.map ul{padding-left:18px;margin:.3em 0}
+.map li{margin:.2em 0}
+.conn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.conn .card .u{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* lectura */
+.readwrap{display:grid;grid-template-columns:240px 1fr;gap:36px}
+aside.toc{position:sticky;top:110px;align-self:start;font-size:14.5px;max-height:calc(100vh - 130px);overflow:auto}
+aside.toc b{display:block;margin:14px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+aside.toc a{display:block;color:var(--ink2);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+aside.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
+article.read{max-width:760px;font-family:var(--serif);font-size:18.5px;line-height:1.7}
+article.read h3{border-top:1px solid var(--line);padding-top:26px}
+article.read h3 .tag{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;border-radius:4px;padding:2px 8px;vertical-align:middle;margin-right:8px}
+.box{font-family:var(--sans);font-size:16px;background:var(--soft);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box.res{background:#EEF6F3;border-left:4px solid var(--b1)}
+.box.int{background:#FBF1EB;border-left:4px solid var(--b2)}
+.box b.h{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--ink2)}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+table.t{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:15px;margin:12px 0}
+table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+table.t th{background:var(--soft);font-weight:700}
+/* simuladores */
+.sim{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.simgrid{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:start}
+.ctrl label{display:block;font-size:14.5px;font-weight:600;margin-top:12px}
+.ctrl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctrl .v{float:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctrl select{width:100%;padding:6px;font-family:var(--sans);font-size:15px;border-radius:6px;border:1px solid var(--line)}
+.chk{display:flex;gap:8px;align-items:center;font-weight:400!important}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px}
+.out div{background:var(--soft);border-radius:8px;padding:6px 10px}
+.out small{display:block;color:var(--muted);font-size:12px}
+.out b{font-variant-numeric:tabular-nums;font-size:17px}
+.note{font-size:15px;color:var(--ink2);background:#F7F5F0;border-radius:8px;padding:10px 14px;margin-top:12px}
+svg.plot{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+svg.plot text{font-family:var(--sans);font-size:12px;fill:#4A5059}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+/* glosario */
+#gsearch{width:100%;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;font-family:var(--sans);margin-bottom:14px}
+dl.gl dt{font-weight:700;margin-top:14px;font-size:17px}
+dl.gl dd{margin:2px 0 0;color:var(--ink2)}
+dl.gl .bk{font-size:12px;font-weight:700;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+/* simulacro */
+.quiz .qi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.quiz .qi p.st{font-weight:600}
+.quiz .op{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:6px 0;font-family:var(--sans);font-size:16px;cursor:pointer}
+.quiz .op:hover{border-color:var(--accent)}
+.quiz .op.ok{background:#E6F4EE;border-color:#2E8B6A}
+.quiz .op.bad{background:#FBE9E5;border-color:#C2553A}
+.quiz .ex{display:none;margin-top:8px;font-size:15.5px;background:var(--soft);border-radius:8px;padding:10px 12px}
+.score{position:sticky;top:110px;float:right;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700}
+details.dev{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+details.dev summary{cursor:pointer;font-weight:700}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px;text-align:center}
+@media (max-width:860px){
+  .readwrap,.simgrid{grid-template-columns:1fr}
+  aside.toc{position:static;max-height:none}
+  .grid2,.grid3,.map,.conn{grid-template-columns:1fr}
+  .score{position:static;float:none;display:inline-block}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <div class="brand"><span class="sq"><i style="background:var(--b1)"></i><i style="background:var(--b2)"></i><i style="background:var(--b3)"></i><i style="background:var(--b4)"></i></span><a href="../" style="color:inherit;text-decoration:none">Organización Industrial</a>&nbsp;· Unidad II<small><a href="../" style="color:var(--muted)">← Todas las unidades</a></small></div>
+  <nav class="tabs" id="tabs">
+    <a href="#inicio">Inicio</a><a href="#esquema">Esquema</a><a href="#lectura">Lectura</a><a href="#simuladores">Simuladores</a><a href="#glosario">Glosario</a><a href="#simulacro">Simulacro</a><a href="#bibliografia">Bibliografía</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ================= INICIO ================= -->
+<section class="view" id="v-inicio">
+  <div class="eyebrow">Apuntes de cátedra · Notas de clase de Daniel Hoyos Maldonado</div>
+  <h1>Análisis estructural de los mercados</h1>
+  <p class="lead">Cuando en un mercado hay pocas empresas, cada una sabe que su decisión cambia lo que les conviene hacer a las demás. Esta unidad estudia esa interdependencia con cuatro familias de modelos: competencia en precios, competencia en cantidades, competencia secuencial y, por último, la tentación de dejar de competir mediante fusiones o colusión.</p>
+  <div class="btns">
+    <a class="btn pri" href="#esquema">Empezar por el esquema</a>
+    <a class="btn" href="#simuladores">Abrir los simuladores</a>
+    <a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Bibliografía recomendada (Drive)</a>
+  </div>
+  <div class="blocks">
+    <button style="background:var(--b1)" data-go="b1">1</button>
+    <button style="background:var(--b2)" data-go="b2">2</button>
+    <button style="background:var(--b3)" data-go="b3">3</button>
+    <button style="background:var(--b4)" data-go="b4">4</button>
+  </div>
+  <h2>Los cuatro bloques</h2>
+  <div class="list4">
+    <div class="row" data-go="b1"><div class="num" style="color:var(--b1)">1</div><div><div class="t">Competencia simultánea por precios: Bertrand</div><div class="s">Productos homogéneos y diferenciados · costos simétricos, asimétricos e inciertos · restricción de capacidad</div></div></div>
+    <div class="row" data-go="b2"><div class="num" style="color:var(--b2)">2</div><div><div class="t">Competencia simultánea por cantidades: Cournot</div><div class="s">Costos simétricos y asimétricos · costos fijos · empresa pública · información incompleta</div></div></div>
+    <div class="row" data-go="b3"><div class="num" style="color:var(--b3)">3</div><div><div class="t">Competencia secuencial: Stackelberg</div><div class="s">Líder y seguidor · costos asimétricos · precios con productos diferenciados · empresa pública · información incompleta</div></div></div>
+    <div class="row" data-go="b4"><div class="num" style="color:var(--b4)">4</div><div><div class="t">Fusión y colusión</div><div class="s">Paradoja de la fusión · cárteles con sinergias · economías de alcance · sostenibilidad de la colusión</div></div></div>
+  </div>
+  <h2 style="margin-top:36px">Cómo estudiar la unidad</h2>
+  <div class="grid2">
+    <div class="card"><h4>1 · Mirá el esquema</h4>Las cinco ideas esenciales y el mapa de la unidad. En pocos minutos sabés qué vas a leer y cómo se conectan los modelos.</div>
+    <div class="card"><h4>2 · Leé el desarrollo</h4>Cada modelo con su planteo, sus condiciones de primer orden y el equilibrio. El índice lateral te lleva a cada caso.</div>
+    <div class="card"><h4>3 · Experimentá</h4>Cuatro simuladores: curvas de reacción de Cournot y Stackelberg, Bertrand con diferenciación, paradoja de la fusión y sostenibilidad de la colusión.</div>
+    <div class="card"><h4>4 · Hacé el simulacro</h4>Doce preguntas de opción múltiple con corrección inmediata y dos preguntas de desarrollo con su guion de respuesta.</div>
+  </div>
+</section>
+
+<!-- ================= ESQUEMA ================= -->
+<section class="view" id="v-esquema">
+  <div class="eyebrow">Antes de leer</div>
+  <h2>Lo esencial en cinco ideas</h2>
+  <ol class="ideas">
+    <li>En un oligopolio el beneficio de cada empresa depende de lo que hacen las demás. La herramienta para resolverlo es el <b>equilibrio de Nash</b>: cada firma responde óptimamente a la estrategia de sus rivales, y eso se representa con <b>funciones de reacción</b>.</li>
+    <li>La <b>variable estratégica importa</b>. Con productos homogéneos y costos iguales, competir en precios (Bertrand) lleva al precio igual al costo marginal; competir en cantidades (Cournot) deja un margen positivo que se achica a medida que aumenta el número de firmas.</li>
+    <li>La <b>paradoja de Bertrand</b> se relaja cuando hay diferenciación de productos, costos distintos o inciertos, o restricciones de capacidad. Con capacidad elegida antes que el precio, el resultado reproduce el de Cournot.</li>
+    <li>El <b>orden de las jugadas</b> también importa. En cantidades, mover primero da ventaja (el líder de Stackelberg produce más y gana más); en precios con productos diferenciados, la ventaja es del que mueve segundo.</li>
+    <li>Las empresas tienen incentivos a <b>dejar de competir</b>, pero no siempre pueden sostenerlo. Una fusión horizontal sin sinergias suele no ser rentable (paradoja de la fusión), y la colusión solo es sostenible si las firmas valoran suficientemente el futuro.</li>
+  </ol>
+  <div class="eyebrow" style="margin-top:28px">Pregunta central</div>
+  <div class="q">¿Cómo determina la forma en que interactúan pocas empresas —qué eligen, cuándo y con qué información— los precios, las cantidades y el bienestar?</div>
+  <h2>Mapa de la unidad</h2>
+  <div class="map">
+    <div class="card" style="--c:var(--b1)"><h4 style="color:var(--b1)">1 · Competencia por precios</h4><ul>
+      <li>Bertrand homogéneo, costos simétricos: \(p=c\)</li><li>Costos asimétricos: la firma eficiente fija \(p=c_2\) o su precio de monopolio</li><li>Costos inciertos \(c_i\sim U[0,1]\): \(p(c)=\frac{1+nc}{n+1}\)</li><li>Productos diferenciados: precios por encima del costo</li><li>Diferenciados con costos asimétricos e inciertos</li><li>Capacidad y luego precios (Kreps–Scheinkman)</li></ul></div>
+    <div class="card" style="--c:var(--b2)"><h4 style="color:var(--b2)">2 · Competencia por cantidades</h4><ul>
+      <li>Cournot simétrico: \(q_i=\frac{1-c}{3}\)</li><li>Costos marginales asimétricos y condición de duopolio</li><li>Costos fijos asimétricos</li><li>Competencia entre empresa privada y pública</li><li>Información incompleta sobre el costo del rival</li></ul></div>
+    <div class="card" style="--c:var(--b3)"><h4 style="color:var(--b3)">3 · Competencia secuencial</h4><ul>
+      <li>Stackelberg simétrico: ventaja del primer movimiento</li><li>Líder y seguidor con costos distintos</li><li>Secuencial en precios: ventaja del segundo movimiento</li><li>Empresa pública seguidora</li><li>Líder desinformado y seguidor desinformado (señalización)</li></ul></div>
+    <div class="card" style="--c:var(--b4)"><h4 style="color:var(--b4)">4 · Fusión y colusión</h4><ul>
+      <li>Fusión entre dos firmas (equivale al monopolio)</li><li>Fusión de \(k\) de \(n\) firmas: regla \(k\ge\hat k\) (paradoja)</li><li>Cártel con sinergias de costos</li><li>Fusión con economías de alcance</li><li>Colusión repetida: \(\delta\ge 9/17\) (Cournot), \(\delta\ge 1/2\) (Bertrand)</li></ul></div>
+  </div>
+  <h2 style="margin-top:32px">Conexiones con otras unidades</h2>
+  <div class="conn">
+    <div class="card"><div class="u">Unidad I</div><b>Monopolio, índice de Lerner y concentración.</b> El monopolio es el punto de referencia de las fusiones y la colusión; los índices de concentración (HHI) se pueden calcular en el simulador de Cournot.</div>
+    <div class="card"><div class="u">Unidad III</div><b>Diferenciación de productos.</b> El parámetro \(\gamma\) del Bertrand diferenciado anticipa los modelos de Hotelling y Salop, donde la diferenciación se elige estratégicamente.</div>
+    <div class="card"><div class="u">Unidad IV</div><b>Política de la competencia.</b> La paradoja de la fusión, las sinergias y la sostenibilidad de los cárteles son la base del análisis de defensa de la competencia.</div>
+  </div>
+  <div class="btns"><a class="btn pri" href="#lectura">Leer el desarrollo →</a></div>
+</section>
+
+<!-- ================= LECTURA ================= -->
+<section class="view" id="v-lectura">
+<div class="readwrap">
+<aside class="toc" id="toc">
+  <b style="color:var(--b1)">1 · Precios</b>
+  <a data-s="s11">Bertrand homogéneo simétrico</a><a data-s="s12">Costos asimétricos</a><a data-s="s13">Costos inciertos</a><a data-s="s14">Productos diferenciados</a><a data-s="s15">Diferenciados, costos asimétricos</a><a data-s="s16">Diferenciados, costos inciertos</a><a data-s="s17">Capacidad y precios</a>
+  <b style="color:var(--b2)">2 · Cantidades</b>
+  <a data-s="s21">Cournot simétrico</a><a data-s="s22">Costos asimétricos</a><a data-s="s23">Costos fijos asimétricos</a><a data-s="s24">Empresa pública</a><a data-s="s25">Información incompleta</a>
+  <b style="color:var(--b3)">3 · Secuencial</b>
+  <a data-s="s31">Stackelberg simétrico</a><a data-s="s32">Costos asimétricos</a><a data-s="s33">Precios, diferenciados</a><a data-s="s34">Empresa pública</a><a data-s="s35">Líder desinformado</a><a data-s="s36">Seguidor desinformado</a>
+  <b style="color:var(--b4)">4 · Fusión y colusión</b>
+  <a data-s="s41">Fusión de dos firmas</a><a data-s="s42">Fusión de k firmas</a><a data-s="s43">Cártel con sinergias</a><a data-s="s44">Economías de alcance</a><a data-s="s45">Colusión a la Cournot</a><a data-s="s46">Colusión en precios, homogéneo</a><a data-s="s47">Colusión en precios, diferenciado</a>
+</aside>
+<article class="read">
+  <div class="eyebrow">Desarrollo completo</div>
+  <h2>Unidad II · Análisis estructural de los mercados</h2>
+  <p>Se analizan modelos de interacción estratégica entre pocas firmas. En cada uno, las empresas eligen una única variable estratégica —precios o cantidades— y el equilibrio se obtiene como un equilibrio de Nash: ninguna firma puede mejorar su beneficio cambiando su decisión dadas las decisiones de las demás. Salvo aclaración, la demanda de mercado es lineal, \(p=1-Q\) (o \(Q=1-p\)), y los costos marginales son constantes con \(0\le c\lt 1\).</p>
+
+  <!-- BLOQUE 1 -->
+  <h3 id="s11"><span class="tag" style="background:var(--b1)">1.1</span>Bertrand con productos homogéneos y costos simétricos</h3>
+  <p>Dos empresas \(i,j\) venden un producto homogéneo con idéntico costo marginal \(c\). Los consumidores compran a la firma más barata; si los precios coinciden, se reparten la demanda:</p>
+  \[ q_i(p_i,p_j)=\begin{cases} Q(p_i) & \text{si } p_i\lt p_j\\ \tfrac12 Q(p_i) & \text{si } p_i=p_j\\ 0 & \text{si } p_i\gt p_j \end{cases} \]
+  <p>La mejor respuesta de \(i\) depende del precio del rival:</p>
+  <ul>
+    <li>si \(p_j\gt p^m\), fija el precio de monopolio \(p^m\) y se queda con todo el mercado;</li>
+    <li>si \(c\lt p_j\le p^m\), le conviene <i>recortar</i> levemente: \(p_i=p_j-\varepsilon\);</li>
+    <li>si \(p_j\le c\), fija \(p_i=c\): no vende, pero tampoco pierde.</li>
+  </ul>
+  <p>La única combinación en la que ninguna firma quiere desviarse es</p>
+  \[ p_i^*=p_j^*=c,\qquad \pi_i^*=\pi_j^*=0. \]
+  <div class="box int"><b class="h">Interpretación</b>Con apenas dos empresas se obtiene el resultado de competencia perfecta: ninguna dispone de poder de mercado. Este resultado tan extremo se conoce como <b>paradoja de Bertrand</b>, y buena parte de la unidad consiste en ver qué supuestos hay que relajar para escapar de ella.</div>
+
+  <h3 id="s12"><span class="tag" style="background:var(--b1)">1.2</span>Bertrand con costos asimétricos</h3>
+  <p>Ahora \(c_1\lt c_2\). Con \(Q=1-p\), el precio de monopolio de la firma 1 es \(p^m(c_1)=\frac{1+c_1}{2}\). Hay dos casos.</p>
+  <p><b>Caso (a): \(p^m(c_1)\gt c_2\)</b> (ventaja de costos moderada). La firma 2 no puede vender por debajo de \(c_2\) sin perder. La firma 1 fija un precio apenas inferior, \(p_1=c_2-\varepsilon\), y captura todo el mercado:</p>
+  \[ \pi_1^*=(c_2-c_1)(1-c_2),\qquad \pi_2^*=0. \]
+  <p><b>Caso (b): \(p^m(c_1)\le c_2\)</b> (innovación <i>drástica</i>). La firma 1 actúa como monopolista sin amenaza efectiva del rival:</p>
+  \[ p_1^*=\frac{1+c_1}{2},\qquad \pi_1^*=\frac{(1-c_1)^2}{4},\qquad \pi_2^*=0. \]
+  <div class="box int"><b class="h">Interpretación</b>La firma más eficiente obtiene una renta igual a su ventaja de costos multiplicada por la cantidad vendida. El precio queda determinado por el costo del rival menos eficiente, no por el propio.</div>
+
+  <h3 id="s13"><span class="tag" style="background:var(--b1)">1.3</span>Bertrand con costos inciertos</h3>
+  <p>Hay \(n\ge2\) firmas con producto homogéneo y demanda \(Q(p)=1-p\). Cada una conoce su costo \(c_i\), pero solo sabe que los de sus rivales se distribuyen en forma independiente y uniforme, \(c_j\sim U[0,1]\). Se busca un equilibrio en el que el precio sea una función creciente del costo, \(p(c)\). Si \(\varphi=p^{-1}\), la firma \(i\) gana el mercado cuando todos sus rivales tienen costos mayores que \(\varphi(p_i)\), lo que ocurre con probabilidad \([1-\varphi(p_i)]^{n-1}\). Su problema es</p>
+  \[ \max_{p_i}\; (p_i-c_i)(1-p_i)\,[1-\varphi(p_i)]^{\,n-1}. \]
+  <p>Probando con una regla lineal \(p(c)=A+Bc\) e imponiendo la condición de primer orden para todo \(c_i\), se obtiene</p>
+  \[ p^*(c_i)=\frac{1+n\,c_i}{n+1}. \]
+  <div class="box res"><b class="h">Resultado</b>Con \(n=1\) se recupera el precio de monopolio \(\frac{1+c}{2}\); cuando \(n\to\infty\), el precio converge al costo marginal. La incertidumbre sobre los costos rivales permite márgenes positivos: cada empresa resigna probabilidad de ganar a cambio de margen.</div>
+
+  <h3 id="s14"><span class="tag" style="background:var(--b1)">1.4</span>Bertrand con productos diferenciados y costos simétricos</h3>
+  <p>Los productos son sustitutos imperfectos. Se parte de la demanda inversa \(p_i=1-q_i-\gamma q_j\), con \(0\le\gamma\lt 1\): \(\gamma\to1\) indica productos casi homogéneos y \(\gamma=0\), mercados independientes. Invirtiendo, la demanda directa es</p>
+  \[ q_i(p_i,p_j)=\frac{1-\gamma-p_i+\gamma p_j}{1-\gamma^2}. \]
+  <p>Cada firma resuelve \(\max_{p_i}(p_i-c)\,q_i(p_i,p_j)\). La condición de primer orden da la función de reacción</p>
+  \[ p_i(p_j)=\frac{1-\gamma+c+\gamma p_j}{2}, \]
+  <p>con pendiente positiva: los precios son <b>complementos estratégicos</b>. Por simetría,</p>
+  \[ p^*=\frac{1-\gamma+c}{2-\gamma},\qquad q^*=\frac{1-c}{(2-\gamma)(1+\gamma)},\qquad \pi^*=\frac{(1-\gamma)(1-c)^2}{(2-\gamma)^2(1+\gamma)}. \]
+  <div class="box int"><b class="h">Interpretación</b>Cuanto más diferenciados los productos (menor \(\gamma\)), menos intensa es la competencia y mayor el margen. Con \(\gamma=0\) cada firma es monopolista de su producto (\(p=\frac{1+c}{2}\)); con \(\gamma\to1\) se vuelve a la paradoja de Bertrand (\(p\to c\)). El <b>precio de reserva</b> surge de la demanda inversa: si el precio supera \(1-\gamma q_j\), el consumidor no demanda unidades del bien \(i\).</div>
+
+  <h3 id="s15"><span class="tag" style="background:var(--b1)">1.5</span>Productos diferenciados con costos asimétricos</h3>
+  <p>Con costos \(c_1\ne c_2\), las funciones de reacción son \(p_i=\frac{1-\gamma+c_i+\gamma p_j}{2}\). Resolviendo el sistema:</p>
+  \[ p_1^*=\frac{(1-\gamma)(2+\gamma)+2c_1+\gamma c_2}{4-\gamma^2},\qquad p_2^*=\frac{(1-\gamma)(2+\gamma)+2c_2+\gamma c_1}{4-\gamma^2}. \]
+  <p>El precio de cada firma aumenta con su propio costo (con peso 2) y también con el costo del rival (con peso \(\gamma\)): un rival más caro relaja la competencia. Las cantidades y beneficios se obtienen sustituyendo en las demandas, verificando que \(q_i^*\gt 0\).</p>
+
+  <h3 id="s16"><span class="tag" style="background:var(--b1)">1.6</span>Productos diferenciados con costos inciertos</h3>
+  <p>Cada empresa tiene costo alto \(c_H\) con probabilidad \(\beta\) o bajo \(c_L\) con probabilidad \(1-\beta\), con \(0\lt c_L\lt c_H\lt 1\). Conoce su costo, no el del rival, pero sí la distribución. Como la demanda es lineal en \(p_j\), la firma de tipo \(k\in\{H,L\}\) responde al <b>precio esperado</b> del rival, \(\bar p_j=\beta p_H+(1-\beta)p_L\):</p>
+  \[ p_k=\frac{1-\gamma+c_k+\gamma\,\bar p}{2}. \]
+  <p>Promediando sobre los tipos, \(\bar p=\frac{1-\gamma+\bar c}{2-\gamma}\), con \(\bar c=\beta c_H+(1-\beta)c_L\). Por lo tanto:</p>
+  \[ p_k^*=\frac{1-\gamma+c_k}{2}+\frac{\gamma\,(1-\gamma+\bar c)}{2(2-\gamma)},\qquad k\in\{H,L\}. \]
+  <p>Cada tipo fija un precio mayor cuanto mayor es su costo y cuanto mayor es el costo <i>esperado</i> del rival.</p>
+
+  <h3 id="s17"><span class="tag" style="background:var(--b1)">1.7</span>Limitación de capacidad y competencia en precios</h3>
+  <p>El juego tiene dos etapas. Primero, las firmas eligen simultáneamente capacidades \(\bar q_1,\bar q_2\) a un costo unitario \(c\) (aquí \(c=\tfrac14\)). Luego, observando las capacidades, fijan precios con costo marginal nulo. La demanda es \(p=1-Q\).</p>
+  <p><b>Segunda etapa.</b> Si las capacidades no son grandes, ninguna firma gana bajando el precio: ya vende toda su capacidad. Subir el precio la deja sobre la demanda residual \(p=1-\bar q_j-q_i\), y como ninguna firma instala más de \(\tfrac12\) (el producto de monopolio), ese desvío no es rentable. El precio de equilibrio vacía el mercado:</p>
+  \[ p^*=1-\bar q_1-\bar q_2. \]
+  <p><b>Primera etapa.</b> Anticipando \(p^*\), cada firma resuelve \(\max_{\bar q_i}(1-\bar q_i-\bar q_j-c)\,\bar q_i\), que es exactamente el problema de Cournot:</p>
+  \[ \bar q_i^*=\frac{1-c}{3}=\frac14,\qquad p^*=\frac12. \]
+  <div class="box res"><b class="h">Resultado (Kreps–Scheinkman)</b>Cuando la capacidad se elige antes que el precio, la competencia en precios reproduce el resultado de Cournot. Esto justifica el uso de Cournot en industrias donde la capacidad es difícil de ajustar en el corto plazo.</div>
+
+  <!-- BLOQUE 2 -->
+  <h3 id="s21"><span class="tag" style="background:var(--b2)">2.1</span>Cournot con costos simétricos</h3>
+  <p>Dos firmas venden un producto homogéneo, enfrentan \(p=1-q_1-q_2\) y tienen costo marginal \(c\). Cada una elige su cantidad simultáneamente:</p>
+  \[ \max_{q_i}\;(1-q_i-q_j-c)\,q_i \;\Rightarrow\; q_i(q_j)=\frac{1-c-q_j}{2}. \]
+  <p>La función de reacción tiene pendiente negativa: las cantidades son <b>sustitutos estratégicos</b>. Por simetría,</p>
+  \[ q_i^*=\frac{1-c}{3},\qquad p^*=\frac{1+2c}{3},\qquad \pi_i^*=\frac{(1-c)^2}{9}. \]
+  <p>Con \(n\) firmas simétricas el resultado se generaliza a \(q_i^*=\frac{1-c}{n+1}\), \(p^*=\frac{1+nc}{n+1}\) y \(\pi_i^*=\left(\frac{1-c}{n+1}\right)^2\): el precio converge al costo marginal a medida que entran firmas.</p>
+
+  <h3 id="s22"><span class="tag" style="background:var(--b2)">2.2</span>Cournot con costos asimétricos</h3>
+  <p>Con \(c_1\lt c_2\), las funciones de reacción son \(q_i=\frac{1-c_i-q_j}{2}\). Resolviendo:</p>
+  \[ q_1^*=\frac{1-2c_1+c_2}{3},\qquad q_2^*=\frac{1-2c_2+c_1}{3},\qquad p^*=\frac{1+c_1+c_2}{3},\qquad \pi_i^*=\frac{(1-2c_i+c_j)^2}{9}. \]
+  <p>La firma 2 produce solo si \(c_2\lt \frac{1+c_1}{2}\), es decir, si su costo es inferior al precio de monopolio de la firma 1. En caso contrario, la firma 1 es la única proveedora. En el duopolio, la firma más eficiente produce más y obtiene mayor beneficio.</p>
+
+  <h3 id="s23"><span class="tag" style="background:var(--b2)">2.3</span>Cournot con costos fijos asimétricos</h3>
+  <p>Las firmas tienen igual costo marginal \(c\) pero costos fijos \(F_1\ne F_2\). Como el costo fijo no afecta la condición de primer orden, las cantidades y el precio son los del caso simétrico, \(q_i^*=\frac{1-c}{3}\) y \(p^*=\frac{1+2c}{3}\). Solo cambian los beneficios:</p>
+  \[ \pi_i^*=\frac{(1-c)^2}{9}-F_i. \]
+  <div class="box int"><b class="h">Interpretación</b>El costo fijo no altera las decisiones marginales, pero sí la decisión de permanecer en el mercado: una firma con \(F_i\gt \frac{(1-c)^2}{9}\) preferirá no operar a largo plazo.</div>
+
+  <h3 id="s24"><span class="tag" style="background:var(--b2)">2.4</span>Cournot entre una empresa privada y una pública</h3>
+  <p>La firma 1 es privada y maximiza su beneficio. La firma 2 es pública y pondera el bienestar total \(W\) (excedente del consumidor más beneficios) y su propio beneficio:</p>
+  \[ \max_{q_2}\;\alpha\,W+(1-\alpha)\,\pi_2,\qquad 0\le\alpha\le1. \]
+  <p>El equilibrio resulta</p>
+  \[ q_1^*=\frac{(1-\alpha)(1-c)}{3-2\alpha},\qquad q_2^*=\frac{1-c}{3-2\alpha},\qquad Q^*=\frac{(2-\alpha)(1-c)}{3-2\alpha}. \]
+  <div class="box res"><b class="h">Casos extremos</b>Con \(\alpha=0\) se recupera el Cournot estándar. Con \(\alpha=1\) la producción total alcanza el nivel competitivo, \(Q^*=1-c\) (precio igual al costo), y la empresa privada no produce.</div>
+
+  <h3 id="s25"><span class="tag" style="background:var(--b2)">2.5</span>Cournot bajo información incompleta</h3>
+  <p>El costo de la firma 1, \(c_L\), es conocido por ambas. La firma 2 conoce el suyo, pero la firma 1 solo sabe que es \(c_H\) con probabilidad \(\alpha\) y \(c_L\) con probabilidad \(1-\alpha\). Cada tipo de la firma 2 responde a \(q_1\):</p>
+  \[ q_2^k=\frac{1-c_k-q_1}{2},\qquad k\in\{H,L\}, \]
+  <p>mientras que la firma 1 responde a la cantidad <i>esperada</i> del rival. Resolviendo el sistema (equilibrio bayesiano de Nash):</p>
+  \[ q_1^*=\frac{1-2c_L+\bar c_2}{3},\qquad \bar c_2=\alpha c_H+(1-\alpha)c_L. \]
+  <p>La firma 1 produce como si enfrentara a un rival con el costo esperado. Cuanto más probable es que el rival tenga costos altos, más produce la firma 1.</p>
+
+  <!-- BLOQUE 3 -->
+  <h3 id="s31"><span class="tag" style="background:var(--b3)">3.1</span>Stackelberg con dos empresas simétricas</h3>
+  <p>La firma 1 (líder) elige \(q_1\) en la primera etapa; la firma 2 (seguidora) observa \(q_1\) y elige \(q_2\). La demanda es \(p=1-Q\) y el costo marginal \(c\). Se resuelve por <b>inducción hacia atrás</b>.</p>
+  <p><b>Segunda etapa.</b> El seguidor responde con su función de reacción: \(q_2(q_1)=\frac{1-c-q_1}{2}\).</p>
+  <p><b>Primera etapa.</b> El líder la anticipa e incorpora en su problema:</p>
+  \[ \max_{q_1}\;\Big(1-q_1-\frac{1-c-q_1}{2}-c\Big)q_1 \;\Rightarrow\; q_1^*=\frac{1-c}{2},\qquad q_2^*=\frac{1-c}{4}. \]
+  \[ p^*=\frac{1+3c}{4},\qquad \pi_1^*=\frac{(1-c)^2}{8},\qquad \pi_2^*=\frac{(1-c)^2}{16}. \]
+  <div class="box int"><b class="h">Interpretación</b>Hay <b>ventaja del primer movimiento</b>: comprometerse con una cantidad grande obliga al seguidor a retraerse. Frente a Cournot, el líder produce y gana más, el seguidor produce y gana menos, y la producción total es mayor, así que el precio es menor.</div>
+
+  <h3 id="s32"><span class="tag" style="background:var(--b3)">3.2</span>Stackelberg con empresas asimétricas</h3>
+  <p>El líder tiene costo \(c_L\) y el seguidor \(c_F\), con \(0\lt c_L\lt c_F\lt 1\). Repitiendo la inducción hacia atrás:</p>
+  \[ q_L^*=\frac{1-2c_L+c_F}{2},\qquad q_F^*=\frac{1+2c_L-3c_F}{4}. \]
+  <ul>
+    <li>Si la ventaja de costos del líder es grande (\(1+2c_L-3c_F\le0\)), solo el líder opera.</li>
+    <li>Si la ventaja es moderada, ambas empresas producen.</li>
+    <li>Si se relaja el supuesto y el líder resulta menos eficiente que el seguidor, con \(1-2c_L+c_F\le0\), solo opera el seguidor.</li>
+  </ul>
+
+  <h3 id="s33"><span class="tag" style="background:var(--b3)">3.3</span>Competencia secuencial en precios con productos diferenciados</h3>
+  <p>Con la demanda del punto 1.4 y costo \(c\), la firma 1 fija \(p_1\) y la firma 2 responde con \(p_2(p_1)=\frac{1-\gamma+c+\gamma p_1}{2}\). Sustituyendo en el problema del líder:</p>
+  \[ p_1^*=\frac{(1-\gamma)(2+\gamma)+c\,(2-\gamma)(1+\gamma)}{2(2-\gamma^2)},\qquad p_2^*=\frac{1-\gamma+c+\gamma p_1^*}{2}. \]
+  <div class="box int"><b class="h">Interpretación</b>Ambos precios superan los del Bertrand simultáneo, y el seguidor fija un precio menor que el líder. Por eso vende más y obtiene <b>mayor beneficio</b>: cuando las variables son complementos estratégicos (precios), la ventaja es del que <b>mueve segundo</b>.</div>
+
+  <h3 id="s34"><span class="tag" style="background:var(--b3)">3.4</span>Competencia secuencial entre una empresa privada y una pública</h3>
+  <p>La firma privada lidera y la pública, que maximiza \(\alpha W+(1-\alpha)\pi_2\), la sigue. La reacción de la pública es \(q_2(q_1)=\frac{1-c-q_1}{2-\alpha}\). Resolviendo el problema del líder:</p>
+  \[ q_1^*=\frac{1-c}{2},\qquad q_2^*=\frac{1-c}{2(2-\alpha)}. \]
+  <p>La producción del líder privado no depende de \(\alpha\). La pública completa el mercado: con \(\alpha=1\) produce \(\frac{1-c}{2}\) y la oferta total alcanza el nivel competitivo.</p>
+
+  <h3 id="s35"><span class="tag" style="background:var(--b3)">3.5</span>Información incompleta: líder desinformado</h3>
+  <p>El líder tiene costo \(c\) y no conoce el del seguidor: \(c_H\) con probabilidad \(\alpha\), \(c_L\) con probabilidad \(1-\alpha\). Cada tipo de seguidor responde \(q_F^k=\frac{1-c_k-q_1}{2}\). El líder maximiza su beneficio esperado:</p>
+  \[ q_1^*=\frac{1-2c+\bar c_F}{2},\qquad \bar c_F=\alpha c_H+(1-\alpha)c_L,\qquad q_F^{k*}=\frac{1-c_k-q_1^*}{2}. \]
+  <p>Igual que en Cournot, el líder decide en función del costo esperado del rival; el seguidor, que sí observa \(q_1\), ajusta según su tipo.</p>
+
+  <h3 id="s36"><span class="tag" style="background:var(--b3)">3.6</span>Información incompleta: seguidor desinformado</h3>
+  <p>Ahora el líder conoce su costo (\(c_H\) o \(c_L\)) y el seguidor no, aunque conoce las probabilidades. Como el seguidor observa \(q_1\) antes de decidir, la cantidad del líder puede <b>transmitir información</b> sobre su costo. Con información completa, el seguidor produciría \(q_F=\frac{1+2c_L-3c_F}{4}\) frente a un líder de costo \(c_L\), y menos que frente a uno de costo alto.</p>
+  <p>Se analiza un <b>equilibrio bayesiano perfecto separador</b>: cada tipo de líder elige una cantidad distinta, y el seguidor actualiza sus creencias al observarla. Fuera del equilibrio se asumen creencias pesimistas (el seguidor cree estar frente a un líder de costo bajo y produce poco). La condición clave es que el líder de costo alto no quiera imitar la cantidad del de costo bajo.</p>
+  <div class="box int"><b class="h">Interpretación</b>Para que la señal sea creíble, el líder de costo bajo puede tener que producir <i>más</i> que con información completa, de modo que imitarlo resulte demasiado costoso para el de costo alto. La asimetría de información amplifica la ventaja del primer movimiento.</div>
+
+  <!-- BLOQUE 4 -->
+  <h3 id="s41"><span class="tag" style="background:var(--b4)">4.1</span>Fusión entre dos firmas</h3>
+  <p>Dos firmas simétricas compiten en cantidades con \(p=1-Q\) y costo \(c\). En la primera etapa deciden si fusionarse; en la segunda, si se fusionaron maximizan el beneficio conjunto y, si no, compiten a la Cournot.</p>
+  <p><b>Sin fusión:</b> \(\pi_i=\frac{(1-c)^2}{9}\). <b>Con fusión:</b> la empresa resultante actúa como monopolista, con \(q^F=\frac{1-c}{2}\), \(p^F=\frac{1+c}{2}\) y \(\pi^F=\frac{(1-c)^2}{4}\). A cada socio le corresponde \(\frac{(1-c)^2}{8}\).</p>
+  \[ \frac{(1-c)^2}{9}\lt \frac{(1-c)^2}{8}\quad\Rightarrow\quad\text{las firmas eligen fusionarse.} \]
+
+  <h3 id="s42"><span class="tag" style="background:var(--b4)">4.2</span>Fusión de \(k\) de \(n\) firmas: la paradoja de la fusión</h3>
+  <p>En una industria de \(n\) firmas Cournot simétricas con \(p=a-Q\), cada una gana \(\pi=\left(\frac{a-c}{n+1}\right)^2\). Si \(k\) firmas se fusionan, quedan \(N=n-k+1\) oferentes y cada uno, la entidad fusionada incluida, gana \(\left(\frac{a-c}{n-k+2}\right)^2\). La fusión es rentable si</p>
+  \[ \left(\frac{a-c}{n-k+2}\right)^2\gt  k\left(\frac{a-c}{n+1}\right)^2 \;\Longleftrightarrow\; -k^2+k(2n+3)-(n+1)^2\gt 0 \;\Longleftrightarrow\; k\gt \hat k\equiv\frac{2n+3-\sqrt{4n+5}}{2}. \]
+  <div class="box res"><b class="h">Resultado (Salant, Switzer y Reynolds)</b>\(\hat k\) se ubica en torno al 80 % de la industria. Una fusión sin sinergias solo es rentable si involucra a la gran mayoría de las firmas, porque las que quedan afuera expanden su producción y se apropian de buena parte del beneficio de la restricción.</div>
+  <p><b>Sostenibilidad.</b> Si un socio abandona la fusión, el mercado pasa a tener \(n-k+3\) firmas y él gana \(\left(\frac{a-c}{n-k+3}\right)^2\). Prefiere quedarse si \((n-k+3)^2\gt k(n-k+2)^2\), es decir:</p>
+  \[ (1-k)(n-k)^2+2(3-2k)(n-k)+(9-4k)\gt 0. \]
+  <p>Para \(k\ge3\) los tres términos son negativos, así que la condición nunca se cumple: cada participante tiene incentivos a abandonar la fusión, cualquiera sea el número de empresas en la industria.</p>
+
+  <h3 id="s43"><span class="tag" style="background:var(--b4)">4.3</span>Cártel con sinergias</h3>
+  <p>Hay \(n\ge2\) firmas con \(p=1-Q\) y costo \(c\). Si \(k\) de ellas forman un cártel, su costo marginal baja a \(c-x\), ventaja que no alcanza a las no participantes. Sin cártel, \(\pi^{NC}=\left(\frac{1-c}{n+1}\right)^2\). Con cártel, resolviendo las funciones de reacción del cártel y de las \(n-k\) externas:</p>
+  \[ q_p=\frac{1-c+x(n-k+1)}{n-k+2},\qquad q_{NP}=\frac{1-c-x}{n-k+2},\qquad p=\frac{1+c(n-k+1)-x}{n-k+2}. \]
+  \[ \pi_p=\left[\frac{1-c+x(n-k+1)}{n-k+2}\right]^2,\qquad \pi_{NP}=\left[\frac{1-c-x}{n-k+2}\right]^2. \]
+  <p>El cártel es rentable si \(\pi_p\ge k\,\pi^{NC}\), lo que se puede expresar como un umbral sobre la sinergia relativa \(\rho\equiv\frac{x}{1-c}\):</p>
+  \[ \rho\;\ge\;\frac{\sqrt{k}\,(n-k+2)-(n+1)}{(n+1)(n-k+1)}\equiv\hat\rho. \]
+  <div class="box int"><b class="h">Interpretación</b>Las sinergias de costos pueden revertir la paradoja de la fusión: si la reducción de costos es suficiente, la entidad fusionada gana más que la suma de sus partes, mientras que las no participantes ven caer su producción.</div>
+
+  <h3 id="s44"><span class="tag" style="background:var(--b4)">4.4</span>Fusión para ganar economías de alcance</h3>
+  <p>Dos firmas venden productos diferenciados con demanda inversa \(p_i=a-bq_i-dq_j\), con \(0\le d\lt b\) (si \(d\to b\), los productos son homogéneos). Cada firma separada tiene costo \(C(q_i)=\frac{c}{2}q_i^2\), y la fusionada \(C(q_1,q_2)=\frac{c}{2}(q_1^2+q_2^2)-\beta q_1q_2\), donde \(\beta\gt 0\) representa las economías de alcance.</p>
+  <p><b>Antes de la fusión</b> (equilibrio de Cournot simétrico):</p>
+  \[ q^*=\frac{a}{2b+c+d},\qquad \pi_i^*=\frac{a^2\,(2b+c)}{2\,(2b+c+d)^2}. \]
+  <p><b>Con la fusión</b> (maximización conjunta y simétrica):</p>
+  \[ q^F=\frac{a}{2(b+d)+(c-\beta)},\qquad \pi^F=\frac{a^2}{2(b+d)+(c-\beta)}. \]
+  \[ \pi^F-2\pi^*=\frac{a^2\,(2b\beta+c\beta+d^2)}{(2b+c+d)^2\,\big[2(b+d)+c-\beta\big]}\gt 0. \]
+  <p>Con \(\beta\gt 0\) la fusión siempre es rentable: combina la internalización de la competencia (el término \(d^2\)) con el ahorro de costos.</p>
+
+  <h3 id="s45"><span class="tag" style="background:var(--b4)">4.5</span>Colusión entre dos empresas que compiten a la Cournot</h3>
+  <p>Dos firmas simétricas (\(p=1-Q\), costo \(c\)) interactúan en forma <b>repetida e indefinida</b> con factor de descuento \(\delta\). Acuerdan producir la mitad del monopolio cada una y castigan cualquier desvío volviendo para siempre al equilibrio de Nash (estrategia de gatillo).</p>
+  <table class="t"><tr><th>Situación</th><th>Cantidad</th><th>Beneficio por período</th></tr>
+    <tr><td>Colusión</td><td>\(\frac{1-c}{4}\) cada una</td><td>\(\pi^C=\frac{(1-c)^2}{8}\)</td></tr>
+    <tr><td>Desvío óptimo (el rival cumple)</td><td>\(\frac{3(1-c)}{8}\)</td><td>\(\pi^D=\frac{9(1-c)^2}{64}\)</td></tr>
+    <tr><td>Castigo (Nash de Cournot)</td><td>\(\frac{1-c}{3}\)</td><td>\(\pi^N=\frac{(1-c)^2}{9}\)</td></tr></table>
+  <p>Coludir es sostenible si el valor presente de cumplir supera al de desviarse:</p>
+  \[ \frac{\pi^C}{1-\delta}\ge\pi^D+\frac{\delta\,\pi^N}{1-\delta}\quad\Longleftrightarrow\quad\delta\ge\frac{\pi^D-\pi^C}{\pi^D-\pi^N}=\frac{9}{17}\approx0{,}53. \]
+
+  <h3 id="s46"><span class="tag" style="background:var(--b4)">4.6</span>Colusión en precios con producto homogéneo</h3>
+  <p>Dos firmas compiten en precios con \(Q=1-p\) y \(c=0\). En competencia, \(p=0\) y \(\pi^N=0\). En colusión fijan el precio de monopolio \(p^m=\frac12\) y cada una gana \(\pi^C=\frac18\). Si una se desvía con un precio levemente menor, captura todo el mercado: \(\pi^D\to\frac14\).</p>
+  \[ \frac{1/8}{1-\delta}\ge\frac14\quad\Longleftrightarrow\quad\delta\ge\frac12. \]
+  <p>El umbral es menor que en Cournot porque el castigo de Bertrand es más severo: el beneficio cae a cero.</p>
+
+  <h3 id="s47"><span class="tag" style="background:var(--b4)">4.7</span>Colusión en precios con productos diferenciados</h3>
+  <p>Con la demanda del punto 1.4 y \(c=0\):</p>
+  <table class="t"><tr><th>Situación</th><th>Precio</th><th>Beneficio por período</th></tr>
+    <tr><td>Colusión</td><td>\(\frac12\)</td><td>\(\pi^C=\frac{1}{4(1+\gamma)}\)</td></tr>
+    <tr><td>Desvío óptimo</td><td>\(\frac{2-\gamma}{4}\)</td><td>\(\pi^D=\frac{(2-\gamma)^2}{16(1-\gamma^2)}\)</td></tr>
+    <tr><td>Nash de Bertrand</td><td>\(\frac{1-\gamma}{2-\gamma}\)</td><td>\(\pi^N=\frac{1-\gamma}{(2-\gamma)^2(1+\gamma)}\)</td></tr></table>
+  \[ \delta\ge\delta^*(\gamma)=\frac{(2-\gamma)^2}{8-8\gamma+\gamma^2}. \]
+  <div class="box int"><b class="h">Interpretación</b>\(\delta^*\) aumenta con \(\gamma\): cuanto más sustitutos son los productos, más tentador resulta desviarse, porque recortar el precio roba más clientes. Por eso la colusión es más difícil de sostener entre productos similares.</div>
+  <div class="btns"><a class="btn pri" href="#simuladores">Experimentar con los simuladores →</a><a class="btn" href="#simulacro">Hacer el simulacro</a></div>
+</article>
+</div>
+</section>
+
+<!-- ================= SIMULADORES ================= -->
+<section class="view" id="v-simuladores">
+  <div class="eyebrow">Aprender manipulando</div>
+  <h2>Simuladores</h2>
+  <p class="lead">Mové los parámetros y observá cómo cambian los equilibrios. Todos usan las mismas especificaciones que la lectura.</p>
+
+  <div class="sim" id="sim1">
+    <h3 style="margin-top:0;color:var(--b2)">1 · Cournot y Stackelberg: curvas de reacción</h3>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Costo marginal firma 1, \(c_1\)<span class="v" id="c1v"></span></label><input type="range" id="c1" min="0" max="0.6" step="0.01" value="0.1">
+        <label>Costo marginal firma 2, \(c_2\)<span class="v" id="c2v"></span></label><input type="range" id="c2" min="0" max="0.6" step="0.01" value="0.1">
+        <label class="chk"><input type="checkbox" id="stk"> Mostrar Stackelberg (firma 1 líder)</label>
+        <div class="out" id="o1"></div>
+        <div class="note" id="n1"></div>
+      </div>
+      <div><svg class="plot" id="p1" viewBox="0 0 520 440"></svg>
+        <div class="legend"><span><i style="background:var(--b1)"></i>Reacción firma 1</span><span><i style="background:var(--b3)"></i>Reacción firma 2</span><span><i style="background:var(--b2)"></i>Equilibrio de Cournot</span><span><i style="background:var(--b4)"></i>Stackelberg</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim" id="sim2">
+    <h3 style="margin-top:0;color:var(--b1)">2 · Bertrand con productos diferenciados</h3>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Grado de sustituibilidad, \(\gamma\)<span class="v" id="gv"></span></label><input type="range" id="g" min="0" max="0.98" step="0.01" value="0.5">
+        <label>Costo firma 1, \(c_1\)<span class="v" id="b1v"></span></label><input type="range" id="bc1" min="0" max="0.5" step="0.01" value="0.1">
+        <label>Costo firma 2, \(c_2\)<span class="v" id="b2v"></span></label><input type="range" id="bc2" min="0" max="0.5" step="0.01" value="0.1">
+        <div class="out" id="o2"></div>
+        <div class="note" id="n2"></div>
+      </div>
+      <div><svg class="plot" id="p2" viewBox="0 0 520 440"></svg>
+        <div class="legend"><span><i style="background:var(--b1)"></i>Reacción firma 1</span><span><i style="background:var(--b3)"></i>Reacción firma 2</span><span><i style="background:var(--b2)"></i>Equilibrio</span><span><i style="background:#999"></i>Costos marginales</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim" id="sim3">
+    <h3 style="margin-top:0;color:var(--b4)">3 · La paradoja de la fusión</h3>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Firmas en la industria, \(n\)<span class="v" id="nv"></span></label><input type="range" id="nn" min="2" max="20" step="1" value="5">
+        <label>Firmas que se fusionan, \(k\)<span class="v" id="kv"></span></label><input type="range" id="kk" min="2" max="5" step="1" value="3">
+        <div class="out" id="o3"></div>
+        <div class="note" id="n3"></div>
+      </div>
+      <div><svg class="plot" id="p3" viewBox="0 0 520 380"></svg>
+        <div class="legend"><span><i style="background:var(--b4)"></i>Beneficio de la fusionada / suma previa de sus socios</span><span><i style="background:#999"></i>Umbral = 1</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim" id="sim4">
+    <h3 style="margin-top:0;color:var(--b3)">4 · ¿Es sostenible la colusión?</h3>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Modelo</label>
+        <select id="mod"><option value="cournot">Cournot (p = 1 − Q)</option><option value="bh">Bertrand, producto homogéneo</option><option value="bd">Bertrand, productos diferenciados</option></select>
+        <label id="lg">Sustituibilidad, \(\gamma\)<span class="v" id="g4v"></span></label><input type="range" id="g4" min="0.05" max="0.95" step="0.01" value="0.5">
+        <label>Factor de descuento, \(\delta\)<span class="v" id="dv"></span></label><input type="range" id="dd" min="0" max="0.95" step="0.01" value="0.6">
+        <div class="out" id="o4"></div>
+        <div class="note" id="n4"></div>
+      </div>
+      <div><svg class="plot" id="p4" viewBox="0 0 520 380"></svg>
+        <div class="legend"><span><i style="background:var(--b1)"></i>Ganancia neta de cumplir el acuerdo</span><span><i style="background:var(--b2)"></i>Cero: indiferencia</span><span><i style="background:#999"></i>δ elegido</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GLOSARIO ================= -->
+<section class="view" id="v-glosario">
+  <div class="eyebrow">Conceptos clave</div>
+  <h2>Glosario de la unidad</h2>
+  <input id="gsearch" type="search" placeholder="Buscar un concepto…">
+  <dl class="gl" id="gl"></dl>
+</section>
+
+<!-- ================= SIMULACRO ================= -->
+<section class="view" id="v-simulacro">
+  <div class="score" id="score">0 / 12</div>
+  <div class="eyebrow">Autoevaluación</div>
+  <h2>Simulacro de examen</h2>
+  <p>Doce preguntas de opción múltiple con corrección inmediata. Salvo aclaración, la demanda es \(p=1-Q\). Después vienen dos preguntas de desarrollo con su guion de respuesta.</p>
+  <div class="quiz" id="quiz"></div>
+  <button class="btn" id="reset">Reiniciar el simulacro</button>
+  <h3>Preguntas de desarrollo</h3>
+  <details class="dev"><summary>A. La paradoja de Bertrand y sus soluciones</summary>
+    <p><b>Consigna.</b> Enuncie la paradoja de Bertrand, explique por qué ocurre y analice al menos tres formas de evitarla, indicando qué supuesto se relaja en cada una.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Planteo: duopolio, producto homogéneo, costo marginal constante e idéntico, competencia simultánea en precios. Equilibrio \(p=c\), \(\pi=0\): con dos firmas se obtiene el resultado competitivo.</li>
+      <li>Mecanismo: el incentivo a recortar el precio en \(\varepsilon\) para capturar todo el mercado elimina cualquier margen positivo.</li>
+      <li>Diferenciación (1.4): con \(\gamma\lt 1\), \(p^*=\frac{1-\gamma+c}{2-\gamma}\gt c\).</li>
+      <li>Restricción de capacidad (1.7): si la capacidad se elige antes, el resultado es el de Cournot.</li>
+      <li>Costos asimétricos o inciertos (1.2 y 1.3): la firma eficiente obtiene rentas; con incertidumbre, \(p(c)=\frac{1+nc}{n+1}\gt c\).</li>
+      <li>Interacción repetida (4.6): la colusión es sostenible si \(\delta\ge\frac12\).</li>
+      <li>Cierre: la paradoja muestra que la concentración, por sí sola, no basta para predecir el poder de mercado; importan la variable estratégica y el contexto.</li>
+    </ol>
+  </details>
+  <details class="dev"><summary>B. Fusiones horizontales: paradoja, sinergias y política de competencia</summary>
+    <p><b>Consigna.</b> En una industria de \(n\) firmas Cournot simétricas, derive la condición para que una fusión de \(k\) firmas sea rentable. Explique la paradoja de la fusión y discuta cómo cambian las conclusiones con sinergias de costos. ¿Qué implicancias tiene para una autoridad de competencia?</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Beneficios antes y después: \(\left(\frac{a-c}{n+1}\right)^2\) y \(\left(\frac{a-c}{n-k+2}\right)^2\).</li>
+      <li>Condición \((n+1)^2\gt k(n-k+2)^2\), que lleva a \(k\gt \hat k=\frac{2n+3-\sqrt{4n+5}}{2}\) (alrededor del 80 % de la industria).</li>
+      <li>Intuición: la entidad fusionada reduce su producción y las externas la expanden (sustitutos estratégicos), apropiándose de parte de la ganancia.</li>
+      <li>Inestabilidad: cada socio prefiere abandonar la fusión (4.2).</li>
+      <li>Sinergias (4.3 y 4.4): una reducción de costos suficiente (\(\rho\ge\hat\rho\)) o economías de alcance (\(\beta\gt 0\)) hacen rentable la fusión.</li>
+      <li>Política: las fusiones rentables sin sinergias son justamente las que más concentran el mercado. La autoridad debería exigir evidencia de eficiencias y evaluar si se trasladan a precios.</li>
+    </ol>
+  </details>
+</section>
+
+<!-- ================= BIBLIOGRAFÍA ================= -->
+<section class="view" id="v-bibliografia">
+  <div class="eyebrow">Para profundizar</div>
+  <h2>Bibliografía recomendada</h2>
+  <p class="lead">Todos los textos están disponibles en la carpeta de la cátedra.</p>
+  <div class="btns"><a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Abrir la carpeta de bibliografía en Google Drive</a></div>
+  <h3>Manuales</h3>
+  <table class="t">
+    <tr><th>Texto</th><th>Para qué usarlo en esta unidad</th><th>Bloques</th></tr>
+    <tr><td>Belleflamme, P. y Peitz, M. <i>Organización industrial: mercados y estrategias</i> (2.ª ed.; también disponible en inglés)</td><td>Referencia principal: competencia imperfecta estática (Bertrand y Cournot), competencia secuencial, cárteles y colusión tácita, fusiones horizontales.</td><td>1 · 2 · 3 · 4</td></tr>
+    <tr><td>Church, J. y Ware, R. <i>Industrial Organization: A Strategic Approach</i></td><td>Desarrollo formal de la teoría de juegos aplicada a oligopolio; buen complemento para Stackelberg y colusión repetida.</td><td>2 · 3 · 4</td></tr>
+    <tr><td>Pepall, L., Richards, D. y Norman, G. <i>Industrial Organization: Contemporary Theory and Empirical Applications</i></td><td>Presentación intuitiva con aplicaciones empíricas; capítulos sobre fusiones horizontales y la paradoja de la fusión.</td><td>1 · 2 · 4</td></tr>
+    <tr><td>Lipczynski, J., Wilson, J. y Goddard, J. <i>Industrial Organisation: Competition, Strategy, Policy</i></td><td>Enfoque descriptivo y de política de competencia; útil para vincular los modelos con casos reales.</td><td>1 · 2 · 4</td></tr>
+    <tr><td>Tarziján, J. y Paredes, R. <i>Organización industrial para la estrategia empresarial</i> (2.ª ed.)</td><td>Texto en español orientado a la estrategia empresarial, con ejemplos latinoamericanos.</td><td>1 · 2 · 3</td></tr>
+    <tr><td><i>Industrial Organization: Practice Exercises with Answer Keys</i> (2.ª ed.)</td><td>Ejercicios resueltos paso a paso con la misma estructura que estas notas. Ideal para practicar antes del parcial.</td><td>1 · 2 · 3 · 4</td></tr>
+  </table>
+  <h3>Artículos de profundización</h3>
+  <table class="t">
+    <tr><th>Artículo</th><th>Tema</th></tr>
+    <tr><td>Spulber, D. (1995). <i>Bertrand competition when rivals' costs are unknown</i>.</td><td>Fundamento del modelo 1.3: Bertrand con costos privados.</td></tr>
+    <tr><td><i>Bertrand competition under uncertainty</i>.</td><td>Extensiones de la competencia en precios con incertidumbre.</td></tr>
+    <tr><td>Lofaro, A. <i>On the efficiency of Bertrand and Cournot competition under incomplete information</i>.</td><td>Comparación de eficiencia entre Bertrand y Cournot cuando los costos no son conocidos (modelos 1.6 y 2.5).</td></tr>
+  </table>
+</section>
+</main>
+<footer>Organización Industrial · FCE-UNICEN · Unidad II — Apuntes elaborados a partir de las notas de clase de la cátedra.</footer>
+
+<script>
+/* ---------- router ---------- */
+const views=['inicio','esquema','lectura','simuladores','glosario','simulacro','bibliografia'];
+function route(){
+  let h=(location.hash||'#inicio').slice(1); if(!views.includes(h)) h='inicio';
+  views.forEach(v=>document.getElementById('v-'+v).classList.toggle('on',v===h));
+  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+  window.scrollTo(0,0);
+  if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise().catch(()=>{});}
+}
+window.addEventListener('hashchange',route); route();
+const firstSec={b1:'s11',b2:'s21',b3:'s31',b4:'s41'};
+document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{location.hash='#lectura';setTimeout(()=>document.getElementById(firstSec[el.dataset.go]).scrollIntoView({behavior:'smooth'}),60);}));
+document.querySelectorAll('#toc a').forEach(a=>a.addEventListener('click',()=>document.getElementById(a.dataset.s).scrollIntoView({behavior:'smooth'})));
+
+/* ---------- plotting helpers ---------- */
+const NS='http://www.w3.org/2000/svg';
+const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function frame(svg,W,H,xr,yr,xl,yl,ticks){
+  svg.innerHTML=''; const m={l:52,r:18,t:16,b:44};
+  const X=v=>m.l+(v-xr[0])/(xr[1]-xr[0])*(W-m.l-m.r), Y=v=>H-m.b-(v-yr[0])/(yr[1]-yr[0])*(H-m.t-m.b);
+  const g=(tag,at,txt)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  const tx=ticks&&ticks.x||5, ty=ticks&&ticks.y||5;
+  for(let i=0;i<=tx;i++){const v=xr[0]+(xr[1]-xr[0])*i/tx;g('line',{x1:X(v),x2:X(v),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#EEEBE5'});g('text',{x:X(v),y:H-m.b+16,'text-anchor':'middle'},+v.toFixed(2));}
+  for(let i=0;i<=ty;i++){const v=yr[0]+(yr[1]-yr[0])*i/ty;g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(v),y2:Y(v),stroke:'#EEEBE5'});g('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end'},+v.toFixed(2));}
+  g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(yr[0]),y2:Y(yr[0]),stroke:'#9AA0A6'});g('line',{x1:X(xr[0]),x2:X(xr[0]),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#9AA0A6'});
+  g('text',{x:(m.l+W-m.r)/2,y:H-8,'text-anchor':'middle','font-weight':'700'},xl);
+  const yt=g('text',{x:14,y:(m.t+H-m.b)/2,'text-anchor':'middle','font-weight':'700',transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`},yl);
+  return {X,Y,g,clip:(x,y)=>x>=xr[0]-1e-9&&x<=xr[1]+1e-9&&y>=yr[0]-1e-9&&y<=yr[1]+1e-9};
+}
+function path(P,pts,stroke,w=2.5,dash){const d=pts.filter(p=>isFinite(p[1])).map((p,i)=>(i?'L':'M')+P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join('');const at={d,fill:'none',stroke,'stroke-width':w};if(dash)at['stroke-dasharray']=dash;return P.g('path',at);}
+function dot(P,x,y,fill,r=6,label){P.g('circle',{cx:P.X(x),cy:P.Y(y),r,fill,stroke:'#fff','stroke-width':2});if(label)P.g('text',{x:P.X(x)+9,y:P.Y(y)-9,'font-weight':'700',fill},label);}
+const f=(v,d=3)=>(Math.abs(v)<1e-12?0:v).toFixed(d).replace('.',',');
+const out=(id,arr)=>document.getElementById(id).innerHTML=arr.map(([k,v])=>`<div><small>${k}</small><b>${v}</b></div>`).join('');
+const $=id=>document.getElementById(id);
+
+/* ---------- Sim 1: Cournot / Stackelberg ---------- */
+function sim1(){
+  const c1=+$('c1').value,c2=+$('c2').value,st=$('stk').checked; $('c1v').textContent=f(c1,2);$('c2v').textContent=f(c2,2);
+  const P=frame($('p1'),520,440,[0,0.6],[0,0.6],'q₁','q₂',{x:6,y:6});
+  // reaction 1: q1=(1-c1-q2)/2  -> points (q1,q2)
+  path(P,[[ (1-c1)/2,0 ],[ Math.max(0,(1-c1-0.6)/2),0.6 ]],col('--b1'));
+  path(P,[[0,(1-c2)/2],[0.6,Math.max(0,(1-c2-0.6)/2)]],col('--b3'));
+  let q1=(1-2*c1+c2)/3,q2=(1-2*c2+c1)/3;
+  if(q2<0){q2=0;q1=(1-c1)/2;} if(q1<0){q1=0;q2=(1-c2)/2;}
+  const Q=q1+q2,p=1-Q,pi1=(p-c1)*q1,pi2=(p-c2)*q2,s1=Q?q1/Q:0,s2=Q?q2/Q:0,hhi=10000*(s1*s1+s2*s2);
+  dot(P,q1,q2,col('--b2'),7,'Cournot');
+  // monopoly reference on axes
+  let rows=[['q₁ Cournot',f(q1)],['q₂ Cournot',f(q2)],['Precio',f(p)],['π₁',f(pi1,4)],['π₂',f(pi2,4)],['HHI',Math.round(hhi).toLocaleString('es-AR')],['Lerner firma 1',f(p>0?(p-c1)/p:0)]];
+  let note=q2===0?'La firma 2 no produce: su costo supera el precio de monopolio de la firma 1, \\(c_2\\ge\\frac{1+c_1}{2}\\).':q1===0?'La firma 1 queda fuera del mercado.':'Equilibrio interior: ambas firmas producen. La firma con menor costo tiene mayor participación.';
+  if(st){
+    let qL=(1-2*c1+c2)/2,qF=(1+2*c1-3*c2)/4;
+    if(qF<0){qF=0;qL=Math.max(1-c2,(1-c1)/2);} if(qL<0){qL=0;qF=(1-c2)/2;}
+    const pS=1-qL-qF; dot(P,Math.min(qL,0.6),qF,col('--b4'),7,'Stackelberg');
+    rows.push(['q₁ líder',f(qL)],['q₂ seguidor',f(qF)],['Precio Stack.',f(pS)],['π₁ líder',f((pS-c1)*qL,4)],['π₂ seguidor',f((pS-c2)*qF,4)]);
+    note+=' Con liderazgo, la firma 1 se ubica sobre la curva de reacción de la 2, produce más que en Cournot y la seguidora produce menos.';
+  }
+  out('o1',rows); $('n1').innerHTML=note; if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([$('n1')]).catch(()=>{});
+}
+['c1','c2','stk'].forEach(i=>$(i).addEventListener('input',sim1));
+
+/* ---------- Sim 2: Bertrand diferenciado ---------- */
+function sim2(){
+  const g=+$('g').value,c1=+$('bc1').value,c2=+$('bc2').value; $('gv').textContent=f(g,2);$('b1v').textContent=f(c1,2);$('b2v').textContent=f(c2,2);
+  const P=frame($('p2'),520,440,[0,1],[0,1],'p₁','p₂',{x:5,y:5});
+  // R1: p1=(1-g+c1+g p2)/2  ; R2: p2=(1-g+c2+g p1)/2
+  path(P,[[(1-g+c1)/2,0],[(1-g+c1+g)/2,1]],col('--b1'));
+  path(P,[[0,(1-g+c2)/2],[1,(1-g+c2+g)/2]],col('--b3'));
+  path(P,[[c1,0],[c1,1]],'#999',1.2,'4 4'); path(P,[[0,c2],[1,c2]],'#999',1.2,'4 4');
+  const den=4-g*g, p1=((1-g)*(2+g)+2*c1+g*c2)/den, p2=((1-g)*(2+g)+2*c2+g*c1)/den;
+  const D=(pi,pj)=>(1-g-pi+g*pj)/(1-g*g); const q1=D(p1,p2),q2=D(p2,p1);
+  dot(P,p1,p2,col('--b2'),7,'Nash');
+  out('o2',[['p₁*',f(p1)],['p₂*',f(p2)],['q₁*',f(q1)],['q₂*',f(q2)],['π₁*',f((p1-c1)*q1,4)],['π₂*',f((p2-c2)*q2,4)],['Margen p₁−c₁',f(p1-c1)]]);
+  $('n2').innerHTML=(q1<0||q2<0)?'⚠️ Con estos parámetros una de las firmas tendría demanda negativa: en ese caso queda fuera del mercado (solución de esquina).':
+    g>0.9?'Con productos casi homogéneos los precios se acercan a los costos marginales: reaparece la paradoja de Bertrand.':
+    g<0.15?'Con productos casi independientes, cada firma fija casi su precio de monopolio, \\(\\frac{1+c}{2}\\).':
+    'Las curvas de reacción tienen pendiente positiva (complementos estratégicos). Al aumentar \\(\\gamma\\), el margen de ambas firmas se reduce.';
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([$('n2')]).catch(()=>{});
+}
+['g','bc1','bc2'].forEach(i=>$(i).addEventListener('input',sim2));
+
+/* ---------- Sim 3: paradoja de la fusión ---------- */
+function sim3(){
+  const n=+$('nn').value; const kk=$('kk'); kk.max=n; if(+kk.value>n)kk.value=n; const k=+kk.value;
+  $('nv').textContent=n;$('kv').textContent=k;
+  const ratio=k=>Math.pow(n+1,2)/(k*Math.pow(n-k+2,2)); const khat=(2*n+3-Math.sqrt(4*n+5))/2;
+  const ys=[];for(let j=2;j<=n;j++)ys.push(ratio(j)); const ymax=Math.max(2,Math.min(Math.ceil(Math.max(...ys)),12));
+  const P=frame($('p3'),520,380,[2,Math.max(n,3)],[0,ymax],'k (firmas que se fusionan)','ratio',{x:Math.min(Math.max(n,3)-2,9),y:4});
+  path(P,[[2,1],[Math.max(n,3),1]],'#999',1.5,'5 4');
+  const pts=[];for(let x=2;x<=n;x+=0.05)pts.push([x,Math.min(ratio(x),ymax)]); path(P,pts,col('--b4'),2.5);
+  if(khat>=2&&khat<=n){path(P,[[khat,0],[khat,ymax]],col('--b2'),1.5,'3 3');P.g('text',{x:P.X(khat)+5,y:P.Y(ymax)+14,fill:col('--b2'),'font-weight':'700'},'k̂ = '+khat.toFixed(2).replace('.',','));}
+  dot(P,k,Math.min(ratio(k),ymax),ratio(k)>1?col('--b1'):col('--b2'),7);
+  const pre=1/Math.pow(n+1,2),post=1/Math.pow(n-k+2,2);
+  out('o3',[['π individual antes',f(pre,4)],['π fusionada',f(post,4)],['Suma previa socios',f(k*pre,4)],['π de cada externa',f(post,4)],['k̂',f(khat,2)],['k̂ / n',Math.round(100*khat/n)+' %']]);
+  $('n3').innerHTML=(ratio(k)>1?'✅ La fusión es rentable: ':'❌ La fusión no es rentable: ')+`con ${k} de ${n} firmas, la fusionada gana ${(100*ratio(k)).toFixed(0)} % de lo que ganaban sus socios por separado. Las firmas externas pasan de ${f(pre,4)} a ${f(post,4)}: siempre ganan con la fusión. (Valores normalizados con \\(a-c=1\\).)`;
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([$('n3')]).catch(()=>{});
+}
+['nn','kk'].forEach(i=>$(i).addEventListener('input',sim3));
+
+/* ---------- Sim 4: colusión ---------- */
+function params4(){
+  const m=$('mod').value,g=+$('g4').value;
+  if(m==='cournot')return{C:1/8,D:9/64,N:1/9,name:'Cournot'};
+  if(m==='bh')return{C:1/8,D:1/4,N:0,name:'Bertrand homogéneo'};
+  return{C:1/(4*(1+g)),D:(2-g)*(2-g)/(16*(1-g*g)),N:(1-g)/((2-g)*(2-g)*(1+g)),name:'Bertrand diferenciado'};
+}
+function sim4(){
+  const d=+$('dd').value,m=$('mod').value; $('dv').textContent=f(d,2);$('g4v').textContent=f(+$('g4').value,2);
+  $('g4').style.display=$('lg').style.display=(m==='bd')?'':'none';
+  const {C,D,N}=params4(); const ds=(D-C)/(D-N);
+  const vc=x=>C/(1-x), vd=x=>D+x*N/(1-x), net=x=>vc(x)-vd(x);
+  const lo=net(0), hi=net(0.95), ymin=Math.min(lo,0)*1.1, ymax=Math.max(hi,0.0001)*1.1;
+  const P=frame($('p4'),520,380,[0,0.95],[ymin,ymax],'δ (factor de descuento)','VP cumplir − VP desviarse',{x:5,y:4});
+  const a=[];for(let x=0;x<=0.95;x+=0.005)a.push([x,net(x)]);
+  path(P,[[0,0],[0.95,0]],col('--b2'),1.5,'5 4');
+  path(P,a,col('--b1'));
+  path(P,[[d,ymin],[d,ymax]],'#999',1.5,'5 4');
+  if(ds<=0.95){dot(P,ds,0,col('--b4'),6,'δ* = '+ds.toFixed(3).replace('.',','));}
+  dot(P,d,net(d),net(d)>=0?col('--b1'):col('--b2'),5);
+  out('o4',[['π colusión',f(C,4)],['π desvío',f(D,4)],['π castigo (Nash)',f(N,4)],['δ*',f(ds,3)],['VP cumplir',f(vc(d),3)],['VP desviarse',f(vd(d),3)]]);
+  $('n4').innerHTML=(d>=ds?'✅ Con δ = '+f(d,2)+' la colusión es sostenible: cumplir el acuerdo vale más que desviarse.':'❌ Con δ = '+f(d,2)+' la colusión no es sostenible: el beneficio inmediato del desvío pesa más que el castigo futuro.')+' El umbral es \\(\\delta^*=\\frac{\\pi^D-\\pi^C}{\\pi^D-\\pi^N}\\).';
+  if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([$('n4')]).catch(()=>{});
+}
+['dd','mod','g4'].forEach(i=>$(i).addEventListener('input',sim4));
+sim1();sim2();sim3();sim4();
+
+/* ---------- Glosario ---------- */
+const GL=[
+['Bertrand, modelo de',1,'Oligopolio en el que las firmas eligen precios simultáneamente. Con productos homogéneos y costos iguales, el equilibrio es p = c.'],
+['Paradoja de Bertrand',1,'Resultado según el cual dos firmas bastan para alcanzar el precio competitivo. Se relaja con diferenciación, capacidad limitada, asimetría o incertidumbre de costos, o interacción repetida.'],
+['Precio de monopolio',1,'Precio que maximiza el beneficio de una firma sola en el mercado; con Q = 1 − p y costo c es (1 + c)/2.'],
+['Innovación drástica',1,'Reducción de costos tan grande que el precio de monopolio de la firma innovadora queda por debajo del costo del rival.'],
+['Productos diferenciados',1,'Bienes que los consumidores perciben como sustitutos imperfectos. El parámetro γ mide su grado de sustituibilidad.'],
+['Precio de reserva',1,'Precio máximo a partir del cual el consumidor deja de demandar un bien.'],
+['Kreps–Scheinkman, resultado de',1,'Si las firmas eligen capacidad y luego compiten en precios, el equilibrio reproduce el de Cournot.'],
+['Complementos estratégicos',1,'Variables cuyas funciones de reacción tienen pendiente positiva: si el rival sube su precio, conviene subir el propio.'],
+['Cournot, modelo de',2,'Oligopolio en el que las firmas eligen cantidades simultáneamente; el precio surge de la demanda de mercado.'],
+['Función de reacción',2,'Mejor respuesta de una firma ante cada estrategia posible de su rival.'],
+['Sustitutos estratégicos',2,'Variables cuyas funciones de reacción tienen pendiente negativa: si el rival produce más, conviene producir menos.'],
+['Equilibrio de Nash',2,'Perfil de estrategias en el que ninguna firma puede aumentar su beneficio cambiando unilateralmente su decisión.'],
+['Equilibrio bayesiano de Nash',2,'Equilibrio de un juego con información incompleta: cada tipo de jugador responde óptimamente dadas sus creencias sobre los tipos de los demás.'],
+['Empresa pública',2,'Firma que maximiza una combinación de bienestar social y beneficio propio; con peso total en el bienestar, lleva el mercado al nivel competitivo.'],
+['Stackelberg, modelo de',3,'Competencia secuencial: el líder decide primero y el seguidor responde tras observarlo.'],
+['Inducción hacia atrás',3,'Método de resolución de juegos secuenciales que parte de la última etapa y avanza hacia la primera.'],
+['Ventaja del primer movimiento',3,'Beneficio que obtiene el líder al comprometerse primero cuando las variables son sustitutos estratégicos (cantidades).'],
+['Ventaja del segundo movimiento',3,'Beneficio que obtiene el seguidor cuando las variables son complementos estratégicos (precios diferenciados).'],
+['Equilibrio separador',3,'Equilibrio de señalización en el que cada tipo de jugador elige una acción distinta, revelando su información privada.'],
+['Paradoja de la fusión',4,'Resultado de Salant, Switzer y Reynolds: en Cournot, una fusión sin sinergias solo es rentable si involucra a cerca del 80 % de la industria.'],
+['Sinergias',4,'Reducciones de costos que surgen de la fusión o del cártel y que no alcanzan a las firmas externas.'],
+['Economías de alcance',4,'Ahorro de costos por producir conjuntamente varios bienes; en el modelo, el término −βq₁q₂.'],
+['Colusión tácita',4,'Coordinación de precios o cantidades sin acuerdo explícito, sostenida por la amenaza de castigo en la interacción repetida.'],
+['Estrategia de gatillo',4,'Estrategia que coopera mientras el rival coopera y castiga para siempre ante el primer desvío, volviendo al equilibrio de Nash.'],
+['Factor de descuento (δ)',4,'Peso que una firma asigna a los beneficios futuros; la colusión es sostenible si δ supera un umbral crítico δ*.'],
+['Cártel',4,'Acuerdo entre firmas para coordinar producción o precios y maximizar el beneficio conjunto.']
+];
+function renderGL(q=''){q=q.toLowerCase();const cols=['','--b1','--b2','--b3','--b4'];
+  $('gl').innerHTML=GL.filter(r=>(r[0]+r[2]).toLowerCase().includes(q)).sort((a,b)=>a[0].localeCompare(b[0],'es')).map(r=>`<dt>${r[0]}<span class="bk" style="background:var(${cols[r[1]]})">${r[1]}</span></dt><dd>${r[2]}</dd>`).join('')||'<p>Sin resultados.</p>';}
+$('gsearch').addEventListener('input',e=>renderGL(e.target.value)); renderGL();
+
+/* ---------- Simulacro ---------- */
+const QZ=[
+{q:'En el duopolio de Bertrand con producto homogéneo y costo marginal común c = 10, el equilibrio es:',o:['p = 10 y beneficios nulos','p igual al precio de monopolio, repartiendo el mercado','p = 10 + ε para la firma que mueve primero','No existe equilibrio en estrategias puras'],a:0,e:'El incentivo a recortar el precio lleva a p = c. Con dos firmas se obtiene el resultado competitivo: la paradoja de Bertrand.'},
+{q:'Duopolio de Cournot con p = 1 − Q y c = 0,1. ¿Cuánto produce cada firma y cuál es el precio?',o:['q = 0,45; p = 0,10','q = 0,30; p = 0,40','q = 0,225; p = 0,55','q = 0,333; p = 0,333'],a:1,e:'q = (1 − c)/3 = 0,3 y p = (1 + 2c)/3 = 0,4.'},
+{q:'Bertrand homogéneo con Q = 1 − p, c₁ = 0,2 y c₂ = 0,4. ¿Cuál es el beneficio de la firma 1?',o:['0,16','0,12','0,08','0'],a:1,e:'El precio de monopolio de la firma 1 es 0,6 > c₂, así que fija p ≈ c₂ = 0,4: π₁ = (0,4 − 0,2)(1 − 0,4) = 0,12.'},
+{q:'Frente al equilibrio de Cournot simétrico, en el de Stackelberg (cantidades):',o:['El líder produce menos y el precio sube','Ambas firmas producen lo mismo que en Cournot','El líder produce más, el seguidor menos y el precio baja','El seguidor obtiene mayor beneficio que el líder'],a:2,e:'q_L = (1 − c)/2 > (1 − c)/3 y q_F = (1 − c)/4 < (1 − c)/3. La producción total sube de 2(1 − c)/3 a 3(1 − c)/4, así que el precio baja.'},
+{q:'Si las firmas eligen primero capacidad (con costo c) y luego compiten en precios, el resultado es:',o:['El de Bertrand: p = c','El de Cournot','El de monopolio','El de Stackelberg'],a:1,e:'Es el resultado de Kreps y Scheinkman: la elección previa de capacidad reproduce el equilibrio de Cournot (con c = 1/4, q = 1/4 y p = 1/2).'},
+{q:'En una industria de n = 10 firmas Cournot simétricas sin sinergias, ¿cuál es el número mínimo de firmas que debe involucrar una fusión para ser rentable?',o:['5','7','8','9'],a:3,e:'k̂ = (2n + 3 − √(4n + 5))/2 = (23 − √45)/2 ≈ 8,15. Se necesita k > 8,15, es decir, al menos 9 de las 10 firmas: más del 80 % de la industria.'},
+{q:'En el duopolio de Cournot repetido con estrategias de gatillo, la colusión es sostenible si:',o:['δ ≥ 1/2','δ ≥ 9/17','δ ≥ 8/9','Siempre, para cualquier δ'],a:1,e:'δ* = (π^D − π^C)/(π^D − π^N) = (9/64 − 1/8)/(9/64 − 1/9) = 9/17 ≈ 0,53.'},
+{q:'En Bertrand con costos inciertos U[0,1], n firmas y Q = 1 − p, la regla de precios de equilibrio es p(c) = (1 + nc)/(n + 1). Con n = 3 y c = 0,2:',o:['p = 0,40','p = 0,60','p = 0,20','p = 0,25'],a:0,e:'p = (1 + 3·0,2)/4 = 1,6/4 = 0,40: un margen positivo pese a ser Bertrand homogéneo.'},
+{q:'En Bertrand con productos diferenciados (c = 0), ¿qué ocurre con el precio de equilibrio cuando γ aumenta?',o:['Aumenta, porque los productos son más parecidos','Disminuye, porque la competencia se vuelve más intensa','No cambia','Primero aumenta y luego disminuye'],a:1,e:'p* = (1 − γ)/(2 − γ) es decreciente en γ: con γ = 0,5, p* = 1/3; con γ → 1, p* → 0.'},
+{q:'En el cártel con sinergias, si la reducción de costos x aumenta, la producción de cada firma no participante:',o:['Aumenta','Disminuye','No cambia','Se iguala a la del cártel'],a:1,e:'q_NP = (1 − c − x)/(n − k + 2) es decreciente en x: un cártel más eficiente desplaza a sus rivales.'},
+{q:'En Cournot entre una firma privada y una pública que maximiza αW + (1 − α)π, si α = 1:',o:['Se obtiene el Cournot estándar','La producción total es la competitiva y la privada no produce','La pública actúa como monopolista','Ambas producen (1 − c)/3'],a:1,e:'Con α = 1, Q* = 1 − c (p = c) y q₁* = (1 − α)(1 − c)/(3 − 2α) = 0.'},
+{q:'En Cournot con información incompleta, si aumenta la probabilidad α de que el rival tenga costo alto, la firma informada sobre su propio costo (firma 1):',o:['Produce menos','Produce más','No cambia su producción','Sale del mercado'],a:1,e:'q₁* = (1 − 2c_L + c̄₂)/3, con c̄₂ = αc_H + (1 − α)c_L, es creciente en α: espera un rival menos agresivo y produce más.'}
+];
+let answered={},right=0;
+function renderQZ(){answered={};right=0;$('score').textContent='0 / '+QZ.length;
+  $('quiz').innerHTML=QZ.map((x,i)=>`<div class="qi"><p class="st">${i+1}. ${x.q}</p>${x.o.map((o,j)=>`<button class="op" data-i="${i}" data-j="${j}">${String.fromCharCode(97+j)}) ${o}</button>`).join('')}<div class="ex" id="ex${i}">${x.e}</div></div>`).join('');
+  document.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,j=+b.dataset.j;if(answered[i]!=null)return;answered[i]=j;
+    const qq=QZ[i];document.querySelectorAll(`.op[data-i="${i}"]`).forEach(o=>{if(+o.dataset.j===qq.a)o.classList.add('ok');else if(+o.dataset.j===j)o.classList.add('bad');});
+    if(j===qq.a)right++; $('score').textContent=right+' / '+QZ.length; const ex=$('ex'+i); ex.style.display='block'; ex.insertAdjacentHTML('afterbegin',`<b>${j===qq.a?'¡Correcto! ':'No es correcta. '}</b>`);}));}
+$('reset').addEventListener('click',renderQZ); renderQZ();
+</script>
+</body>
+</html>

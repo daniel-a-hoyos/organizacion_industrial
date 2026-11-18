@@ -1,2 +1,10 @@
 # organizacion_industrial
-repositorio de la asignatura Organización Industrial (FCE-UNICEN)
+Repositorio de la asignatura Organización Industrial (FCE-UNICEN).
+
+Apuntes interactivos publicados con GitHub Pages:
+https://daniel-a-hoyos.github.io/organizacion_industrial/
+
+| Carpeta | Contenido |
+|---|---|
+| `index.html` | Portada del curso |
+| `unidad2/` | Unidad II · Análisis estructural de los mercados |
