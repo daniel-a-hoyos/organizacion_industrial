@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unidad III · Comportamiento estratégico de las empresas — Organización Industrial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' },
+  startup: { typeset: true }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+:root{
+  --bg:#FBFAF7; --paper:#FFFFFF; --ink:#1F2328; --ink2:#4A5059; --muted:#6B717A; --line:#E6E2DA; --soft:#F3F0EA;
+  --b1:#0F6B5C; --b2:#B4532A; --b3:#3D4FA8; --b4:#8A3B78; --accent:#0F6B5C;
+  --serif:'Source Serif 4', Georgia, serif; --sans:'Source Sans 3', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,250,247,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:1120px;margin:0 auto;padding:10px 20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px}
+.brand .sq{display:grid;grid-template-columns:repeat(4,7px);gap:2px}
+.brand .sq i{width:7px;height:7px;border-radius:1px;display:block}
+.brand small{font-family:var(--sans);color:var(--muted);font-size:13px;margin-left:auto}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:6px}
+nav.tabs a{padding:8px 12px;font-weight:600;font-size:15px;color:var(--ink2);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs a.on{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+section.view{display:none}
+section.view.on{display:block}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:clamp(32px,5vw,48px)}
+h2{font-size:32px}
+h3{font-size:24px;margin-top:1.6em}
+h4{font-size:19px;font-weight:600;margin-top:1.4em}
+p{margin:.6em 0}
+.lead{font-size:20px;color:var(--ink2);max-width:760px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-family:var(--sans)}
+.btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.drive{background:#fff;border-color:#C9D7F2;color:#1A56B8}
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0}
+.blocks button{border:0;border-radius:8px;color:#fff;font-family:var(--serif);font-size:30px;padding:16px 0;cursor:pointer;text-align:center}
+.list4 .row{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);cursor:pointer}
+.list4 .num{font-family:var(--serif);font-size:34px;line-height:1}
+.list4 .t{font-weight:700;font-size:19px}
+.list4 .s{color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin-top:0}
+.card.link{cursor:pointer}
+.card.link:hover{border-color:var(--accent)}
+.q{border-left:4px solid var(--b2);padding:6px 16px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ink2);margin:18px 0}
+ol.ideas{counter-reset:i;list-style:none;padding:0}
+ol.ideas li{counter-increment:i;position:relative;padding:6px 0 6px 38px}
+ol.ideas li::before{content:counter(i);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--b2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.map .card{border-top:5px solid var(--c)}
+.map ul{padding-left:18px;margin:.3em 0}
+.map li{margin:.2em 0}
+.conn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.conn .card .u{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* lectura */
+.readwrap{display:grid;grid-template-columns:240px 1fr;gap:36px}
+aside.toc{position:sticky;top:110px;align-self:start;font-size:14.5px;max-height:calc(100vh - 130px);overflow:auto}
+aside.toc b{display:block;margin:14px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+aside.toc a{display:block;color:var(--ink2);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+aside.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
+article.read{max-width:760px;font-family:var(--serif);font-size:18.5px;line-height:1.7}
+article.read h3{border-top:1px solid var(--line);padding-top:26px}
+article.read h3 .tag{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;border-radius:4px;padding:2px 8px;vertical-align:middle;margin-right:8px}
+.box{font-family:var(--sans);font-size:16px;background:var(--soft);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box.res{background:#EEF6F3;border-left:4px solid var(--b1)}
+.box.int{background:#FBF1EB;border-left:4px solid var(--b2)}
+.box b.h{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--ink2)}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+table.t{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:15px;margin:12px 0}
+table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+table.t th{background:var(--soft);font-weight:700}
+/* simuladores */
+.sim{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.simgrid{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:start}
+.ctrl label{display:block;font-size:14.5px;font-weight:600;margin-top:12px}
+.ctrl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctrl .v{float:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctrl select{width:100%;padding:6px;font-family:var(--sans);font-size:15px;border-radius:6px;border:1px solid var(--line)}
+.chk{display:flex;gap:8px;align-items:center;font-weight:400!important}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px}
+.out div{background:var(--soft);border-radius:8px;padding:6px 10px}
+.out small{display:block;color:var(--muted);font-size:12px}
+.out b{font-variant-numeric:tabular-nums;font-size:17px}
+.note{font-size:15px;color:var(--ink2);background:#F7F5F0;border-radius:8px;padding:10px 14px;margin-top:12px}
+svg.plot{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+svg.plot text{font-family:var(--sans);font-size:12px;fill:#4A5059}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+/* glosario */
+#gsearch{width:100%;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;font-family:var(--sans);margin-bottom:14px}
+dl.gl dt{font-weight:700;margin-top:14px;font-size:17px}
+dl.gl dd{margin:2px 0 0;color:var(--ink2)}
+dl.gl .bk{font-size:12px;font-weight:700;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+/* simulacro */
+.quiz .qi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.quiz .qi p.st{font-weight:600}
+.quiz .op{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:6px 0;font-family:var(--sans);font-size:16px;cursor:pointer}
+.quiz .op:hover{border-color:var(--accent)}
+.quiz .op.ok{background:#E6F4EE;border-color:#2E8B6A}
+.quiz .op.bad{background:#FBE9E5;border-color:#C2553A}
+.quiz .ex{display:none;margin-top:8px;font-size:15.5px;background:var(--soft);border-radius:8px;padding:10px 12px}
+.score{position:sticky;top:110px;float:right;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700}
+details.dev{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+details.dev summary{cursor:pointer;font-weight:700}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px;text-align:center}
+@media (max-width:860px){
+  .readwrap,.simgrid{grid-template-columns:1fr}
+  aside.toc{position:static;max-height:none}
+  .grid2,.grid3,.map,.conn{grid-template-columns:1fr}
+  .score{position:static;float:none;display:inline-block}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <div class="brand"><span class="sq"><i style="background:var(--b1)"></i><i style="background:var(--b2)"></i><i style="background:var(--b3)"></i><i style="background:var(--b4)"></i></span><a href="../" style="color:inherit;text-decoration:none">Organización Industrial</a>&nbsp;· Unidad III<small><a href="../" style="color:var(--muted)">← Todas las unidades</a></small></div>
+  <nav class="tabs" id="tabs">
+    <a href="#inicio">Inicio</a><a href="#esquema">Esquema</a><a href="#lectura">Lectura</a><a href="#simuladores">Simuladores</a><a href="#glosario">Glosario</a><a href="#simulacro">Simulacro</a><a href="#bibliografia">Bibliografía</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ================= INICIO ================= -->
+<section class="view" id="v-inicio">
+  <div class="eyebrow">Apuntes de cátedra · Notas de clase y diapositivas de Daniel Hoyos Maldonado, ampliadas con la bibliografía del curso</div>
+  <h1>Comportamiento estratégico de las empresas</h1>
+  <p class="lead">Las empresas con poder de mercado no se limitan a elegir un precio. Segmentan a sus clientes y arman paquetes, comunican (o disimulan) la calidad de lo que venden, invierten en publicidad e innovan para mejorar su posición frente a los rivales. Esta unidad estudia esas estrategias y sus efectos sobre el bienestar.</p>
+  <div class="btns">
+    <a class="btn pri" href="#esquema">Empezar por el esquema</a>
+    <a class="btn" href="#simuladores">Abrir los simuladores</a>
+    <a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Bibliografía recomendada (Drive)</a>
+  </div>
+  <div class="blocks">
+    <button style="background:var(--b1)" data-go="b1">1</button>
+    <button style="background:var(--b2)" data-go="b2">2</button>
+    <button style="background:var(--b3)" data-go="b3">3</button>
+    <button style="background:var(--b4)" data-go="b4">4</button>
+  </div>
+  <h2>Los cuatro bloques</h2>
+  <div class="list4">
+    <div class="row" data-go="b1"><div class="num" style="color:var(--b1)">1</div><div><div class="t">Estrategias de precios y segmentación de mercado</div><div class="s">Discriminación de primer, segundo y tercer grado · tarifa en dos partes · versionado · discriminación intertemporal · bundling y tying</div></div></div>
+    <div class="row" data-go="b2"><div class="num" style="color:var(--b2)">2</div><div><div class="t">Calidad de producto e información</div><div class="s">Bienes de búsqueda, experiencia y creencia · selección adversa · riesgo moral · señales de precio y publicidad · garantías y marcas</div></div></div>
+    <div class="row" data-go="b3"><div class="num" style="color:var(--b3)">3</div><div><div class="t">Publicidad y estrategias de marketing</div><div class="s">Publicidad informativa, persuasiva y complementaria · regla de Dorfman–Steiner · bienestar · publicidad y competencia</div></div></div>
+    <div class="row" data-go="b4"><div class="num" style="color:var(--b4)">4</div><div><div class="t">Investigación y desarrollo</div><div class="s">Efecto reemplazo y efecto eficiencia · estructura de mercado e incentivos a innovar · carreras de patentes · cooperación en I+D · propiedad intelectual</div></div></div>
+  </div>
+  <h2 style="margin-top:36px">Cómo estudiar la unidad</h2>
+  <div class="grid2">
+    <div class="card"><h4>1 · Mirá el esquema</h4>Las cinco ideas esenciales, el mapa de la unidad y sus conexiones con el resto del programa.</div>
+    <div class="card"><h4>2 · Leé el desarrollo</h4>Las notas y diapositivas de la cátedra, con los modelos formales de la bibliografía. El índice lateral te lleva a cada tema.</div>
+    <div class="card"><h4>3 · Experimentá</h4>Cuatro simuladores: discriminación de tercer grado, bundling puro y mixto, publicidad óptima e incentivos a innovar.</div>
+    <div class="card"><h4>4 · Hacé el simulacro</h4>Doce preguntas de opción múltiple con corrección inmediata y dos preguntas de desarrollo con su guion.</div>
+  </div>
+</section>
+
+<!-- ================= ESQUEMA ================= -->
+<section class="view" id="v-esquema">
+  <div class="eyebrow">Antes de leer</div>
+  <h2>Lo esencial en cinco ideas</h2>
+  <ol class="ideas">
+    <li><b>La información manda.</b> La taxonomía de la discriminación de precios es, en el fondo, una clasificación de lo que la empresa sabe sobre el comprador: su disposición a pagar (primer grado), una señal de grupo (tercer grado) o nada, en cuyo caso diseña un menú para que se autoseleccione (segundo grado).</li>
+    <li><b>El bundling es discriminación con otro nombre.</b> Un paquete homogeneiza valoraciones dispares y funciona como tamiz de perfiles; a veces también traslada poder de mercado de un bien a otro, y entonces es un problema de defensa de la competencia.</li>
+    <li><b>La calidad no siempre se observa.</b> Con información asimétrica, los productos malos pueden expulsar a los buenos (selección adversa). Precios, publicidad, garantías y marcas son mecanismos para transmitir información creíble.</li>
+    <li><b>La publicidad óptima</b> crece con la elasticidad de la demanda a la publicidad y cae con la elasticidad precio (regla de Dorfman–Steiner). Su efecto sobre el bienestar depende de si informa o persuade.</li>
+    <li><b>La estructura de mercado y la innovación se determinan mutuamente.</b> El monopolista innova menos que una firma competitiva (efecto reemplazo), pero el que está amenazado por la entrada puede innovar más (efecto eficiencia). La propiedad intelectual equilibra incentivos dinámicos y pérdidas estáticas.</li>
+  </ol>
+  <div class="eyebrow" style="margin-top:28px">Pregunta central</div>
+  <div class="q">¿Qué estrategias, más allá del precio único, usan las empresas para ganar y sostener poder de mercado, y cuándo esas estrategias benefician o perjudican a la sociedad?</div>
+  <h2>Mapa de la unidad</h2>
+  <div class="map">
+    <div class="card" style="--c:var(--b1)"><h4 style="color:var(--b1)">1 · Precios y segmentación</h4><ul>
+      <li>Condiciones: poder de mercado, heterogeneidad, arbitraje limitado</li><li>Primer grado: eficiencia sin excedente del consumidor</li><li>Tercer grado: \(\frac{p_i-c}{p_i}=\frac{1}{|\eta_i|}\); prueba de la producción</li><li>Segundo grado: autoselección, tarifa en dos partes, versionado</li><li>Bundling puro, mixto y tying</li></ul></div>
+    <div class="card" style="--c:var(--b2)"><h4 style="color:var(--b2)">2 · Calidad e información</h4><ul>
+      <li>Bienes de búsqueda, experiencia y creencia</li><li>Información oculta: selección adversa (Akerlof)</li><li>Acción oculta: riesgo moral y reputación</li><li>Señales: precio y publicidad como «quema de dinero»</li><li>Garantías, marcas y marcas paraguas</li></ul></div>
+    <div class="card" style="--c:var(--b3)"><h4 style="color:var(--b3)">3 · Publicidad</h4><ul>
+      <li>Visiones: informativa, persuasiva, complementaria</li><li>Dorfman–Steiner: \(\frac{A}{pQ}=\frac{\eta_A}{|\eta_p|}\)</li><li>Bienestar de la publicidad</li><li>Publicidad informativa y competencia en precios</li><li>Publicidad como barrera a la entrada</li></ul></div>
+    <div class="card" style="--c:var(--b4)"><h4 style="color:var(--b4)">4 · I+D e innovación</h4><ul>
+      <li>Innovación drástica y no drástica</li><li>Efecto reemplazo (Arrow) y efecto eficiencia</li><li>Forma de U invertida en Cournot</li><li>Carreras de patentes y exceso de I+D</li><li>Derrames, cooperación en I+D y patentes</li></ul></div>
+  </div>
+  <h2 style="margin-top:32px">Conexiones con otras unidades</h2>
+  <div class="conn">
+    <div class="card"><div class="u">Unidad I</div><b>Monopolio y regla de la elasticidad inversa.</b> La discriminación de tercer grado aplica la regla del Lerner a cada segmento; el monopolista multiproducto anticipa la lógica del bundling.</div>
+    <div class="card"><div class="u">Unidad II</div><b>Oligopolio.</b> Los modelos de Cournot y Bertrand sirven para analizar incentivos a innovar y el efecto estratégico de la I+D, que depende de si las variables son sustitutos o complementos estratégicos.</div>
+    <div class="card"><div class="u">Unidad IV</div><b>Política de la competencia.</b> Las ventas atadas, la publicidad como barrera a la entrada, las patentes y la cooperación en I+D son materia de defensa de la competencia.</div>
+  </div>
+  <div class="btns"><a class="btn pri" href="#lectura">Leer el desarrollo →</a></div>
+</section>
+
+<!-- ================= LECTURA ================= -->
+<section class="view" id="v-lectura">
+<div class="readwrap">
+<aside class="toc" id="toc">
+  <b style="color:var(--b1)">1 · Precios y segmentación</b>
+  <a data-s="s11">Fundamentos</a><a data-s="s12">Primer grado</a><a data-s="s13">Tercer grado</a><a data-s="s14">Segundo grado</a><a data-s="s15">Discriminación intertemporal</a><a data-s="s16">Bundling con valoraciones correlacionadas</a><a data-s="s17">Bundling puro y mixto</a><a data-s="s18">Por qué funciona el bundling</a><a data-s="s19">Caso Disney+ y Star+</a>
+  <b style="color:var(--b2)">2 · Calidad e información</b>
+  <a data-s="s21">Tipos de bienes</a><a data-s="s22">Selección adversa</a><a data-s="s23">Riesgo moral y reputación</a><a data-s="s24">Señales de precio y publicidad</a><a data-s="s25">Garantías y marcas</a>
+  <b style="color:var(--b3)">3 · Publicidad</b>
+  <a data-s="s31">Tres visiones</a><a data-s="s32">Regla de Dorfman–Steiner</a><a data-s="s33">Bienestar</a><a data-s="s34">Publicidad y competencia</a>
+  <b style="color:var(--b4)">4 · I+D</b>
+  <a data-s="s41">Conceptos</a><a data-s="s42">Efecto reemplazo</a><a data-s="s43">Oligopolio e innovación</a><a data-s="s44">Efecto eficiencia y carreras</a><a data-s="s45">Exceso de I+D</a><a data-s="s46">Efecto estratégico y cooperación</a><a data-s="s47">Propiedad intelectual</a>
+</aside>
+<article class="read">
+  <div class="eyebrow">Desarrollo completo</div>
+  <h2>Unidad III · Análisis del comportamiento estratégico</h2>
+  <p>El bloque 1 sigue las notas de clase (Parte 3) y las diapositivas de la cátedra sobre discriminación de precios y bundling. El bloque 4 se apoya en Belleflamme y Peitz (cap. 18 y comienzo del cap. 19). Los bloques 2 y 3 siguen la estructura de los capítulos 12, 13 y 6 del mismo manual.</p>
+
+  <!-- BLOQUE 1 -->
+  <h3 id="s11"><span class="tag" style="background:var(--b1)">1.1</span>Fundamentos de la discriminación de precios</h3>
+  <p>Con un precio único, la empresa con poder de mercado iguala ingreso y costo marginal: vende menos y más caro que el óptimo social. Desde su propio punto de vista «deja valor sobre la mesa» dos veces: cede excedente a quienes habrían pagado más y renuncia a transacciones cuyo valor supera el costo. <b>Discriminar precios</b> es el intento de recuperar ambas porciones.</p>
+  <div class="box res"><b class="h">Definición (Stigler)</b>Hay discriminación cuando dos unidades del mismo bien se venden a precios cuyo cociente difiere del cociente de sus costos marginales. Por eso son discriminación los descuentos por volumen, las versiones deliberadamente limitadas o los precios por país con igual costo de servir; no lo son cobrar más un envío más lejano o un producto de calidad genuinamente superior.</div>
+  <p>Hacen falta tres condiciones:</p>
+  <ol>
+    <li><b>Poder de mercado:</b> una demanda con pendiente negativa; no requiere monopolio, basta diferenciación o costos de cambio.</li>
+    <li><b>Heterogeneidad aprovechable:</b> los consumidores difieren en su disposición a pagar y la empresa puede identificarlos o inducirlos a revelarse.</li>
+    <li><b>Arbitraje limitado:</b> si quien compra barato puede revender a quien compra caro, la estrategia se derrumba.</li>
+  </ol>
+  <table class="t"><tr><th>Pigou</th><th>Denominación actual</th><th>Qué observa la empresa</th><th>Instrumento</th></tr>
+    <tr><td>Primer grado</td><td>Precios personalizados</td><td>La disposición a pagar individual</td><td>Un precio para cada comprador</td></tr>
+    <tr><td>Tercer grado</td><td>Precios por grupo</td><td>Una señal observable y verificable</td><td>Un precio por segmento</td></tr>
+    <tr><td>Segundo grado</td><td>Precios por menú</td><td>Nada sobre el individuo</td><td>Un menú que induce autoselección</td></tr></table>
+  <p>La economía digital relaja la segunda condición, porque nunca se supo tanto sobre cada comprador, y refuerza la tercera: la barrera al arbitraje ya no es física sino contractual y tecnológica (cuentas, licencias, DRM).</p>
+
+  <h3 id="s12"><span class="tag" style="background:var(--b1)">1.2</span>Precios personalizados (primer grado)</h3>
+  <p>A cada consumidor se le cobra exactamente su disposición a pagar, y se vende hasta que el precio de la última unidad iguala el costo marginal. Resultados:</p>
+  <ul>
+    <li><b>Eficiencia:</b> se intercambia la cantidad socialmente óptima.</li>
+    <li><b>Distribución:</b> el excedente del consumidor es cero; todo el excedente total se convierte en beneficio.</li>
+  </ul>
+  <div class="box int"><b class="h">La paradoja de la eficiencia</b>El resultado distributivamente más agresivo coincide con el asignativamente más eficiente: eficiencia y equidad no son lo mismo. En la práctica, casi nadie fija un precio por persona, pero muchas empresas fijan miles de precios por microsegmento. La frontera entre primer y tercer grado se volvió borrosa, y la regulación (en la Unión Europea, la Directiva 2019/2161 obliga a informar cuando un precio fue personalizado) y la percepción de injusticia ponen límites.</div>
+
+  <h3 id="s13"><span class="tag" style="background:var(--b1)">1.3</span>Precios por grupo (tercer grado)</h3>
+  <p>La empresa maximiza el beneficio conjunto sobre segmentos separados. La condición de primer orden iguala el ingreso marginal al costo marginal en cada segmento, lo que lleva a la <b>regla de la elasticidad inversa</b> por segmento:</p>
+  \[ IMg_1=IMg_2=CMg\quad\Longrightarrow\quad \frac{p_i-c}{p_i}=\frac{1}{|\eta_i|}. \]
+  <p>El margen es mayor donde la demanda es más rígida: el segmento elástico recibe el precio bajo. La señal que define el segmento debe correlacionar con la elasticidad y ser difícil de falsear.</p>
+  <div class="box"><b class="h">Ejemplo numérico</b>Segmento A: \(q=120-p\); segmento B: \(q=120-2p\); \(c=20\).
+    <table class="t" style="margin-bottom:0"><tr><th></th><th>Precio uniforme</th><th>Con discriminación</th></tr>
+      <tr><td>Precios (A / B)</td><td>50 / 50</td><td>70 / 40</td></tr>
+      <tr><td>Cantidades (A / B)</td><td>70 / 20</td><td>50 / 40</td></tr>
+      <tr><td>Beneficio</td><td>2.700</td><td>3.300</td></tr>
+      <tr><td>Excedente del consumidor</td><td>2.550</td><td>1.650</td></tr>
+      <tr><td>Bienestar total</td><td>5.250</td><td>4.950</td></tr></table>
+    Los márgenes verifican la regla: 0,714 = 1/1,4 en A y 0,5 = 1/2 en B. La cantidad total no cambia (90), y el bienestar cae porque la misma producción se reparte peor.</div>
+  <p><b>Prueba de la producción</b> (Schmalensee, Varian): un aumento de la cantidad total es condición necesaria, aunque no suficiente, para que la discriminación de tercer grado eleve el bienestar. La excepción relevante es cuando el precio uniforme dejaría un segmento sin atender: discriminar abre mercados y el efecto puede ser claramente positivo.</p>
+
+  <h3 id="s14"><span class="tag" style="background:var(--b1)">1.4</span>Precios por menú (segundo grado)</h3>
+  <p>La empresa no observa nada del comprador y diseña un menú de combinaciones (cantidad o calidad, precio) para que cada tipo elija la suya. Dos restricciones organizan el diseño:</p>
+  <ul>
+    <li><b>Participación:</b> cada tipo prefiere comprar a no comprar.</li>
+    <li><b>Compatibilidad de incentivos:</b> cada tipo prefiere su opción a la del otro.</li>
+  </ul>
+  <div class="box res"><b class="h">Resultado canónico</b>No hay distorsión en el extremo alto: el tipo de valoración alta recibe la calidad o cantidad eficiente, pero paga menos que su disposición máxima (su <b>renta informacional</b>). La opción del tipo bajo se degrada por debajo del óptimo para que el «disfraz» no le resulte atractivo al tipo alto. Si el segmento bajo es pequeño, puede convenir excluirlo.</div>
+  <p><b>Tarifa en dos partes</b>, \(T(q)=A+p\,q\). Con consumidores homogéneos, \(p=c\) y \(A\) igual al excedente del consumidor: replica la discriminación perfecta. Con consumidores heterogéneos, el óptimo fija \(p\) por encima del costo marginal y un \(A\) más moderado, para no expulsar al pequeño. Aparece en clubes, servicios públicos, suscripciones logísticas y software en la nube.</p>
+  <p><b>Versionado y bienes dañados.</b> Si no se puede identificar al comprador, se ofrecen versiones de distinta calidad. La versión inferior existe para proteger el margen de la superior, aunque a veces producirla cueste más (deshabilitar funciones, insertar publicidad): la lógica es de tamiz, no de costos (Deneckere y McAfee).</p>
+
+  <h3 id="s15"><span class="tag" style="background:var(--b1)">1.5</span>Discriminación intertemporal</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz dedican el capítulo 10 a fijar precios a lo largo del tiempo. Un monopolista de bienes durables querría vender caro primero a los compradores impacientes de alta valoración y bajar el precio después. Pero si los consumidores lo anticipan, esperan, y el monopolista termina «compitiendo consigo mismo»: es la <b>conjetura de Coase</b>, según la cual, sin capacidad de compromiso, el precio tiende al costo marginal. Alquilar en lugar de vender, comprometerse con capacidad limitada u ofrecer garantías de precio son formas de recuperar poder. La <b>discriminación basada en el comportamiento</b> usa el historial de compras para cobrar distinto a clientes nuevos y antiguos, lo que en oligopolio genera robo de clientes.</div>
+
+  <h3 id="s16"><span class="tag" style="background:var(--b1)">1.6</span>Bundling con valoraciones correlacionadas</h3>
+  <p>Un monopolista vende dos bienes, A y B, con costo marginal nulo. La valoración del bien A es \(\theta_A\sim U[0,1]\) y la del bien B está positivamente correlacionada con ella:</p>
+  \[ \theta_B=\rho\,\theta_A+(1-\rho)(1-\theta_A),\qquad \tfrac23\le\rho\le 1. \]
+  <p><b>Venta por separado.</b> Para el bien A, \(q_A=1-p_A\), de modo que \(p_A^*=\tfrac12\) y \(\pi_A^*=\tfrac14\). El consumidor compra B si \(\theta_A\gt \frac{p_B+\rho-1}{2\rho-1}\), por lo que</p>
+  \[ q_B=\frac{\rho-p_B}{2\rho-1},\qquad p_B^*=\frac{\rho}{2},\qquad \pi_B^*=\frac{\rho^2}{4(2\rho-1)},\qquad \pi^{S}=\frac14+\frac{\rho^2}{4(2\rho-1)}. \]
+  <p><b>Bundling puro.</b> El consumidor compra la canasta si \(\theta_A+\theta_B=2\rho\theta_A+1-\rho\gt p_{AB}\):</p>
+  \[ q_{AB}=\frac{1+\rho-p_{AB}}{2\rho},\qquad p_{AB}^*=\frac{1+\rho}{2},\qquad \pi^{B}=\frac{(1+\rho)^2}{8\rho}. \]
+  <div class="box int"><b class="h">Comparación</b>\[ \pi^{S}-\pi^{B}=\frac{(\rho-1)^2}{8\rho\,(2\rho-1)}\ \ge 0. \]Con valoraciones <b>positivamente</b> correlacionadas, el paquete no reduce la dispersión de las disposiciones a pagar y no conviene: vender por separado es al menos tan rentable, y ambas estrategias coinciden solo si \(\rho=1\). El <b>caso práctico</b> de las notas, \(\theta_B=\tfrac14+\tfrac12\theta_A\), corresponde a \(\rho=\tfrac34\): por separado se obtiene \(\tfrac14+\tfrac{9}{32}=\tfrac{17}{32}\approx0{,}531\) (con \(p_B^*=\tfrac38\)); con el paquete, \(p_{AB}^*=\tfrac78\) y \(\pi^B=\tfrac{49}{96}\approx0{,}510\).</div>
+
+  <h3 id="s17"><span class="tag" style="background:var(--b1)">1.7</span>Bundling puro frente a bundling mixto</h3>
+  <p>Los consumidores se dividen en dos grupos con preferencias heterogéneas; \(\lambda\) es la proporción del grupo A y los costos marginales son nulos.</p>
+  <table class="t"><tr><th>Grupo</th><th>Proporción</th><th>Torta</th><th>Café</th><th>Canasta</th></tr>
+    <tr><td>A</td><td>\(\lambda\)</td><td>120</td><td>30</td><td>150</td></tr>
+    <tr><td>B</td><td>\(1-\lambda\)</td><td>60</td><td>60</td><td>120</td></tr></table>
+  <ul>
+    <li><b>Venta por separado.</b> Torta a 120 (solo A) si \(\lambda\gt \tfrac12\), o a 60 (todos). Café a 30 (todos) si \(\lambda\gt \tfrac12\), o a 60 (solo B). Beneficio: \(120-60\lambda\) si \(\lambda\le\tfrac12\); \(120\lambda+30\) si \(\lambda\gt \tfrac12\).</li>
+    <li><b>Bundling puro.</b> Canasta a 150 (solo A) si \(150\lambda\gt 120\), es decir, \(\lambda\gt \tfrac45\); si no, a 120 (todos). Beneficio: \(\max\{150\lambda,\,120\}\).</li>
+    <li><b>Bundling mixto.</b> Café a 60 y canasta a 150: A compra la canasta y B el café, con beneficio \(60+90\lambda\). Alternativamente, canasta a 120 para todos. Beneficio: \(\max\{60+90\lambda,\,120\}\), con la primera opción si \(\lambda\gt \tfrac23\).</li>
+  </ul>
+  <div class="box res"><b class="h">Conclusión de las notas</b>El bundling mixto produce un beneficio al menos tan alto como las otras estrategias para todos los valores de \(\lambda\): permite cobrarle la canasta completa al grupo que la valora y venderle solo el componente que le interesa al otro. El simulador 2 permite verificarlo.</div>
+
+  <h3 id="s18"><span class="tag" style="background:var(--b1)">1.8</span>Por qué funciona el bundling, y cuándo preocupa</h3>
+  <p><b>Reducir la dispersión</b> (Stigler, sobre el <i>block booking</i> de películas): si A valora 100 y 50 los bienes 1 y 2, y B valora 50 y 100, vendiendo por separado el beneficio máximo es 200; el paquete a 150 lo compran ambos y rinde 300. El mecanismo funciona cuando la correlación de las valoraciones es baja o negativa.</p>
+  <p><b>Con costos, el mixto suele dominar.</b> Con cuatro consumidores que valoran (10, 90), (30, 70), (70, 30) y (90, 10) y costo 20 por bien: por separado se gana 200; con el paquete puro a 100, 240; con el mixto (componentes a 85 y paquete a 99), 248. El paquete puro obliga a entregar unidades que valen menos que su costo.</p>
+  <ul>
+    <li><b>Bienes de información</b> (Bakos y Brynjolfsson): con costo marginal casi nulo, la valoración media por bien de un paquete grande se concentra y la demanda del paquete se vuelve casi vertical. Esa es la fuerza de las suscripciones ilimitadas.</li>
+    <li><b>Disuasión y exclusión</b> (Whinston): atar puede ser un compromiso creíble para excluir rivales cuando hay economías de escala. La crítica de Chicago (un solo beneficio de monopolio) no se sostiene si la exclusión altera la estructura del mercado.</li>
+    <li><b>Casos:</b> Estados Unidos c. Microsoft (navegador), Comisión Europea c. Microsoft (Windows Media Player, 2004), Comisión Europea c. Google Android (2018). En Argentina, la Ley 27.442 incluye las ventas atadas entre las conductas que pueden constituir abuso de posición dominante.</li>
+  </ul>
+
+  <h3 id="s19"><span class="tag" style="background:var(--b1)">1.9</span>Caso aplicado: Disney+ y Star+</h3>
+  <p>Hasta junio de 2024, la oferta en América Latina combinaba las dos suscripciones por separado con un combo más barato que la suma: <b>bundling mixto</b>. Desde la integración de Star+ en Disney+, la oferta pasó a un plan único con niveles: <b>bundling puro con versionado</b> (segundo grado).</p>
+  <table class="t"><tr><th>Escenario</th><th>Suscripciones</th><th>Contribución mensual</th><th>Margen por suscripción</th></tr>
+    <tr><td>A · servicios por separado</td><td>1.500.000</td><td>10,0 millones</td><td>6,67</td></tr>
+    <tr><td>B · menú de paquetes</td><td>800.000</td><td>10,8 millones</td><td>13,50</td></tr></table>
+  <p>El menú sacrifica volumen para duplicar el margen por cliente, y funciona porque los catálogos se valoran de manera distinta. Para que el plan superior se elija, la diferencia de precio entre niveles debe ser menor que el valor extra que el suscriptor intensivo asigna al deporte y la calidad: es la condición de compatibilidad de incentivos. Hay que leer los números con cautela: las cantidades están supuestas, son márgenes y no beneficios, y falta la dinámica de bajas y canibalización.</p>
+
+  <!-- BLOQUE 2 -->
+  <h3 id="s21"><span class="tag" style="background:var(--b2)">2.1</span>Calidad e información: tipos de bienes</h3>
+  <p>Cuando los consumidores no conocen la calidad, el mercado puede funcionar mal. Siguiendo a Nelson, conviene distinguir:</p>
+  <ul>
+    <li><b>Bienes de búsqueda:</b> la calidad se observa antes de comprar (ropa, muebles).</li>
+    <li><b>Bienes de experiencia:</b> la calidad se conoce después de consumir (restaurantes, libros, software).</li>
+    <li><b>Bienes de creencia:</b> la calidad es difícil de evaluar incluso después de consumir (servicios médicos, reparaciones, alimentos orgánicos).</li>
+  </ul>
+  <p>Belleflamme y Peitz (cap. 12) separan dos problemas de información asimétrica: la <b>información oculta</b> (el vendedor conoce una calidad exógena que el comprador no ve) y la <b>acción oculta</b> (la calidad depende de un esfuerzo del vendedor que el comprador no observa).</p>
+
+  <h3 id="s22"><span class="tag" style="background:var(--b2)">2.2</span>Información oculta: selección adversa</h3>
+  <p>En el mercado de autos usados de Akerlof, los vendedores conocen la calidad y los compradores solo su distribución. Si el precio refleja la calidad <i>media</i>, los dueños de autos buenos no venden, la calidad media cae, el precio baja y el proceso se repite.</p>
+  <div class="box"><b class="h">Ejemplo</b>Mitad de autos buenos (los compradores los valoran 10.000; los vendedores, 8.000) y mitad malos (6.000 y 4.000). Si se venden todos, los compradores pagan a lo sumo la valoración media, 8.000. A ese precio, el dueño de un auto bueno apenas está dispuesto a vender; si la proporción de autos buenos baja un poco, el precio cae por debajo de 8.000 y solo quedan los malos. Los productos de baja calidad expulsan a los de alta, aunque el intercambio de autos buenos sería mutuamente beneficioso.</div>
+  <p>Las respuestas del mercado son la <b>señalización</b> (el informado realiza una acción costosa que el mal tipo no imitaría), el <b>filtrado</b> (el desinformado ofrece un menú que induce la autoselección), la <b>certificación</b> por terceros y la <b>reputación</b>.</p>
+
+  <h3 id="s23"><span class="tag" style="background:var(--b2)">2.3</span>Acción oculta: riesgo moral y reputación</h3>
+  <p>Si la calidad depende de un esfuerzo costoso que el comprador no observa, el vendedor tiene incentivos a reducirlo. En una relación de una sola vez, el equilibrio es de baja calidad. En una relación <b>repetida</b>, la amenaza de perder clientes futuros disciplina al vendedor, siempre que el beneficio de mantener la reputación supere la ganancia de corto plazo de engañar. Para sostener la alta calidad, el precio debe incluir una <b>prima</b> sobre el costo, una renta que el vendedor perdería si engaña. Los sistemas de gestión de la calidad y las certificaciones también reducen el problema.</p>
+
+  <h3 id="s24"><span class="tag" style="background:var(--b2)">2.4</span>Precio y publicidad como señales de calidad</h3>
+  <p>Un vendedor de alta calidad puede querer distinguirse. Para que la señal sea creíble, debe ser más costosa (o menos rentable) para el de baja calidad que para el de alta.</p>
+  <ul>
+    <li><b>Publicidad como «quema de dinero»</b> (Nelson; Milgrom y Roberts): para bienes de experiencia, un gasto publicitario elevado puede ser rentable solo si el producto es bueno, porque únicamente así habrá compras repetidas que lo amorticen. Lo que informa no es el contenido del aviso, sino su costo.</li>
+    <li><b>Precio alto como señal:</b> en un equilibrio separador, el vendedor de alta calidad puede fijar un precio distorsionado (habitualmente por encima del de información completa) que al de baja calidad no le conviene imitar.</li>
+    <li><b>Señales conjuntas:</b> el vendedor elige la combinación de precio y publicidad que señala al menor costo.</li>
+  </ul>
+  <p>En oligopolio, la competencia puede reducir la distorsión necesaria para señalar, aunque no eliminarla.</p>
+
+  <h3 id="s25"><span class="tag" style="background:var(--b2)">2.5</span>Garantías y marcas</h3>
+  <p>Belleflamme y Peitz (cap. 13) analizan herramientas de marketing para los bienes de experiencia:</p>
+  <ul>
+    <li><b>Garantías.</b> Funcionan como señal de confiabilidad, porque ofrecerlas es más costoso para quien vende productos que fallan. Además, cumplen un rol de seguro para el comprador, aunque una garantía muy amplia reduce el cuidado del consumidor (riesgo moral del lado del comprador).</li>
+    <li><b>Marcas y reputación.</b> Permiten a los consumidores asociar experiencias pasadas con compras futuras: una marca es un activo que se pierde si se defrauda.</li>
+    <li><b>Marcas paraguas.</b> Extender una marca a nuevos productos traslada reputación, pero también pone en juego la de toda la línea, lo que refuerza el incentivo a cuidar la calidad.</li>
+  </ul>
+
+  <!-- BLOQUE 3 -->
+  <h3 id="s31"><span class="tag" style="background:var(--b3)">3.1</span>Tres visiones de la publicidad</h3>
+  <p>Belleflamme y Peitz (cap. 6) presentan tres perspectivas sobre el rol de la publicidad:</p>
+  <ul>
+    <li><b>Persuasiva:</b> altera las preferencias, crea lealtad y diferenciación (a veces artificial), vuelve la demanda menos elástica y puede funcionar como barrera a la entrada.</li>
+    <li><b>Informativa:</b> comunica la existencia del producto, sus características, su precio o su ubicación; reduce los costos de búsqueda y suele intensificar la competencia.</li>
+    <li><b>Complementaria:</b> la publicidad entra en la función de utilidad junto con el producto (por ejemplo, por prestigio social), sin cambiar las preferencias de fondo.</li>
+  </ul>
+  <p>La visión adoptada cambia la evaluación de bienestar, porque determina con qué preferencias se mide el excedente.</p>
+
+  <h3 id="s32"><span class="tag" style="background:var(--b3)">3.2</span>La regla de Dorfman–Steiner</h3>
+  <p>Un monopolista elige precio \(p\) y gasto publicitario \(A\), con demanda \(Q(p,A)\) y costo marginal constante \(c\). Las condiciones de primer orden dan:</p>
+  \[ \frac{p-c}{p}=\frac{1}{|\eta_p|}\qquad\text{y}\qquad (p-c)\frac{\partial Q}{\partial A}=1. \]
+  <p>Combinándolas se obtiene la intensidad publicitaria óptima:</p>
+  \[ \frac{A}{p\,Q}=\frac{\eta_A}{|\eta_p|}, \]
+  <p>donde \(\eta_A\) es la elasticidad de la demanda respecto de la publicidad. El gasto en publicidad, como porcentaje de las ventas, es mayor cuanto más responde la demanda a la publicidad y <b>cuanto menos elástica es al precio</b>: las empresas con márgenes altos tienen más incentivos a publicitar, porque cada venta adicional vale más.</p>
+
+  <h3 id="s33"><span class="tag" style="background:var(--b3)">3.3</span>Bienestar: ¿hay demasiada publicidad?</h3>
+  <p>El efecto de la publicidad sobre el bienestar es ambiguo. Si es informativa, amplía el mercado y reduce los costos de búsqueda: puede aumentar el bienestar, aunque el monopolista no internaliza todo el excedente que genera y puede publicitar de menos. Si es persuasiva y se evalúa con las preferencias previas a la publicidad, el gasto puede ser socialmente excesivo: parte de él solo redistribuye clientes entre empresas (un dilema del prisionero publicitario). Si se evalúa con las preferencias posteriores, puede ser insuficiente.</p>
+
+  <h3 id="s34"><span class="tag" style="background:var(--b3)">3.4</span>Publicidad y competencia</h3>
+  <ul>
+    <li><b>Publicidad informativa en oligopolio.</b> Cuando solo una parte de los consumidores conoce cada producto, informar a más consumidores aumenta la competencia efectiva en precios; los precios caen a medida que la publicidad se abarata.</li>
+    <li><b>Publicidad persuasiva en oligopolio.</b> Aumenta la diferenciación percibida y relaja la competencia en precios. Si las empresas publicitan para robarse clientes entre sí, pueden terminar gastando de más sin ganar participación.</li>
+    <li><b>Publicidad como barrera a la entrada.</b> Si la lealtad de marca construida por las empresas establecidas obliga al entrante a gastar más por cliente, la publicidad acumulada funciona como un costo hundido endógeno (Unidad I).</li>
+  </ul>
+
+  <!-- BLOQUE 4 -->
+  <h3 id="s41"><span class="tag" style="background:var(--b4)">4.1</span>I+D: conceptos básicos</h3>
+  <p>Belleflamme y Peitz (cap. 18) estudian la relación de doble vía entre estructura de mercado e innovación: los incentivos a invertir en I+D dependen de la estructura, y la I+D se usa para moldearla. Algunas distinciones:</p>
+  <ul>
+    <li><b>Innovación de proceso</b> (reduce el costo de producir un bien existente) e <b>innovación de producto</b> (un bien nuevo).</li>
+    <li>Una innovación de proceso es <b>drástica</b> si el precio de monopolio con el nuevo costo, \(p^m(c_1)\), queda por debajo del costo anterior \(c_0\): el innovador actúa como monopolista sin restricción. Si no, es <b>no drástica</b> y la competencia lo limita.</li>
+    <li>Schumpeter sostenía que tolerar monopolios estimula la innovación y que las grandes empresas tienen más <i>capacidad</i> para innovar, porque enfrentan mejor las externalidades, las indivisibilidades y la incertidumbre. La pregunta es si también tienen más <i>incentivos</i>.</li>
+  </ul>
+
+  <h3 id="s42"><span class="tag" style="background:var(--b4)">4.2</span>Monopolio frente a competencia: el efecto reemplazo</h3>
+  <p>¿Cuánto pagaría una empresa por una innovación no drástica que reduce el costo de \(c_0\) a \(c_1\), si fuera su única usuaria (Arrow, 1962)?</p>
+  <ul>
+    <li><b>Firma competitiva:</b> antes ganaba cero; con la innovación cobra \(c_0-\varepsilon\) y vende \(q_0^c\). Valora la innovación en \(\pi^c=q_0^c\,(c_0-c_1)\).</li>
+    <li><b>Monopolista:</b> ya ganaba \(\pi_0^m\); valora la innovación en \(\pi_1^m-\pi_0^m\), que es menor.</li>
+  </ul>
+  <div class="box res"><b class="h">Lección (Belleflamme y Peitz, 18.1)</b>Una firma competitiva valora más una innovación de proceso menor que un monopolista. Es el <b>efecto reemplazo</b>: para la firma competitiva, la innovación crea un beneficio nuevo; para el monopolista, solo reemplaza un beneficio existente por uno mayor. Ambas valoraciones están por debajo del valor social, porque ninguna se apropia del aumento del excedente del consumidor. El caso Microsoft ilustra la idea: la empresa fue más innovadora donde competía (consolas) que donde tenía monopolio (Windows, Office).</div>
+
+  <h3 id="s43"><span class="tag" style="background:var(--b4)">4.3</span>Incentivos a innovar en oligopolio</h3>
+  <p>En un Cournot lineal con \(n\) firmas, \(P=a-q\), costo inicial \(c_0\) e innovación que lleva el costo de una firma a \(c_1\), sea \(\psi\equiv\frac{c_0-c_1}{a-c_0}\in(0,1)\) el tamaño relativo de la innovación. El incentivo a innovar es</p>
+  \[ PI(n)=\frac{n}{(n+1)^2}\,(2+n\psi)\,\psi\,(a-c_0)^2. \]
+  <p>\(PI(n+1)\gt PI(n)\) si y solo si \(\psi\gt \hat\psi(n)=\frac{2(n^2+n-1)}{2n^2+4n+1}\). Así, el monopolio da el mayor incentivo si \(\psi\lt \tfrac27\approx0{,}286\); el duopolio, si \(0{,}286\lt \psi\lt \tfrac{10}{17}\approx0{,}588\); y así sucesivamente.</p>
+  <div class="box int"><b class="h">Lección (18.2)</b>El incentivo a innovar sigue una <b>U invertida</b> respecto del número de firmas. Hay dos fuerzas opuestas: más firmas reducen los beneficios de todos (efecto competencia), pero también aumentan el número de rivales menos eficientes frente a los cuales el innovador gana ventaja. Cuanto más grande es la innovación, mayor es el número «ideal» de firmas.</div>
+
+  <h3 id="s44"><span class="tag" style="background:var(--b4)">4.4</span>Efecto eficiencia y carreras de patentes</h3>
+  <p>Si la innovación la puede adquirir tanto un monopolista establecido como un entrante potencial, el primero está dispuesto a pagar \(\pi^m(c_1)-\pi^d(c_0,c_1)\) y el segundo, \(\pi^d(c_1,c_0)\). El establecido paga más si</p>
+  \[ \pi^m(c_1)\gt \pi^d(c_0,c_1)+\pi^d(c_1,c_0), \]
+  <p>lo que ocurre cuando los productos son sustitutos cercanos: un monopolio gana más que dos duopolistas juntos. Es el <b>efecto eficiencia</b> (Gilbert y Newbery): el miedo a perder el monopolio refuerza el incentivo a innovar, y el monopolio tiende a persistir.</p>
+  <p>En una <b>carrera de patentes</b> con incertidumbre (Reinganum), conviven los dos efectos: el de eficiencia favorece al establecido y el de reemplazo al entrante, porque innovar antes «acelera» el reemplazo del propio beneficio. Con innovaciones no drásticas tiende a dominar el efecto eficiencia; con innovaciones drásticas, el de reemplazo, en línea con la destrucción creativa de Schumpeter.</p>
+
+  <h3 id="s45"><span class="tag" style="background:var(--b4)">4.5</span>¿Demasiada I+D?</h3>
+  <p>Dos firmas pueden pagar un costo \(f\) para investigar, con probabilidad de éxito \(\rho\). Si solo una tiene éxito, gana \(\pi^m\); si ambas, \(\pi^d\) cada una. Ambas invierten en equilibrio si</p>
+  \[ f\le f_2^{priv}=\rho(1-\rho)\pi^m+\rho^2\pi^d, \]
+  <p>pero desde el punto de vista de la industria conviene que inviertan las dos solo si \(f\le f_2^{publ}=f_2^{priv}-\rho^2(\pi^m-\pi^d)\). Para \(f\) entre ambos umbrales hay duplicación socialmente excesiva de esfuerzos: cada firma ignora el efecto de su I+D sobre el beneficio de la rival (Lección 18.5).</p>
+
+  <h3 id="s46"><span class="tag" style="background:var(--b4)">4.6</span>Efecto estratégico, derrames y cooperación en I+D</h3>
+  <p>Dos firmas eligen primero cuánto reducir sus costos, \(c_i=c-x_i-\beta x_j\), donde \(\beta\in[0,1]\) mide los <b>derrames</b> de conocimiento, y después compiten en el mercado.</p>
+  <ul>
+    <li><b>Efecto estratégico</b> (Lección 18.6): invertir en I+D vuelve a la firma más agresiva. Con competencia en cantidades y derrames bajos, el rival se retrae y conviene invertir <i>más</i>. Con competencia en precios, o en cantidades con derrames altos, el rival responde con dureza y conviene invertir <i>menos</i>.</li>
+    <li><b>Cooperación en I+D</b> (d'Aspremont y Jacquemin; Lección 18.7): si las firmas coordinan su I+D pero compiten en el mercado, invierten más cuando los derrames son grandes y menos cuando son pequeños. En el Cournot lineal, el umbral es \(\beta=\tfrac12\), porque el beneficio del rival es \(\pi_j^*=\tfrac19\big[a-c+(2-\beta)x_j+(2\beta-1)x_i\big]^2\).</li>
+    <li>En un <b>joint venture</b> de investigación que además comparte toda la información (\(\beta=1\)), los resultados son superiores en I+D, beneficios, excedente del consumidor y bienestar. Por eso Estados Unidos, la Unión Europea y Japón permiten la cooperación en I+D entre competidores, con el riesgo de que facilite la colusión en el mercado de productos.</li>
+  </ul>
+
+  <h3 id="s47"><span class="tag" style="background:var(--b4)">4.7</span>Propiedad intelectual</h3>
+  <p>Las actividades que generan conocimiento enfrentan un problema de <b>apropiabilidad</b> por tres fallas de mercado (Belleflamme y Peitz, cap. 19):</p>
+  <ul>
+    <li><b>incertidumbre</b> tecnológica y comercial;</li>
+    <li><b>indivisibilidades:</b> grandes costos fijos, de modo que el costo marginal queda por debajo del medio y fijar el precio igual al costo marginal no es viable;</li>
+    <li><b>bien público:</b> el conocimiento es no rival y difícil de excluir, y genera externalidades.</li>
+  </ul>
+  <p>La propiedad intelectual (patentes, derechos de autor) otorga un monopolio temporal para restaurar el incentivo a innovar, a costa de una pérdida estática de bienestar. El diseño óptimo de una patente combina su <b>duración</b> y su <b>amplitud</b> (cuán distinto debe ser un producto para no infringirla). Las alternativas son los <b>premios</b>, los <b>subsidios</b> a la investigación y el <b>secreto</b>; en la práctica, la protección legal se complementa con medidas privadas como la ventaja del primero en llegar y los activos complementarios.</p>
+  <div class="btns"><a class="btn pri" href="#simuladores">Experimentar con los simuladores →</a><a class="btn" href="#simulacro">Hacer el simulacro</a></div>
+</article>
+</div>
+</section>
+
+<!-- ================= SIMULADORES ================= -->
+<section class="view" id="v-simuladores">
+  <div class="eyebrow">Aprender manipulando</div>
+  <h2>Simuladores</h2>
+  <p class="lead">Cuatro herramientas para explorar las estrategias de la unidad con los mismos modelos de la lectura.</p>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b1)">1 · Discriminación de tercer grado</h3>
+    <p style="font-size:15px;color:var(--ink2)">Segmento A: \(q_A=120-p\). Segmento B: \(q_B=a_B-2p\). Costo marginal constante \(c\).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Tamaño del segmento B, \(a_B\)<span class="v" id="abv"></span></label><input type="range" id="ab" min="30" max="200" step="1" value="120">
+        <label>Costo marginal, \(c\)<span class="v" id="c1v"></span></label><input type="range" id="c1" min="0" max="50" step="1" value="20">
+        <div class="out" id="o1"></div><div class="note" id="n1"></div>
+      </div>
+      <div><svg class="plot" id="p1" viewBox="0 0 520 360"></svg>
+        <div class="legend"><span><i style="background:#9aa0a6"></i>Precio uniforme</span><span><i style="background:var(--b1)"></i>Con discriminación</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b2)">2 · Venta separada, bundling puro y bundling mixto</h3>
+    <p style="font-size:15px;color:var(--ink2)">Ejemplo de las notas: el grupo A (proporción \(\lambda\)) valora la torta en 120 y el café en 30; el grupo B, ambos en 60. Costos nulos.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Proporción del grupo A, \(\lambda\)<span class="v" id="lv"></span></label><input type="range" id="ll" min="0" max="1" step="0.01" value="0.75">
+        <div class="out" id="o2"></div><div class="note" id="n2"></div>
+      </div>
+      <div><svg class="plot" id="p2" viewBox="0 0 520 360"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Venta por separado</span><span><i style="background:var(--b4)"></i>Bundling puro</span><span><i style="background:var(--b2)"></i>Bundling mixto</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b3)">3 · Publicidad óptima (Dorfman–Steiner)</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda \(Q=k\,p^{-\eta_p}A^{\eta_A}\), costo marginal 1. El gráfico muestra el beneficio según la intensidad publicitaria \(A/(pQ)\).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Elasticidad precio, \(|\eta_p|\)<span class="v" id="epv"></span></label><input type="range" id="ep" min="1.3" max="6" step="0.1" value="2.5">
+        <label>Elasticidad publicidad, \(\eta_A\)<span class="v" id="eav"></span></label><input type="range" id="ea" min="0.02" max="0.5" step="0.01" value="0.15">
+        <div class="out" id="o3"></div><div class="note" id="n3"></div>
+      </div>
+      <div><svg class="plot" id="p3" viewBox="0 0 520 360"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Beneficio (relativo al máximo)</span><span><i style="background:var(--b2)"></i>Óptimo: η<sub>A</sub>/|η<sub>p</sub>|</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b4)">4 · Incentivos a innovar</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda \(P=1-Q\). Una innovación de proceso reduce el costo de \(c_0\) a \(c_1\).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Costo inicial, \(c_0\)<span class="v" id="c0v"></span></label><input type="range" id="c0" min="0.1" max="0.8" step="0.01" value="0.5">
+        <label>Costo con la innovación, \(c_1\)<span class="v" id="c1iv"></span></label><input type="range" id="c1i" min="0" max="0.79" step="0.01" value="0.35">
+        <div class="out" id="o4"></div><div class="note" id="n4"></div>
+      </div>
+      <div><svg class="plot" id="p4a" viewBox="0 0 520 260"></svg><svg class="plot" id="p4b" viewBox="0 0 520 240" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b1)"></i>Firma competitiva</span><span><i style="background:var(--b4)"></i>Monopolista</span><span><i style="background:#9aa0a6"></i>Valor social</span><span><i style="background:var(--b2)"></i>Incentivo en Cournot según n</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GLOSARIO ================= -->
+<section class="view" id="v-glosario">
+  <div class="eyebrow">Conceptos clave</div>
+  <h2>Glosario de la unidad</h2>
+  <input id="gsearch" type="search" placeholder="Buscar un concepto…">
+  <dl class="gl" id="gl"></dl>
+</section>
+
+<!-- ================= SIMULACRO ================= -->
+<section class="view" id="v-simulacro">
+  <div class="score" id="score">0 / 12</div>
+  <div class="eyebrow">Autoevaluación</div>
+  <h2>Simulacro de examen</h2>
+  <p>Doce preguntas de opción múltiple con corrección inmediata, seguidas de dos preguntas de desarrollo con su guion de respuesta.</p>
+  <div class="quiz" id="quiz"></div>
+  <button class="btn" id="reset">Reiniciar el simulacro</button>
+  <h3>Preguntas de desarrollo</h3>
+  <details class="dev"><summary>A. Discriminación de precios, bundling y bienestar</summary>
+    <p><b>Consigna.</b> Compare los tres grados de discriminación de precios según la información que requieren y sus efectos sobre el bienestar. Explique por qué el bundling puede entenderse como discriminación de segundo grado y en qué casos plantea problemas de competencia. Ilustre con un ejemplo de la economía digital.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Las tres condiciones necesarias; la taxonomía según qué observa la empresa.</li>
+      <li>Primer grado: eficiencia con excedente del consumidor nulo.</li>
+      <li>Tercer grado: la regla de la elasticidad inversa; la prueba de la producción; apertura de mercados.</li>
+      <li>Segundo grado: autoselección, renta informacional, distorsión en el extremo bajo.</li>
+      <li>Bundling: reducción de la dispersión (Stigler), correlación de las valoraciones, superioridad del mixto con costos; bienes de información.</li>
+      <li>Tying y exclusión (Whinston), casos Microsoft y Google; Ley 27.442.</li>
+      <li>Ejemplo: streaming (Disney+ y Star+), precios por país, suscripciones.</li>
+    </ol>
+  </details>
+  <details class="dev"><summary>B. Estructura de mercado e innovación</summary>
+    <p><b>Consigna.</b> ¿Qué estructura de mercado favorece más la innovación? Discuta el efecto reemplazo, el efecto eficiencia y la relación entre el número de competidores y los incentivos a innovar. Evalúe la conveniencia de permitir la cooperación en I+D entre competidores.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Las dos conjeturas de Schumpeter: capacidad frente a incentivos.</li>
+      <li>Arrow: efecto reemplazo; la valoración privada es menor que la social.</li>
+      <li>Oligopolio: U invertida en Cournot según el tamaño de la innovación (\(\hat\psi(1)=2/7\)).</li>
+      <li>Efecto eficiencia (Gilbert y Newbery) y persistencia del monopolio; carreras de patentes: resultado ambiguo.</li>
+      <li>Duplicación excesiva en carreras de patentes.</li>
+      <li>Derrames y cooperación: más I+D si \(\beta\gt 1/2\); joint ventures con información compartida; riesgo de colusión.</li>
+      <li>Rol de la propiedad intelectual: duración, amplitud y alternativas.</li>
+    </ol>
+  </details>
+</section>
+
+<!-- ================= BIBLIOGRAFÍA ================= -->
+<section class="view" id="v-bibliografia">
+  <div class="eyebrow">Para profundizar</div>
+  <h2>Bibliografía recomendada</h2>
+  <p class="lead">Todos los textos están disponibles en la carpeta de la cátedra.</p>
+  <div class="btns"><a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Abrir la carpeta de bibliografía en Google Drive</a></div>
+  <table class="t">
+    <tr><th>Texto</th><th>Capítulos para esta unidad</th><th>Bloques</th></tr>
+    <tr><td>Belleflamme, P. y Peitz, M. <i>Organización industrial: mercados y estrategias</i> (2.ª ed.)</td><td>Parte IV: cap. 8 (precios grupales y personalizados), cap. 9 (precios tipo menú), cap. 10 (discriminación intertemporal), cap. 11 (venta por paquetes). Parte III: cap. 6 (publicidad). Parte V: cap. 12 (información asimétrica, señales de precio y publicidad), cap. 13 (herramientas para bienes de experiencia). Parte VII: cap. 18 (innovación e I+D), cap. 19 (propiedad intelectual).</td><td>1 · 2 · 3 · 4</td></tr>
+    <tr><td>Lipczynski, J., Wilson, J. y Goddard, J. <i>Industrial Organization: Competition, Strategy, Policy</i> (2.ª ed.)</td><td>Cap. 10 (fijación de precios y discriminación), cap. 12 (diferenciación de productos), cap. 13 (publicidad), cap. 14 (investigación y desarrollo).</td><td>1 · 3 · 4</td></tr>
+    <tr><td>Church, J. y Ware, R.; Pepall, L., Richards, D. y Norman, G.; Tarziján, J. y Paredes, R.</td><td>Lectura complementaria para discriminación de precios, publicidad e innovación.</td><td>1 · 3 · 4</td></tr>
+    <tr><td><i>Industrial Organization: Practice Exercises with Answer Keys</i> (2.ª ed.)</td><td>Ejercicios de discriminación de precios, bundling e incentivos a innovar.</td><td>1 · 4</td></tr>
+  </table>
+  <p style="font-size:15px;color:var(--muted)">Artículos citados: Stigler (1963), sobre <i>block booking</i>; Whinston (1990), <i>Tying, foreclosure and exclusion</i>; Bakos y Brynjolfsson (1999), <i>Bundling information goods</i>; Deneckere y McAfee (1996), <i>Damaged goods</i>; Akerlof (1970), <i>The market for lemons</i>; Nelson (1970, 1974), sobre información y publicidad; Milgrom y Roberts (1986), sobre señales de precio y publicidad; Dorfman y Steiner (1954); Arrow (1962); Gilbert y Newbery (1982); Reinganum (1983); d'Aspremont y Jacquemin (1988).</p>
+</section>
+</main>
+<footer>Organización Industrial · FCE-UNICEN · Unidad III — Apuntes elaborados a partir de las notas de clase y diapositivas de la cátedra y de la bibliografía del curso.</footer>
+
+<script>
+/* ---------- router ---------- */
+const views=['inicio','esquema','lectura','simuladores','glosario','simulacro','bibliografia'];
+function route(){
+  let h=(location.hash||'#inicio').slice(1); if(!views.includes(h)) h='inicio';
+  views.forEach(v=>document.getElementById('v-'+v).classList.toggle('on',v===h));
+  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+  window.scrollTo(0,0);
+  if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise().catch(()=>{});}
+}
+window.addEventListener('hashchange',route); route();
+const firstSec={b1:'s11',b2:'s21',b3:'s31',b4:'s41'};
+document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{location.hash='#lectura';setTimeout(()=>document.getElementById(firstSec[el.dataset.go]).scrollIntoView({behavior:'smooth'}),60);}));
+document.querySelectorAll('#toc a').forEach(a=>a.addEventListener('click',()=>document.getElementById(a.dataset.s).scrollIntoView({behavior:'smooth'})));
+
+/* ---------- helpers ---------- */
+const NS='http://www.w3.org/2000/svg';
+const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const lab=(v,r)=>{const d=r[1]-r[0];const s=d<0.5?3:d<5?2:d<50?1:0;return (+v.toFixed(s)).toLocaleString('es-AR');};
+function frame(svg,W,H,xr,yr,xl,yl,ticks){
+  svg.innerHTML=''; const m={l:52,r:18,t:16,b:44};
+  const X=v=>m.l+(v-xr[0])/(xr[1]-xr[0])*(W-m.l-m.r), Y=v=>H-m.b-(v-yr[0])/(yr[1]-yr[0])*(H-m.t-m.b);
+  const g=(tag,at,txt)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  const tx=ticks&&ticks.x||5, ty=ticks&&ticks.y||5;
+  for(let i=0;i<=tx;i++){const v=xr[0]+(xr[1]-xr[0])*i/tx;g('line',{x1:X(v),x2:X(v),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#EEEBE5'});g('text',{x:X(v),y:H-m.b+16,'text-anchor':'middle'},lab(v,xr));}
+  for(let i=0;i<=ty;i++){const v=yr[0]+(yr[1]-yr[0])*i/ty;g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(v),y2:Y(v),stroke:'#EEEBE5'});g('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end'},lab(v,yr));}
+  g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(yr[0]),y2:Y(yr[0]),stroke:'#9AA0A6'});g('line',{x1:X(xr[0]),x2:X(xr[0]),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#9AA0A6'});
+  g('text',{x:(m.l+W-m.r)/2,y:H-8,'text-anchor':'middle','font-weight':'700'},xl);
+  g('text',{x:14,y:(m.t+H-m.b)/2,'text-anchor':'middle','font-weight':'700',transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`},yl);
+  return {X,Y,g,xr,yr};
+}
+function path(P,pts,stroke,w=2.5,dash){const v=pts.filter(p=>isFinite(p[1])&&p[1]>=P.yr[0]-1e-9&&p[1]<=P.yr[1]+1e-9);if(v.length<2)return;const d=v.map((p,i)=>(i?'L':'M')+P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join('');const at={d,fill:'none',stroke,'stroke-width':w};if(dash)at['stroke-dasharray']=dash;return P.g('path',at);}
+function poly(P,pts,fill){P.g('polygon',{points:pts.map(p=>P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join(' '),fill,opacity:.85});}
+function dot(P,x,y,fill,r=6,label){P.g('circle',{cx:P.X(x),cy:P.Y(y),r,fill,stroke:'#fff','stroke-width':2});if(label)P.g('text',{x:P.X(x)+9,y:P.Y(y)-9,'font-weight':'700',fill},label);}
+const f=(v,d=2)=>(Math.abs(v)<1e-12?0:v).toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const out=(id,arr)=>document.getElementById(id).innerHTML=arr.map(([k,v])=>`<div><small>${k}</small><b>${v}</b></div>`).join('');
+const $=id=>document.getElementById(id);
+const tset=el=>{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]).catch(()=>{});};
+
+/* ---------- bar helper ---------- */
+function bars(svgId,W,H,groups,series,ymax,ylab){
+  const G=frame($(svgId),W,H,[0,groups.length],[0,ymax],'',ylab,{x:groups.length,y:4});
+  // remove x tick labels: overwrite with group names
+  [...$(svgId).querySelectorAll('text')].forEach(t=>{if(+t.getAttribute('y')===H-44+16)t.remove();});
+  const bw=0.8/series.length;
+  groups.forEach((gname,i)=>{
+    series.forEach((s,j)=>{const v=s.vals[i];if(!isFinite(v))return;const x0=i+0.1+j*bw,x1=x0+bw*0.92;const y=Math.max(0,Math.min(v,ymax));
+      G.g('rect',{x:G.X(x0),y:G.Y(y),width:G.X(x1)-G.X(x0),height:G.Y(0)-G.Y(y),fill:s.color,rx:2});
+      G.g('text',{x:(G.X(x0)+G.X(x1))/2,y:G.Y(y)-5,'text-anchor':'middle','font-size':'11'},s.fmt?s.fmt(v):f(v,0));});
+    G.g('text',{x:G.X(i+0.5),y:H-44+18,'text-anchor':'middle','font-weight':'700'},gname);
+  });
+  return G;
+}
+
+/* ---------- Sim 1: tercer grado ---------- */
+function sim1(){
+  const aB=+$('ab').value,c=+$('c1').value; $('abv').textContent=aB;$('c1v').textContent=c;
+  const qA=p=>Math.max(0,120-p), qB=p=>Math.max(0,aB-2*p);
+  // discrimination
+  let pA=(120+c)/2, QA=qA(pA), pB=aB/4+c/2, QB=qB(pB); if(QB<=0){pB=NaN;QB=0;}
+  const piD=(pA-c)*QA+(QB>0?(pB-c)*QB:0), csD=0.5*QA*QA+QB*QB/4;
+  // uniform: grid
+  let best=-1,pu=c; for(let p=c;p<=Math.max(120,aB/2);p+=0.01){const v=(p-c)*(qA(p)+qB(p)); if(v>best){best=v;pu=p;}}
+  const qAu=qA(pu),qBu=qB(pu), csU=0.5*qAu*qAu+qBu*qBu/4, piU=best;
+  const WU=piU+csU, WD=piD+csD, QU=qAu+qBu, QD=QA+QB;
+  const ymax=Math.ceil(Math.max(WU,WD)*1.12/1000)*1000;
+  bars('p1',520,360,['Beneficio','Exc. consumidor','Bienestar'],[
+    {color:'#9aa0a6',vals:[piU,csU,WU]},{color:col('--b1'),vals:[piD,csD,WD]}],ymax,'');
+  out('o1',[['p uniforme',f(pu,1)],['p_A discrim.',f(pA,1)],['p_B discrim.',isFinite(pB)?f(pB,1):'no atiende'],['Q uniforme',f(QU,1)],['Q discrim.',f(QD,1)],['B atendido con p único',qBu>0?'sí':'no']]);
+  const dW=WD-WU;
+  $('n1').innerHTML=qBu<=0&&QB>0?`✅ Con precio único el segmento B queda <b>sin atender</b>. Discriminar abre ese mercado: la cantidad total pasa de ${f(QU,1)} a ${f(QD,1)} y el bienestar ${dW>=0?'sube':'cambia'} en ${f(dW,0)}.`:
+    Math.abs(QD-QU)<0.05?`La cantidad total no cambia (${f(QU,1)}): según la prueba de la producción, el bienestar no puede aumentar. Cae en ${f(-dW,0)} porque la misma producción se reparte peor.`:
+    `La cantidad total pasa de ${f(QU,1)} a ${f(QD,1)} y el bienestar varía en ${f(dW,0)}.`;
+}
+['ab','c1'].forEach(i=>$(i).addEventListener('input',sim1));
+
+/* ---------- Sim 2: bundling ---------- */
+const S=l=>l<=0.5?120-60*l:120*l+30, PB=l=>Math.max(150*l,120), MB=l=>Math.max(60+90*l,120);
+function sim2(){
+  const l=+$('ll').value; $('lv').textContent=f(l,2);
+  const G=frame($('p2'),520,360,[0,1],[80,160],'λ (proporción del grupo A)','beneficio por consumidor',{x:5,y:6});
+  const a=[],b=[],c=[];for(let x=0;x<=1.0001;x+=0.005){a.push([x,S(x)]);b.push([x,PB(x)]);c.push([x,MB(x)]);}
+  path(G,a,col('--b3'),2.5);path(G,b,col('--b4'),2.5,'7 4');path(G,c,col('--b2'),3);
+  path(G,[[l,80],[l,160]],'#999',1.2,'4 4');
+  dot(G,l,S(l),col('--b3'),5);dot(G,l,PB(l),col('--b4'),5);dot(G,l,MB(l),col('--b2'),6);
+  const sep=l<=0.5?'torta 60, café 60':'torta 120, café 30', pur=150*l>120?'canasta 150 (solo A)':'canasta 120 (todos)', mix=60+90*l>120?'café 60, canasta 150':'canasta 120 (todos)';
+  out('o2',[['Por separado',f(S(l),1)],['Bundling puro',f(PB(l),1)],['Bundling mixto',f(MB(l),1)]]);
+  $('n2').innerHTML=`<b>Precios óptimos.</b> Por separado: ${sep}. Puro: ${pur}. Mixto: ${mix}.<br>El bundling mixto ${MB(l)>Math.max(S(l),PB(l))+1e-9?'supera estrictamente':'iguala'} a la mejor alternativa${MB(l)>Math.max(S(l),PB(l))+1e-9?` por ${f(MB(l)-Math.max(S(l),PB(l)),1)} por consumidor`:''}.`;
+}
+$('ll').addEventListener('input',sim2);
+
+/* ---------- Sim 3: Dorfman-Steiner ---------- */
+function sim3(){
+  const e=+$('ep').value,a=+$('ea').value; $('epv').textContent=f(e,1);$('eav').textContent=f(a,2);
+  const p=e/(e-1), K=(p-1)*Math.pow(p,-e);
+  const Astar=Math.pow(a*K,1/(1-a)), prof=A=>K*Math.pow(A,a)-A, pmax=prof(Astar);
+  const sOf=A=>A/(p*Math.pow(p,-e)*Math.pow(A,a)); const sstar=a/e;
+  const pts=[];for(let k=0.02;k<=4;k+=0.02){const A=Astar*k;pts.push([sOf(A),prof(A)/pmax]);}
+  const xmax=Math.max(...pts.map(q=>q[0]));
+  const G=frame($('p3'),520,360,[0,xmax],[0,1.05],'intensidad publicitaria A/(pQ)','beneficio / máximo',{x:5,y:5});
+  path(G,pts,col('--b3'),2.5); path(G,[[sstar,0],[sstar,1.05]],col('--b2'),1.5,'5 4'); dot(G,sstar,1,col('--b2'),6,'óptimo');
+  out('o3',[['Precio óptimo',f(p,2)],['Margen (p−c)/p',f(1/e,3)],['A/(pQ) óptimo',f(100*sstar,1)+' %']]);
+  $('n3').innerHTML=`La intensidad óptima es η<sub>A</sub>/|η<sub>p</sub>| = ${f(a,2)} / ${f(e,1)} ≈ ${f(100*sstar,1)} % de las ventas. Una demanda más elástica al precio reduce el margen y, con él, el valor de cada venta adicional que genera la publicidad.`;
+  tset($('n3'));
+}
+['ep','ea'].forEach(i=>$(i).addEventListener('input',sim3));
+
+/* ---------- Sim 4: innovación ---------- */
+function sim4(){
+  let c0=+$('c0').value; const c1s=$('c1i'); c1s.max=(c0-0.01).toFixed(2); if(+c1s.value>=c0)c1s.value=(c0-0.01).toFixed(2); const c1=+c1s.value;
+  $('c0v').textContent=f(c0,2);$('c1iv').textContent=f(c1,2);
+  const pm=x=>(1-x)*(1-x)/4, drastic=(1+c1)/2<c0;
+  const Vc=drastic?pm(c1):(c0-c1)*(1-c0), Vm=pm(c1)-pm(c0), Vs=0.5*(1-c1)*(1-c1)-0.5*(1-c0)*(1-c0);
+  const ym=Vs*1.2;
+  bars('p4a',520,260,['Firma competitiva','Monopolista','Valor social'],[{color:col('--b1'),vals:[Vc,NaN,NaN]},{color:col('--b4'),vals:[NaN,Vm,NaN]},{color:'#9aa0a6',vals:[NaN,NaN,Vs]}].map(s=>({...s,fmt:v=>f(v,4)})),ym,'valor por período');
+  const psi=(c0-c1)/(1-c0);
+  const PI=n=>n/((n+1)*(n+1))*(2+n*psi)*psi;
+  const ns=[1,2,3,4,5,6,7,8,9,10], vals=ns.map(PI); const im=vals.indexOf(Math.max(...vals));
+  const G=frame($('p4b'),520,240,[0,11],[0,Math.max(...vals)*1.2],'número de firmas en Cournot (n)','incentivo / (a−c₀)²',{x:11,y:4});
+  ns.forEach((n,i)=>{const x0=n-0.35,x1=n+0.35;G.g('rect',{x:G.X(x0),y:G.Y(vals[i]),width:G.X(x1)-G.X(x0),height:G.Y(0)-G.Y(vals[i]),fill:i===im?col('--b2'):'#e8c3ae',rx:2});});
+  out('o4',[['Tipo de innovación',drastic?'drástica':'no drástica'],['Valor competitiva',f(Vc,4)],['Valor monopolista',f(Vm,4)],['Valor social',f(Vs,4)],['ψ (tamaño relativo)',psi<1?f(psi,3):'≥ 1'],['n que maximiza',psi<1?ns[im]:'—']]);
+  $('n4').innerHTML=`<b>Efecto reemplazo:</b> la firma competitiva valora la innovación ${f(Vc/Vm,2)} veces más que el monopolista, y ambas por debajo del valor social. `+(psi<1?`<b>En Cournot</b>, con ψ = ${f(psi,3)}, el incentivo es máximo con ${ns[im]} ${ns[im]===1?'firma (monopolio)':'firmas'}: la relación es de U invertida.`:'Con ψ ≥ 1 la innovación es drástica también en Cournot y el gráfico de abajo no aplica.');
+}
+['c0','c1i'].forEach(i=>$(i).addEventListener('input',sim4));
+sim1();sim2();sim3();sim4();
+
+/* ---------- Glosario ---------- */
+const GL=[
+['Discriminación de precios',1,'Venta de unidades del mismo bien a precios cuyo cociente difiere del cociente de sus costos marginales (Stigler).'],
+['Arbitraje',1,'Reventa de quien compra barato a quien compra caro; limitarlo es condición para discriminar.'],
+['Precios personalizados (primer grado)',1,'Cada consumidor paga su disposición a pagar; resultado eficiente con excedente del consumidor nulo.'],
+['Precios por grupo (tercer grado)',1,'Un precio por segmento identificado mediante una señal observable; margen inverso a la elasticidad de cada segmento.'],
+['Precios por menú (segundo grado)',1,'Menú de opciones que induce a los consumidores a autoseleccionarse; incluye descuentos por volumen y versionado.'],
+['Prueba de la producción',1,'Para que la discriminación de tercer grado aumente el bienestar, la cantidad total debe aumentar (condición necesaria).'],
+['Renta informacional',1,'Excedente que conserva el consumidor de alta valoración para que no elija la opción pensada para el de baja valoración.'],
+['Tarifa en dos partes',1,'Precio compuesto por un cargo fijo de acceso y un precio por unidad: T(q) = A + pq.'],
+['Versionado',1,'Oferta de versiones de distinta calidad de un mismo producto para segmentar; incluye los «bienes dañados».'],
+['Conjetura de Coase',1,'Un monopolista de bienes durables sin capacidad de compromiso termina vendiendo cerca del costo marginal porque los consumidores esperan bajas de precio.'],
+['Bundling puro',1,'Los bienes solo se venden en paquete.'],
+['Bundling mixto',1,'Se ofrecen el paquete y los componentes por separado, con el paquete más barato que la suma.'],
+['Tying (venta atada)',1,'La compra de un bien obliga a comprar otro complementario; puede usarse para excluir rivales.'],
+['Bienes de experiencia',2,'Bienes cuya calidad solo se conoce después de consumirlos.'],
+['Bienes de creencia',2,'Bienes cuya calidad es difícil de evaluar incluso después de consumirlos.'],
+['Selección adversa',2,'Con información oculta sobre la calidad, los productos malos pueden expulsar a los buenos del mercado (Akerlof).'],
+['Riesgo moral',2,'Problema de acción oculta: quien no es observado tiene incentivos a reducir su esfuerzo o su cuidado.'],
+['Señalización',2,'Acción costosa del agente informado que el tipo de baja calidad no estaría dispuesto a imitar.'],
+['Marca paraguas',2,'Uso de una misma marca para varios productos, que traslada reputación entre ellos.'],
+['Publicidad informativa',3,'Publicidad que comunica existencia, características o precios y reduce costos de búsqueda.'],
+['Publicidad persuasiva',3,'Publicidad que altera las preferencias y aumenta la diferenciación percibida.'],
+['Regla de Dorfman–Steiner',3,'La razón publicidad/ventas óptima es igual al cociente entre la elasticidad publicidad y la elasticidad precio de la demanda.'],
+['Innovación drástica',4,'Innovación de proceso que permite al innovador fijar su precio de monopolio sin restricción de los rivales.'],
+['Efecto reemplazo',4,'El monopolista valora menos una innovación que una firma competitiva porque solo reemplaza un beneficio que ya tenía (Arrow).'],
+['Efecto eficiencia',4,'El monopolista amenazado por la entrada valora más una innovación que el entrante, porque protege su monopolio (Gilbert y Newbery).'],
+['Carrera de patentes',4,'Competencia por ser el primero en innovar; puede generar duplicación socialmente excesiva de esfuerzos.'],
+['Derrames de conocimiento',4,'Parte de los resultados de la I+D de una firma que beneficia a sus rivales (parámetro β).'],
+['Joint venture de investigación',4,'Acuerdo de cooperación en I+D entre empresas que siguen compitiendo en el mercado de productos.'],
+['Apropiabilidad',4,'Capacidad del innovador de capturar los beneficios de su innovación; limitada por la naturaleza de bien público del conocimiento.']
+];
+function renderGL(q=''){q=q.toLowerCase();const cols=['','--b1','--b2','--b3','--b4'];
+  $('gl').innerHTML=GL.filter(r=>(r[0]+r[2]).toLowerCase().includes(q)).sort((a,b)=>a[0].localeCompare(b[0],'es')).map(r=>`<dt>${r[0]}<span class="bk" style="background:var(${cols[r[1]]})">${r[1]}</span></dt><dd>${r[2]}</dd>`).join('')||'<p>Sin resultados.</p>';}
+$('gsearch').addEventListener('input',e=>renderGL(e.target.value)); renderGL();
+
+/* ---------- Simulacro ---------- */
+const QZ=[
+{q:'Según la definición de Stigler, ¿cuál de estas situaciones NO es discriminación de precios?',o:['Precios distintos por país para un servicio digital con igual costo','Un descuento por volumen','Cobrar más caro un envío a una localidad más lejana','Una versión gratuita con publicidad y otra paga sin ella'],a:2,e:'El mayor precio refleja un mayor costo de servir: el cociente de precios acompaña al de costos marginales. Las otras opciones son formas de discriminar.'},
+{q:'Con discriminación de tercer grado, un segmento tiene elasticidad |η| = 2 en el óptimo. Su margen (p − c)/p es:',o:['20 %','50 %','66,7 %','200 %'],a:1,e:'Regla de la elasticidad inversa por segmento: (p − c)/p = 1/|η| = 1/2.'},
+{q:'En el ejemplo de la lectura (q_A = 120 − p, q_B = 120 − 2p, c = 20), al pasar del precio uniforme a la discriminación, la cantidad total:',o:['Aumenta','Disminuye','No cambia, y el bienestar cae','No cambia, y el bienestar aumenta'],a:2,e:'Con demandas lineales y ambos segmentos atendidos, la cantidad total se mantiene en 90 y el bienestar cae de 5.250 a 4.950.'},
+{q:'Con discriminación perfecta (primer grado):',o:['La cantidad es menor que la de competencia','El excedente del consumidor es nulo y el resultado es eficiente','El excedente del productor es nulo','Hay pérdida irrecuperable de eficiencia'],a:1,e:'Se produce la cantidad socialmente óptima y todo el excedente queda en manos de la empresa: la paradoja de la eficiencia.'},
+{q:'Con consumidores homogéneos, la tarifa en dos partes T(q) = A + pq óptima fija:',o:['p = precio de monopolio y A = 0','p = c y A igual al excedente del consumidor','p = 0 y A igual al ingreso de monopolio','p = c y A = 0'],a:1,e:'El precio unitario igual al costo maximiza el excedente, y el cargo fijo lo captura entero: replica la discriminación perfecta.'},
+{q:'En el menú óptimo de segundo grado con dos tipos de consumidores:',o:['Ambos tipos reciben la calidad eficiente','El tipo alto recibe la calidad eficiente y conserva una renta informacional','El tipo bajo recibe la calidad eficiente','La empresa extrae todo el excedente de ambos tipos'],a:1,e:'No hay distorsión en el extremo alto; la opción del tipo bajo se degrada para que el tipo alto no la imite, y el tipo alto conserva una renta.'},
+{q:'En el modelo de las notas, con θ_B = ρθ_A + (1 − ρ)(1 − θ_A) y 2/3 ≤ ρ ≤ 1, el bundling puro frente a la venta por separado:',o:['Es siempre más rentable','Nunca es más rentable; empata solo si ρ = 1','Es más rentable si ρ < 3/4','Es más rentable si ρ > 3/4'],a:1,e:'π^S − π^B = (ρ − 1)²/[8ρ(2ρ − 1)] ≥ 0: con correlación positiva, el paquete no reduce la dispersión de las valoraciones.'},
+{q:'En el ejemplo de torta y café con λ = 0,75, ¿qué estrategia da el mayor beneficio por consumidor y cuánto?',o:['Venta por separado: 120','Bundling puro: 120','Bundling mixto: 127,5','Bundling puro: 112,5'],a:2,e:'Mixto: café a 60 (grupo B) y canasta a 150 (grupo A): 60 + 90 · 0,75 = 127,5. Por separado y puro se obtiene 120.'},
+{q:'En el mercado de «limones» de Akerlof:',o:['Los vendedores de autos buenos fijan precios más altos y venden más','La información asimétrica puede expulsar del mercado a los autos de buena calidad','Los compradores conocen la calidad de cada auto','El precio refleja exactamente la calidad de cada auto'],a:1,e:'Si el precio refleja la calidad media, a los dueños de autos buenos no les conviene vender; la calidad media cae y el mercado puede desaparecer.'},
+{q:'Si la elasticidad publicidad de la demanda es 0,1 y la elasticidad precio es 2, la regla de Dorfman–Steiner indica un gasto publicitario de:',o:['2 % de las ventas','5 % de las ventas','10 % de las ventas','20 % de las ventas'],a:1,e:'A/(pQ) = η_A/|η_p| = 0,1/2 = 0,05.'},
+{q:'Según el efecto reemplazo (Arrow), ante una innovación de proceso no drástica:',o:['El monopolista la valora más que una firma competitiva','Una firma competitiva la valora más que el monopolista','Ambos la valoran igual','Ninguno la valora por encima de su costo'],a:1,e:'El monopolista ya tenía beneficios: la innovación solo los reemplaza por otros mayores. La firma competitiva parte de cero.'},
+{q:'En el modelo de d\'Aspremont y Jacquemin con Cournot lineal, la cooperación en I+D aumenta la inversión respecto de la no cooperación cuando:',o:['Los derrames son nulos','Los derrames superan 1/2','Las firmas compiten en precios','Hay una sola firma'],a:1,e:'El beneficio del rival depende de (2β − 1)x_i: si β > 1/2, la I+D de una firma beneficia a la otra y la cooperación internaliza esa externalidad positiva.'}
+];
+let answered={},right=0;
+function renderQZ(){answered={};right=0;$('score').textContent='0 / '+QZ.length;
+  $('quiz').innerHTML=QZ.map((x,i)=>`<div class="qi"><p class="st">${i+1}. ${x.q}</p>${x.o.map((o,j)=>`<button class="op" data-i="${i}" data-j="${j}">${String.fromCharCode(97+j)}) ${o}</button>`).join('')}<div class="ex" id="ex${i}">${x.e}</div></div>`).join('');
+  document.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,j=+b.dataset.j;if(answered[i]!=null)return;answered[i]=j;
+    const qq=QZ[i];document.querySelectorAll(`.op[data-i="${i}"]`).forEach(o=>{if(+o.dataset.j===qq.a)o.classList.add('ok');else if(+o.dataset.j===j)o.classList.add('bad');});
+    if(j===qq.a)right++; $('score').textContent=right+' / '+QZ.length; const ex=$('ex'+i); ex.style.display='block'; ex.insertAdjacentHTML('afterbegin',`<b>${j===qq.a?'¡Correcto! ':'No es correcta. '}</b>`);}));}
+$('reset').addEventListener('click',renderQZ); renderQZ();
+
+</script>
+</body>
+</html>

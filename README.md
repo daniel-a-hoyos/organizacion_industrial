@@ -9,3 +9,4 @@ https://daniel-a-hoyos.github.io/organizacion_industrial/
 | `index.html` | Portada del curso |
 | `unidad1/` | Unidad I · Aspectos introductorios y fundamentos |
 | `unidad2/` | Unidad II · Análisis estructural de los mercados |
+| `unidad3/` | Unidad III · Comportamiento estratégico de las empresas |
