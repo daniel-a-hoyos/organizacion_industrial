@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unidad I · Aspectos introductorios y fundamentos — Organización Industrial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' },
+  startup: { typeset: true }
+};
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js"></script>
+<style>
+:root{
+  --bg:#FBFAF7; --paper:#FFFFFF; --ink:#1F2328; --ink2:#4A5059; --muted:#6B717A; --line:#E6E2DA; --soft:#F3F0EA;
+  --b1:#0F6B5C; --b2:#B4532A; --b3:#3D4FA8; --b4:#8A3B78; --accent:#0F6B5C;
+  --serif:'Source Serif 4', Georgia, serif; --sans:'Source Sans 3', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,250,247,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.topin{max-width:1120px;margin:0 auto;padding:10px 20px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:17px}
+.brand .sq{display:grid;grid-template-columns:repeat(4,7px);gap:2px}
+.brand .sq i{width:7px;height:7px;border-radius:1px;display:block}
+.brand small{font-family:var(--sans);color:var(--muted);font-size:13px;margin-left:auto}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:6px}
+nav.tabs a{padding:8px 12px;font-weight:600;font-size:15px;color:var(--ink2);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs a.on{color:var(--accent);border-bottom-color:var(--accent)}
+main{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+section.view{display:none}
+section.view.on{display:block}
+.eyebrow{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:clamp(32px,5vw,48px)}
+h2{font-size:32px}
+h3{font-size:24px;margin-top:1.6em}
+h4{font-size:19px;font-weight:600;margin-top:1.4em}
+p{margin:.6em 0}
+.lead{font-size:20px;color:var(--ink2);max-width:760px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-family:var(--sans)}
+.btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.drive{background:#fff;border-color:#C9D7F2;color:#1A56B8}
+.blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0}
+.blocks button{border:0;border-radius:8px;color:#fff;font-family:var(--serif);font-size:30px;padding:16px 0;cursor:pointer;text-align:center}
+.list4 .row{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line);cursor:pointer}
+.list4 .num{font-family:var(--serif);font-size:34px;line-height:1}
+.list4 .t{font-weight:700;font-size:19px}
+.list4 .s{color:var(--muted);font-size:15px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h4{margin-top:0}
+.card.link{cursor:pointer}
+.card.link:hover{border-color:var(--accent)}
+.q{border-left:4px solid var(--b2);padding:6px 16px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ink2);margin:18px 0}
+ol.ideas{counter-reset:i;list-style:none;padding:0}
+ol.ideas li{counter-increment:i;position:relative;padding:6px 0 6px 38px}
+ol.ideas li::before{content:counter(i);position:absolute;left:0;top:8px;width:24px;height:24px;border-radius:50%;background:var(--b2);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:10px}
+.map .card{border-top:5px solid var(--c)}
+.map ul{padding-left:18px;margin:.3em 0}
+.map li{margin:.2em 0}
+.conn{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.conn .card .u{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+/* lectura */
+.readwrap{display:grid;grid-template-columns:240px 1fr;gap:36px}
+aside.toc{position:sticky;top:110px;align-self:start;font-size:14.5px;max-height:calc(100vh - 130px);overflow:auto}
+aside.toc b{display:block;margin:14px 0 4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+aside.toc a{display:block;color:var(--ink2);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+aside.toc a:hover{color:var(--accent);border-left-color:var(--accent)}
+article.read{max-width:760px;font-family:var(--serif);font-size:18.5px;line-height:1.7}
+article.read h3{border-top:1px solid var(--line);padding-top:26px}
+article.read h3 .tag{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;border-radius:4px;padding:2px 8px;vertical-align:middle;margin-right:8px}
+.box{font-family:var(--sans);font-size:16px;background:var(--soft);border-radius:10px;padding:14px 18px;margin:16px 0}
+.box.res{background:#EEF6F3;border-left:4px solid var(--b1)}
+.box.int{background:#FBF1EB;border-left:4px solid var(--b2)}
+.box b.h{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;color:var(--ink2)}
+mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;padding:4px 0}
+table.t{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:15px;margin:12px 0}
+table.t th,table.t td{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+table.t th{background:var(--soft);font-weight:700}
+/* simuladores */
+.sim{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;margin:22px 0}
+.simgrid{display:grid;grid-template-columns:290px 1fr;gap:24px;align-items:start}
+.ctrl label{display:block;font-size:14.5px;font-weight:600;margin-top:12px}
+.ctrl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctrl .v{float:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctrl select{width:100%;padding:6px;font-family:var(--sans);font-size:15px;border-radius:6px;border:1px solid var(--line)}
+.chk{display:flex;gap:8px;align-items:center;font-weight:400!important}
+.out{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:12px}
+.out div{background:var(--soft);border-radius:8px;padding:6px 10px}
+.out small{display:block;color:var(--muted);font-size:12px}
+.out b{font-variant-numeric:tabular-nums;font-size:17px}
+.note{font-size:15px;color:var(--ink2);background:#F7F5F0;border-radius:8px;padding:10px 14px;margin-top:12px}
+svg.plot{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:10px}
+svg.plot text{font-family:var(--sans);font-size:12px;fill:#4A5059}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+/* glosario */
+#gsearch{width:100%;padding:12px 14px;font-size:16px;border:1px solid var(--line);border-radius:10px;font-family:var(--sans);margin-bottom:14px}
+dl.gl dt{font-weight:700;margin-top:14px;font-size:17px}
+dl.gl dd{margin:2px 0 0;color:var(--ink2)}
+dl.gl .bk{font-size:12px;font-weight:700;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle}
+/* simulacro */
+.quiz .qi{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.quiz .qi p.st{font-weight:600}
+.quiz .op{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin:6px 0;font-family:var(--sans);font-size:16px;cursor:pointer}
+.quiz .op:hover{border-color:var(--accent)}
+.quiz .op.ok{background:#E6F4EE;border-color:#2E8B6A}
+.quiz .op.bad{background:#FBE9E5;border-color:#C2553A}
+.quiz .ex{display:none;margin-top:8px;font-size:15.5px;background:var(--soft);border-radius:8px;padding:10px 12px}
+.score{position:sticky;top:110px;float:right;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-weight:700}
+details.dev{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}
+details.dev summary{cursor:pointer;font-weight:700}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:20px;text-align:center}
+@media (max-width:860px){
+  .readwrap,.simgrid{grid-template-columns:1fr}
+  aside.toc{position:static;max-height:none}
+  .grid2,.grid3,.map,.conn{grid-template-columns:1fr}
+  .score{position:static;float:none;display:inline-block}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin">
+  <div class="brand"><span class="sq"><i style="background:var(--b1)"></i><i style="background:var(--b2)"></i><i style="background:var(--b3)"></i><i style="background:var(--b4)"></i></span><a href="../" style="color:inherit;text-decoration:none">Organización Industrial</a>&nbsp;· Unidad I<small><a href="../" style="color:var(--muted)">← Todas las unidades</a></small></div>
+  <nav class="tabs" id="tabs">
+    <a href="#inicio">Inicio</a><a href="#esquema">Esquema</a><a href="#lectura">Lectura</a><a href="#simuladores">Simuladores</a><a href="#glosario">Glosario</a><a href="#simulacro">Simulacro</a><a href="#bibliografia">Bibliografía</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- ================= INICIO ================= -->
+<section class="view" id="v-inicio">
+  <div class="eyebrow">Apuntes de cátedra · Notas de clase de Daniel Hoyos Maldonado, ampliadas con la bibliografía del curso</div>
+  <h1>Aspectos introductorios y fundamentos</h1>
+  <p class="lead">Antes de estudiar cómo compiten las empresas conviene precisar qué estudia la Organización Industrial, con qué enfoques lo hace y cuáles son las herramientas microeconómicas sobre las que se apoya: costos, demanda, estructuras de mercado y, en la base de todo, una pregunta sencilla en apariencia: ¿por qué existen las empresas?</p>
+  <div class="btns">
+    <a class="btn pri" href="#esquema">Empezar por el esquema</a>
+    <a class="btn" href="#simuladores">Abrir los simuladores</a>
+    <a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Bibliografía recomendada (Drive)</a>
+  </div>
+  <div class="blocks">
+    <button style="background:var(--b1)" data-go="b1">1</button>
+    <button style="background:var(--b2)" data-go="b2">2</button>
+    <button style="background:var(--b3)" data-go="b3">3</button>
+    <button style="background:var(--b4)" data-go="b4">4</button>
+  </div>
+  <h2>Los cuatro bloques</h2>
+  <div class="list4">
+    <div class="row" data-go="b1"><div class="num" style="color:var(--b1)">1</div><div><div class="t">Ámbito y metodología de la Organización Industrial</div><div class="s">Qué estudia la disciplina · competencia estática y dinámica · enfoque Estructura–Conducta–Resultados · escuela de Chicago · Nueva Organización Industrial · estrategia empresarial</div></div></div>
+    <div class="row" data-go="b2"><div class="num" style="color:var(--b2)">2</div><div><div class="t">Producción y costos</div><div class="s">Corto y largo plazo · costos de oportunidad, fijos e irrecuperables · economías de escala y escala mínima eficiente · economías de alcance</div></div></div>
+    <div class="row" data-go="b3"><div class="num" style="color:var(--b3)">3</div><div><div class="t">Demanda y estructuras de mercado</div><div class="s">Elasticidades e ingreso marginal · competencia perfecta · monopolio, índice de Lerner y bienestar · monopolio natural · competencia monopolística · mercado relevante y poder de mercado</div></div></div>
+    <div class="row" data-go="b4"><div class="num" style="color:var(--b4)">4</div><div><div class="t">Teorías de la firma</div><div class="s">De la teoría neoclásica a las teorías gerenciales, conductuales, de recursos y del conocimiento · Coase, Williamson y los costos de transacción</div></div></div>
+  </div>
+  <h2 style="margin-top:36px">Cómo estudiar la unidad</h2>
+  <div class="grid2">
+    <div class="card"><h4>1 · Mirá el esquema</h4>Las cinco ideas esenciales y el mapa de la unidad, con sus conexiones con el resto del programa.</div>
+    <div class="card"><h4>2 · Leé el desarrollo</h4>Las notas de clase, ampliadas con recuadros tomados de los manuales de la bibliografía. El índice lateral te lleva a cada tema.</div>
+    <div class="card"><h4>3 · Experimentá</h4>Cuatro simuladores: curvas de costos y decisión de producir, elasticidad e ingreso marginal, bienestar en monopolio y regulación del monopolio natural.</div>
+    <div class="card"><h4>4 · Hacé el simulacro</h4>Doce preguntas de opción múltiple con corrección inmediata y dos preguntas de desarrollo con su guion.</div>
+  </div>
+</section>
+
+<!-- ================= ESQUEMA ================= -->
+<section class="view" id="v-esquema">
+  <div class="eyebrow">Antes de leer</div>
+  <h2>Lo esencial en cinco ideas</h2>
+  <ol class="ideas">
+    <li>La Organización Industrial estudia <b>por qué los mercados se organizan como lo hacen</b> —fronteras de las empresas, concentración, diferenciación, condiciones de entrada— y <b>cómo esa organización afecta la conducta</b> de las firmas y el bienestar.</li>
+    <li>El enfoque <b>Estructura–Conducta–Resultados</b> fundó la disciplina, pero sus relaciones causales resultaron débiles y bidireccionales. La <b>Nueva Organización Industrial</b> pone el foco en la conducta estratégica, con la teoría de juegos como herramienta.</li>
+    <li>Los <b>costos</b> condicionan la estructura: las economías de escala y la escala mínima eficiente explican por qué algunas industrias tienen pocas empresas, y en el extremo, un <b>monopolio natural</b>.</li>
+    <li>El <b>poder de mercado</b> es la capacidad de fijar el precio por encima del costo marginal. Se mide con el índice de Lerner, que en un monopolio es la inversa de la elasticidad, y su costo social es la pérdida de eficiencia asignativa (y a veces productiva).</li>
+    <li>Las empresas existen porque usar el mercado tiene <b>costos de transacción</b> (Coase). El tamaño y los límites de la firma resultan de comparar esos costos con los de organizar la actividad internamente.</li>
+  </ol>
+  <div class="eyebrow" style="margin-top:28px">Pregunta central</div>
+  <div class="q">¿Por qué los mercados y las empresas tienen la forma que tienen, y qué consecuencias tiene esa forma para la competencia y el bienestar?</div>
+  <h2>Mapa de la unidad</h2>
+  <div class="map">
+    <div class="card" style="--c:var(--b1)"><h4 style="color:var(--b1)">1 · Ámbito y metodología</h4><ul>
+      <li>Objeto: fronteras de la firma, concentración, diferenciación, entrada</li><li>Competencia estática (neoclásica) y dinámica (Schumpeter, escuela austríaca)</li><li>Enfoque ECR y sus retroalimentaciones</li><li>Críticas; hipótesis de colusión frente a eficiencia (Chicago)</li><li>Nueva Organización Industrial; Porter y las cinco fuerzas</li></ul></div>
+    <div class="card" style="--c:var(--b2)"><h4 style="color:var(--b2)">2 · Producción y costos</h4><ul>
+      <li>Rendimientos marginales decrecientes y curvas de costo en U</li><li>Costos de oportunidad, fijos e irrecuperables</li><li>Rendimientos y economías de escala: fuentes reales y pecuniarias</li><li>Escala mínima eficiente; deseconomías de escala</li><li>Economías de alcance</li></ul></div>
+    <div class="card" style="--c:var(--b3)"><h4 style="color:var(--b3)">3 · Demanda y estructuras de mercado</h4><ul>
+      <li>Elasticidades; \(IMg=p\,(1-1/|\eta|)\)</li><li>Competencia perfecta: \(p=CMg\)</li><li>Monopolio: \(L=\frac{p-CMg}{p}=\frac{1}{|\eta|}\); pérdida de bienestar</li><li>Monopolio natural, competencia monopolística, empresa dominante</li><li>Mercado relevante (SSNIP) y medición del poder de mercado</li></ul></div>
+    <div class="card" style="--c:var(--b4)"><h4 style="color:var(--b4)">4 · Teorías de la firma</h4><ul>
+      <li>Neoclásica y competencia imperfecta</li><li>Separación propiedad–control; teorías gerenciales (Baumol, Marris, Williamson)</li><li>Comportamiento organizacional (Simon; Cyert y March)</li><li>Coase y Williamson: costos de transacción, especificidad de activos</li><li>Derechos de propiedad, recursos, conocimiento y estrategia</li></ul></div>
+  </div>
+  <h2 style="margin-top:32px">Conexiones con otras unidades</h2>
+  <div class="conn">
+    <div class="card"><div class="u">Unidad II</div><b>Oligopolio.</b> Entre los extremos de competencia perfecta y monopolio están los modelos de Bertrand, Cournot y Stackelberg; el índice de Lerner y el HHI vuelven a aparecer allí.</div>
+    <div class="card"><div class="u">Unidad III</div><b>Comportamiento estratégico.</b> La diferenciación, la publicidad y la I+D son las variables de conducta que el enfoque ECR enumera y la Nueva OI modeliza.</div>
+    <div class="card"><div class="u">Unidad IV</div><b>Política de la competencia.</b> La definición del mercado relevante, la medición del poder de mercado y el monopolio natural son la base de la defensa de la competencia y la regulación.</div>
+  </div>
+  <div class="btns"><a class="btn pri" href="#lectura">Leer el desarrollo →</a></div>
+</section>
+
+<!-- ================= LECTURA ================= -->
+<section class="view" id="v-lectura">
+<div class="readwrap">
+<aside class="toc" id="toc">
+  <b style="color:var(--b1)">1 · Ámbito y método</b>
+  <a data-s="s11">Qué estudia la OI</a><a data-s="s12">Competencia estática y dinámica</a><a data-s="s13">Estructura–Conducta–Resultados</a><a data-s="s14">Críticas y escuela de Chicago</a><a data-s="s15">Nueva Organización Industrial</a><a data-s="s16">Estrategia: Porter y Kay</a>
+  <b style="color:var(--b2)">2 · Producción y costos</b>
+  <a data-s="s21">Corto plazo</a><a data-s="s22">Conceptos de costo</a><a data-s="s23">Largo plazo y escala</a><a data-s="s24">Fuentes de economías de escala</a><a data-s="s25">EME y deseconomías</a><a data-s="s26">Economías de alcance</a>
+  <b style="color:var(--b3)">3 · Demanda y mercados</b>
+  <a data-s="s31">Elasticidades e IMg</a><a data-s="s32">Competencia perfecta</a><a data-s="s33">Monopolio y Lerner</a><a data-s="s34">Eficiencia y bienestar</a><a data-s="s35">Monopolio natural</a><a data-s="s36">Competencia monopolística</a><a data-s="s37">Multiproducto y empresa dominante</a><a data-s="s38">Mercado relevante y poder de mercado</a>
+  <b style="color:var(--b4)">4 · Teorías de la firma</b>
+  <a data-s="s41">Panorama de las teorías</a><a data-s="s42">Teorías gerenciales y conductuales</a><a data-s="s43">Coase y los costos de transacción</a><a data-s="s44">Williamson: gobernanza</a>
+</aside>
+<article class="read">
+  <div class="eyebrow">Desarrollo completo</div>
+  <h2>Unidad I · Aspectos introductorios y fundamentos</h2>
+  <p>Esta lectura sigue las notas de clase de la cátedra. Los recuadros <b>«Desde la bibliografía»</b> amplían algunos temas con los manuales de la carpeta del curso, principalmente Lipczynski, Wilson y Goddard (caps. 1 a 3) y Belleflamme y Peitz (caps. 1 y 2).</p>
+
+  <!-- BLOQUE 1 -->
+  <h3 id="s11"><span class="tag" style="background:var(--b1)">1.1</span>Qué estudia la Organización Industrial</h3>
+  <p>La disciplina busca explicar <b>por qué los mercados se encuentran organizados de una manera determinada</b>. Cuatro cuestiones ocupan el centro de la escena:</p>
+  <ul>
+    <li><b>Las fronteras de las empresas.</b> ¿Por qué distintas etapas de un proceso productivo se organizan dentro de una misma firma y no en compañías separadas? ¿Por qué se tercerizan otras? También interesan los acuerdos entre empresas independientes que restringen la conducta de una de las partes (<i>restricciones verticales</i>).</li>
+    <li><b>La concentración de la oferta:</b> los factores que determinan el número y el tamaño de las empresas.</li>
+    <li><b>La diferenciación de productos:</b> qué ocurre cuando los consumidores no perciben los productos como sustitutos perfectos.</li>
+    <li><b>Las condiciones de entrada:</b> las barreras que enfrentan los nuevos competidores y la posibilidad de que las firmas establecidas las construyan.</li>
+  </ul>
+  <p>A ello se suma una segunda pregunta: <b>si el modo de organización de los mercados afecta la conducta de las empresas</b>. Si los productos no son sustitutos perfectos, hay lugar para competir por vías distintas del precio; el grado de concentración condiciona la fijación de precios y cantidades; ciertas prácticas corporativas alteran la naturaleza de la competencia. Desde una perspectiva dinámica, interesan además las estrategias orientadas a desplazar rivales o a impedir el ingreso de nuevas firmas.</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz resumen el campo en la relación entre <b>mercados y estrategias</b>: lo que une ambos términos es el <b>poder de mercado</b>, la capacidad de subir el precio por encima del costo marginal sin perder toda (o la mayor parte de) la demanda. Ese poder puede surgir de la diferenciación, de la información imperfecta de los consumidores, de los costos de cambio o de condiciones de costos y demanda que solo hacen viable a una o pocas empresas (cap. 1).</div>
+
+  <h3 id="s12"><span class="tag" style="background:var(--b1)">1.2</span>Competencia estática y competencia dinámica</h3>
+  <p>La teoría neoclásica de la firma —competencia perfecta, competencia monopolística, oligopolio y monopolio— se apoya en una concepción <b>estática</b> de la competencia: el foco está puesto en el equilibrio de largo plazo y en cómo cambia ante variaciones en los datos (estática comparativa).</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski, Wilson y Goddard contraponen a esa visión la de <b>Schumpeter</b> y la <b>escuela austríaca</b> (cap. 1). Para Schumpeter, la competencia está impulsada por la <i>innovación</i>: nuevos productos, procesos y mercados destruyen a los anteriores («destrucción creativa»), y el beneficio de monopolio es la recompensa temporal del innovador, que los imitadores terminan erosionando. Para los austríacos (Kirzner), el empresario descubre oportunidades que otros no advirtieron en un mundo de información imperfecta. En ambos casos, <b>un beneficio extraordinario no prueba un abuso de poder de mercado</b>: puede ser la señal que guía la reasignación de recursos.</div>
+
+  <h3 id="s13"><span class="tag" style="background:var(--b1)">1.3</span>El enfoque Estructura–Conducta–Resultados (ECR)</h3>
+  <p>Desarrollado por Mason y Bain, sostiene que cada sector se caracteriza por una <b>estructura</b>, una <b>conducta</b> de las empresas que lo integran y un conjunto de <b>resultados</b>, vinculados entre sí y dependientes de condiciones básicas exógenas como la tecnología o la intervención del gobierno.</p>
+  <table class="t">
+    <tr><th>Estructura (fija en el corto plazo)</th><th>Conducta</th><th>Resultados</th></tr>
+    <tr><td>Número y tamaño de compradores y vendedores<br>Condiciones de entrada y salida<br>Diferenciación de productos<br>Integración vertical y diversificación</td><td>Objetivos empresariales<br>Políticas de precios<br>Diseño, marca, publicidad y marketing<br>Investigación y desarrollo<br>Colusión<br>Fusiones</td><td>Rentabilidad<br>Crecimiento<br>Calidad de productos y servicios<br>Progreso tecnológico<br>Eficiencia asignativa y productiva</td></tr>
+  </table>
+  <p>Según este enfoque, el rol del Estado es promover la competencia y prevenir abusos del poder de mercado, actuando sobre la <b>estructura</b> (impedir fusiones horizontales, dividir grandes empresas), sobre la <b>conducta</b> (controles de precios, sanciones a la colusión) o sobre los <b>resultados</b> mediante otras políticas (fiscal, ambiental, de empleo).</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>El esquema no es solo unidireccional. Lipczynski et al. destacan las <b>retroalimentaciones</b>: la conducta modifica la estructura (una fusión cambia la concentración; la publicidad y la I+D crean diferenciación), y los resultados también (la rentabilidad atrae o expulsa empresas; el progreso técnico altera las condiciones básicas de oferta y demanda). La diferenciación, la integración vertical y la diversificación son a la vez estructura y conducta.</div>
+
+  <h3 id="s14"><span class="tag" style="background:var(--b1)">1.4</span>Críticas al enfoque ECR y la escuela de Chicago</h3>
+  <ol>
+    <li>La teoría microeconómica en que se apoya no especifica relaciones precisas entre estructura, conducta y resultados (la teoría del oligopolio es, en buena medida, indeterminada).</li>
+    <li>Es difícil decidir qué variables corresponden a cada categoría.</li>
+    <li>No hay un conjunto uniforme de indicadores de resultados.</li>
+    <li>Muchos trabajos empíricos miden la estructura solo con la concentración, ignorando barreras de entrada o diferenciación.</li>
+    <li>Las asociaciones empíricas suelen tener el signo esperado, pero son estadísticamente débiles.</li>
+    <li>El enfoque privilegia modelos estáticos de equilibrio de corto plazo.</li>
+    <li>Interpreta la correlación positiva entre concentración y rentabilidad como evidencia de colusión, cuando podría reflejar eficiencia.</li>
+  </ol>
+  <div class="box int"><b class="h">Colusión o eficiencia</b>La última crítica dio lugar a un debate central. Según la <b>hipótesis de colusión</b>, las industrias concentradas son más rentables porque les resulta más fácil coordinarse. Según la <b>hipótesis de eficiencia</b>, asociada a la <b>escuela de Chicago</b>, las empresas son grandes <i>porque</i> son más eficientes, y castigarlas por su rentabilidad sería castigar el éxito. Chicago desconfía de la intervención: los abusos tenderían a corregirse solos y los cárteles serían inestables. Críticos como Blaug le reprochan apoyarse en el supuesto de que la economía nunca está lejos del equilibrio competitivo.</div>
+
+  <h3 id="s15"><span class="tag" style="background:var(--b1)">1.5</span>La Nueva Organización Industrial</h3>
+  <p>Agrupa las teorías que buscan explicar las <b>estrategias y conductas</b> de las empresas. Abandona el supuesto de que las firmas son iguales en todo salvo en el tamaño y las concibe como entidades activas. Distingue entre <b>decisiones tácticas</b>, de corto plazo (precios, cantidades), y <b>decisiones estratégicas</b>, con efectos de largo plazo sobre la estructura del mercado (características de los productos, capacidad productiva).</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>La herramienta central es la <b>teoría de juegos</b>. Belleflamme y Peitz lo explican así: un monopolista sin amenaza de entrada resuelve un problema de <i>decisión</i>, porque puede elegir en aislamiento; en cuanto hay rivales actuales o potenciales, lo que hagan los demás afecta su beneficio y el problema se vuelve un <i>juego</i>. Según la situación, el concepto de solución es el equilibrio de Nash, el perfecto en subjuegos (decisiones secuenciales), el bayesiano (información privada) o el bayesiano perfecto (señalización). Todos ellos aparecen en la Unidad II. Lipczynski et al. recogen también la crítica de Schmalensee: la teoría de juegos genera escenarios consistentes, pero no siempre predicciones contrastables.</div>
+
+  <h3 id="s16"><span class="tag" style="background:var(--b1)">1.6</span>Organización Industrial y estrategia empresarial</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski et al. dedican una sección a la <b>dirección estratégica</b>, deudora de la OI (cap. 1). Las <b>cinco fuerzas de Porter</b> —rivalidad entre competidores, amenaza de entrantes, amenaza de sustitutos, poder de los compradores y poder de los proveedores— son una versión del enfoque ECR orientada a la empresa. Porter propone además la <b>cadena de valor</b> y tres <b>estrategias genéricas</b>: liderazgo en costos, diferenciación y enfoque. Kay, en cambio, sostiene que cada firma es distinta y que su ventaja competitiva proviene de <b>capacidades distintivas</b> difíciles de imitar: innovación, arquitectura organizacional y reputación.</div>
+
+  <!-- BLOQUE 2 -->
+  <h3 id="s21"><span class="tag" style="background:var(--b2)">2.1</span>Producción y costos en el corto plazo</h3>
+  <p>La función de producción de largo plazo es \(q=f(L,K)\); en el corto plazo el capital está fijo, \(q=f(L,\bar K)\). La <b>ley de los rendimientos marginales decrecientes</b> establece que, al agregar trabajo a un capital fijo, la contribución adicional de cada unidad termina declinando. El producto medio crece mientras el marginal lo supera y decrece cuando el marginal es menor: alcanza su máximo donde \(PMg_L=PMe_L\).</p>
+  <p>Los costos se dividen en <b>variables</b> (el pago al trabajo, en este esquema) y <b>fijos</b> (el pago al capital). Dividiendo por el producto se obtienen el costo variable medio, el costo fijo medio (siempre decreciente) y el costo medio; el <b>costo marginal</b> es el costo de producir una unidad adicional. Cuando el producto medio crece, el costo variable medio cae, y viceversa: de allí la forma de U. El costo marginal corta al costo variable medio y al costo medio en sus mínimos.</p>
+  \[ CMg=\frac{dCT}{dq}=\frac{w}{PMg_L},\qquad CVMe=\frac{w}{PMe_L}. \]
+
+  <h3 id="s22"><span class="tag" style="background:var(--b2)">2.2</span>Conceptos de costo: económico, fijo e irrecuperable</h3>
+  <p>Desde el punto de vista económico, los costos son la retribución de todos los factores del proceso productivo, incluido el <b>costo de oportunidad</b> del tiempo y el esfuerzo de los propietarios. Contablemente, esa recompensa forma parte del beneficio; para el economista es la <b>ganancia ordinaria</b>, y cualquier rendimiento por encima o por debajo de ella es <b>ganancia extraordinaria</b>.</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz distinguen con cuidado (cap. 2):
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li><b>Costo de oportunidad.</b> Los costos relevantes no son los históricos sino el valor del mejor uso alternativo de los recursos (por ejemplo, de una capacidad escasa).</li>
+      <li><b>Costos fijos.</b> No dependen del nivel de producción. Afectan el beneficio, pero no las decisiones de precio, que se toman en el margen. Por eso fijar el precio como un margen sobre el costo total medio no maximiza beneficios.</li>
+      <li><b>Costos irrecuperables (hundidos).</b> No pueden recuperarse si se revierte la decisión. Algunos son exógenos (una licencia intransferible); otros son endógenos, como la reputación que las firmas establecidas construyeron con publicidad. Son claves para explicar la formación de mercados poco competitivos y las barreras de entrada.</li>
+    </ul></div>
+
+  <h3 id="s23"><span class="tag" style="background:var(--b2)">2.3</span>Largo plazo: rendimientos y economías de escala</h3>
+  <p>A largo plazo la empresa puede superar la restricción de los rendimientos decrecientes aumentando todos los factores. La relación entre insumos y producto queda gobernada por los <b>rendimientos a escala</b>, que pueden ser crecientes, constantes o decrecientes según la respuesta proporcional del producto ante una variación proporcional de los factores. Típicamente, una mayor escala reduce al principio el costo medio; luego esa reducción se agota y, si la escala sigue creciendo, el costo medio aumenta.</p>
+  <p>El <b>costo medio de largo plazo</b> es el menor costo para cada nivel de producción cuando pueden variar capital y trabajo; gráficamente, la <b>envolvente</b> de las curvas de corto plazo. La combinación óptima de factores surge de la tangencia entre la isocuanta (dimensión tecnológica) y la recta de isocosto (dimensión económica):</p>
+  \[ \frac{PMg_L}{PMg_K}=\frac{w}{r}. \]
+  <p>Las economías de escala pueden ser <b>reales</b> (ahorros en cantidades físicas de insumos) o <b>pecuniarias</b> (menores precios de los insumos). Pueden darse a nivel de planta o de empresa, y ser <b>internas</b> o <b>externas</b>, cuando surgen de la expansión de toda la industria.</p>
+
+  <h3 id="s24"><span class="tag" style="background:var(--b2)">2.4</span>Fuentes de las economías de escala</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski et al. enumeran las principales fuentes (cap. 2):
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li><b>Especialización</b> del trabajo y de la gerencia.</li>
+      <li><b>Indivisibilidades:</b> equipos que solo se justifican a gran escala, funciones que no crecen con la producción y el balanceo de capacidades entre máquinas.</li>
+      <li><b>Aprendizaje:</b> la productividad crece con la producción acumulada (curva de aprendizaje en la fabricación de aviones).</li>
+      <li><b>Relaciones geométricas:</b> si el costo depende de la superficie y la capacidad del volumen, duplicar las dimensiones de un tanque cuadruplica la superficie y multiplica por ocho la capacidad. En la industria petrolera se usa la «regla del 0,6»: duplicar la capacidad eleva los costos alrededor de un 60 %.</li>
+      <li><b>Pecuniarias:</b> acceso más barato al financiamiento, descuentos por volumen en compras, economías en publicidad y transporte.</li>
+    </ul></div>
+
+  <h3 id="s25"><span class="tag" style="background:var(--b2)">2.5</span>Escala mínima eficiente y deseconomías de escala</h3>
+  <p>La <b>escala mínima eficiente (EME)</b> es el nivel de producción a partir del cual ya no se obtienen reducciones del costo medio de largo plazo. Su tamaño en relación con el mercado es un determinante clave de la concentración: si la EME representa una fracción grande de la demanda, solo hay lugar para pocas empresas.</p>
+  <p>También pueden surgir <b>deseconomías de escala</b>, vinculadas a problemas de gerenciamiento o a costos de transporte.</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski et al. explican las deseconomías gerenciales siguiendo a Williamson (1967). Cada nivel jerárquico supervisa al inferior, y la información se distorsiona de dos maneras: deliberadamente, cuando cada nivel se presenta de la mejor manera posible, y accidentalmente, por las sucesivas transmisiones, como en el «teléfono descompuesto». Señalan además que, en la práctica, después de la EME el costo medio puede mantenerse constante en un amplio rango (curva en L), porque una empresa con muchas plantas puede replicar plantas de tamaño óptimo y descentralizar decisiones.</div>
+
+  <h3 id="s26"><span class="tag" style="background:var(--b2)">2.6</span>Economías de alcance</h3>
+  <p>Son ahorros de costos que surgen cuando una compañía produce dos o más productos con el mismo conjunto de recursos. Hay economías de alcance si</p>
+  \[ C(q_1,q_2)\lt C(q_1,0)+C(0,q_2). \]
+  <p>Provienen de insumos compartidos (los mismos componentes en distintos productos), de funciones comunes (finanzas, marketing, distribución) o del uso de información sobre los clientes. En muchos modelos de OI se supone, por simplicidad, que las empresas operan con rendimientos constantes a escala en todo el rango de producción. La Unidad II retoma las economías de alcance como motivo de una fusión.</p>
+
+  <!-- BLOQUE 3 -->
+  <h3 id="s31"><span class="tag" style="background:var(--b3)">3.1</span>Demanda, elasticidades e ingreso marginal</h3>
+  <p>La <b>elasticidad precio de la demanda</b> mide la respuesta relativa de la cantidad ante un cambio relativo en el precio:</p>
+  \[ \eta=\frac{\Delta Q/Q}{\Delta P/P}=\frac{\Delta Q}{\Delta P}\cdot\frac{P}{Q}\lt 0. \]
+  <p>Si \(|\eta|\gt 1\) (demanda elástica), el efecto cantidad domina y el ingreso total aumenta cuando el precio baja; si \(|\eta|=1\), el ingreso no cambia; si \(|\eta|\lt 1\) (inelástica), el ingreso cae al bajar el precio. La relación con el ingreso marginal es</p>
+  \[ IMg=\frac{\Delta IT}{\Delta Q}=P\left(1-\frac{1}{|\eta|}\right), \]
+  <p>de modo que \(IMg\gt 0\) si la demanda es elástica, \(IMg=0\) con elasticidad unitaria e \(IMg\lt 0\) si es inelástica.</p>
+  <ul>
+    <li><b>Elasticidad cruzada</b> \(\eta_{1,2}\): mayor que cero si los bienes son sustitutos, menor que cero si son complementarios, nula si son independientes.</li>
+    <li><b>Elasticidad publicitaria</b> \(\eta_A=\frac{\Delta Q/Q}{\Delta A/A}\): mide la efectividad del gasto en publicidad; se espera que sea positiva.</li>
+    <li><b>Elasticidad precio de la oferta</b>: se espera que también sea positiva.</li>
+  </ul>
+  <p>La regla «<b>ingreso marginal igual a costo marginal</b>» gobierna las decisiones de producción en cualquier estructura de mercado.</p>
+  <table class="t"><tr><th>Estructura</th><th>N.º de empresas</th><th>Condiciones de entrada</th><th>Diferenciación</th></tr>
+    <tr><td>Competencia perfecta</td><td>Muchas</td><td>Libre</td><td>Ninguna</td></tr>
+    <tr><td>Competencia monopolística</td><td>Muchas</td><td>Libre</td><td>Alguna</td></tr>
+    <tr><td>Oligopolio</td><td>Pocas</td><td>Barreras</td><td>Alguna</td></tr>
+    <tr><td>Monopolio</td><td>Una</td><td>Sin ingreso</td><td>Total</td></tr></table>
+
+  <h3 id="s32"><span class="tag" style="background:var(--b3)">3.2</span>Competencia perfecta</h3>
+  <p>Supuestos: muchos oferentes y demandantes, cada uno con incidencia insignificante; libre entrada y salida; productos homogéneos; información perfecta; sin costos de transporte; empresas que maximizan beneficios en forma independiente. Cada empresa es <b>tomadora de precios</b>: enfrenta una demanda horizontal, de modo que \(P=IMg\), y produce donde \(P=CMg\).</p>
+  <p>En el corto plazo, la empresa produce sobre el tramo creciente del costo marginal mientras el precio cubra el <b>costo variable medio</b> mínimo (punto de cierre); por debajo, le conviene no producir. Si hay ganancias extraordinarias, ingresan nuevas empresas, la oferta se desplaza y el precio cae hasta que, en el <b>largo plazo</b>, \(P=CMg=CMe_{\min}\) y solo hay ganancias normales.</p>
+
+  <h3 id="s33"><span class="tag" style="background:var(--b3)">3.3</span>Monopolio e índice de Lerner</h3>
+  <p>Supuestos: un solo vendedor, barreras de entrada insuperables, sin sustitutos cercanos, información perfecta o imperfecta, maximización del beneficio. No hay curva de oferta: el producto surge de la igualdad entre ingreso y costo marginales. Frente a la competencia perfecta, el monopolio:</p>
+  <ol>
+    <li>fija un precio mayor y produce una cantidad menor;</li>
+    <li>en general no produce en la escala mínima eficiente, es decir, al costo medio mínimo alcanzable;</li>
+    <li>obtiene ganancias extraordinarias también en el largo plazo.</li>
+  </ol>
+  <p>El <b>índice de Lerner</b> mide el poder de mercado como el margen relativo del precio sobre el costo marginal, y para un monopolista maximizador se relaciona con la elasticidad:</p>
+  \[ L=\frac{P-CMg}{P}=\frac{1}{|\eta|},\qquad 0\le L\le 1. \]
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz llaman a esta expresión <b>regla de la elasticidad inversa</b>: cuanto menos elástica es la demanda, mayor es el margen. Un monopolista nunca opera en el tramo inelástico de la demanda, porque allí \(IMg\lt 0\). Y una empresa solo tiene poder de mercado si la demanda que percibe no es infinitamente elástica (cap. 2).</div>
+
+  <h3 id="s34"><span class="tag" style="background:var(--b3)">3.4</span>Eficiencia y bienestar</h3>
+  <p>La <b>eficiencia asignativa</b> se alcanza cuando ninguna reasignación de recursos puede mejorar a un agente sin empeorar a otro; requiere \(P=CMg\). La <b>eficiencia productiva</b> tiene dos componentes: la <b>técnica</b> (o eficiencia X: el máximo producto posible con los factores empleados) y la <b>económica</b> (producir al menor costo dados los precios de los factores). Una empresa puede ser técnicamente eficiente y económicamente ineficiente.</p>
+  <p>En competencia, el excedente total es máximo. En monopolio, una parte del excedente del consumidor se transfiere al productor y otra se pierde: la <b>pérdida irrecuperable de eficiencia</b> (<i>deadweight loss</i>). Si además el monopolista opera con costos superiores a los que impondría la competencia (ineficiencia X), la pérdida social incluye el exceso de costos.</p>
+  <table class="t"><tr><th>Concepto</th><th>Costos bajos</th><th>Costos altos</th><th>Variación</th></tr>
+    <tr><td>Excedente del consumidor</td><td>D+E+F</td><td>D</td><td>−(E+F)</td></tr>
+    <tr><td>Excedente del productor</td><td>G+H+J+K</td><td>E+G</td><td>−(H+J+K)+E</td></tr>
+    <tr><td>Excedente total</td><td>D+E+F+G+H+J+K</td><td>D+E+G</td><td>−(F+H+J+K)</td></tr>
+    <tr><td>Incremento de costos</td><td></td><td>J</td><td></td></tr>
+    <tr><td>Pérdida irrecuperable</td><td></td><td>F+H+K</td><td></td></tr></table>
+  <p>El simulador 3 reproduce esta comparación con una demanda lineal.</p>
+
+  <h3 id="s35"><span class="tag" style="background:var(--b3)">3.5</span>Monopolio natural</h3>
+  <p>Un mercado es un <b>monopolio natural</b> cuando el costo medio de largo plazo es decreciente en todo el rango relevante de producción, dada la demanda. El ejemplo típico son las redes domiciliarias de agua, gas y electricidad. El regulador enfrenta un dilema:</p>
+  <ul>
+    <li>si el monopolista <b>maximiza beneficios</b>, obtiene ganancias extraordinarias y hay pérdida de bienestar;</li>
+    <li>si se lo obliga a vender a su <b>costo medio</b>, produce más y obtiene ganancias normales, pero es ineficiente asignativamente;</li>
+    <li>si se le exige <b>eficiencia asignativa</b> (\(P=CMg\)), tiene pérdidas iguales a su costo fijo y necesita un subsidio o una tarifa en dos partes.</li>
+  </ul>
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz distinguen el monopolio natural, que surge de las condiciones de costos y demanda, del <b>monopolio patrocinado por el gobierno</b>. Este puede justificarse para evitar duplicar inversiones socialmente costosas, para premiar la innovación (patentes) o, con menos fundamento, para crear «campeones nacionales». El caso de Alcoa muestra cómo patentes, economías de escala e integración vertical sobre la energía y la bauxita sostuvieron un monopolio durante décadas (cap. 1).</div>
+
+  <h3 id="s36"><span class="tag" style="background:var(--b3)">3.6</span>Competencia monopolística</h3>
+  <p>Supuestos: muchos compradores y vendedores, libre entrada y salida, productos diferenciados, información perfecta o imperfecta, posibles costos de transporte (la localización como atributo distintivo), maximización del beneficio. Cada empresa tiene cierto poder de mercado, limitado por la sustituibilidad de su producto, y sus decisiones tienen un impacto poco significativo sobre las demás. Como no hay una demanda de mercado bien definida, el análisis se hace a nivel de empresa.</p>
+  <p>Las ganancias extraordinarias atraen entrantes, que desplazan la demanda de cada firma hacia la izquierda hasta la <b>tangencia</b> entre la demanda y el costo medio. En ese equilibrio de largo plazo:</p>
+  <ol>
+    <li>la empresa no produce en la escala mínima eficiente (hay capacidad ociosa);</li>
+    <li>solo obtiene ganancias normales;</li>
+    <li>como \(P\gt CMg\), hay ineficiencia asignativa y pérdida irrecuperable;</li>
+    <li>la presión competitiva deja menos margen para la ineficiencia técnica o económica que en el monopolio.</li>
+  </ol>
+
+  <h3 id="s37"><span class="tag" style="background:var(--b3)">3.7</span>Monopolista multiproducto y empresa dominante</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Belleflamme y Peitz extienden el monopolio en dos direcciones (cap. 2).
+    <p style="margin:.5em 0"><b>Monopolista multiproducto.</b> Cuando una empresa controla varios productos, internaliza las relaciones entre ellos. Si los productos son <b>sustitutos</b>, fija precios <i>más altos</i> que dos empresas separadas, porque bajar un precio le quita ventas a su otro producto; esta es la lógica básica de la comparación entre duopolio y monopolio que retoma la Unidad II. Si son <b>complementos</b> o hay <b>economías de alcance</b>, fija precios <i>más bajos</i>, incluso por debajo del costo marginal en alguno de ellos, como el software gratuito o las demostraciones de videojuegos.</p>
+    <p style="margin:.5em 0 0"><b>Empresa dominante con franja competitiva.</b> Una empresa grande fija el precio y un conjunto de pequeñas empresas tomadoras de precios abastece parte del mercado. La dominante maximiza sobre la <b>demanda residual</b> (demanda de mercado menos la oferta de la franja), y su poder de mercado queda acotado por la reacción de la franja.</p></div>
+  <p>Una expresión habitual de ese límite, conocida como fórmula de Landes y Posner, es</p>
+  \[ L_d=\frac{s_d}{|\eta|+(1-s_d)\,\varepsilon_f}, \]
+  <p>donde \(s_d\) es la participación de la empresa dominante, \(|\eta|\) la elasticidad de la demanda de mercado y \(\varepsilon_f\) la elasticidad de oferta de la franja. Con \(s_d=1\) se recupera la regla del monopolio; cuanto más reactiva es la franja, menor es el margen de la dominante.</p>
+
+  <h3 id="s38"><span class="tag" style="background:var(--b3)">3.8</span>Mercado relevante y medición del poder de mercado</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Para evaluar el poder de mercado primero hay que <b>definir el mercado</b>. Las autoridades de competencia usan la prueba del <b>monopolista hipotético</b> (SSNIP): el mercado relevante es el menor conjunto de productos y área geográfica en el que un monopolista hipotético podría sostener rentablemente un aumento de precios pequeño pero significativo y no transitorio, de entre un 5 % y un 10 % (la Unión Europea usa ese rango y Estados Unidos un 5 %). Si los consumidores se desplazarían a otro producto en número suficiente, ese producto se incorpora al mercado y la prueba se repite. Además de la sustitución por el lado de la demanda, cuenta la <b>sustitución por el lado de la oferta</b>: empresas que podrían empezar a producir rápidamente y sin grandes costos irrecuperables (Belleflamme y Peitz, cap. 2).</div>
+  <p>Una vez definido el mercado, el poder de mercado se mide con:</p>
+  <ul>
+    <li>el <b>índice de Lerner</b>, una «foto» de la intensidad competitiva, difícil de calcular porque el costo marginal rara vez es observable y que ignora consideraciones dinámicas;</li>
+    <li>la <b>razón de concentración</b> de las \(m\) mayores empresas, \(C_m=\sum_{i=1}^{m}s_i\); en la Unión Europea, una participación superior al 40 % suele considerarse indicio de dominancia;</li>
+    <li>el <b>índice de Herfindahl–Hirschman</b>, \(HHI=\sum_{i=1}^{n}s_i^2\), que considera toda la distribución: aumenta si cae el número de empresas o si crece la desigualdad de participaciones. Los índices de concentración se profundizan en la Unidad II.</li>
+  </ul>
+
+  <!-- BLOQUE 4 -->
+  <h3 id="s41"><span class="tag" style="background:var(--b4)">4.1</span>Panorama de las teorías de la firma</h3>
+  <table class="t">
+    <tr><th>Teoría</th><th>Autores</th><th>Idea central</th><th>Diferencia con la neoclásica</th></tr>
+    <tr><td>Neoclásica</td><td>Marshall, Clark, Knight</td><td>Maximización de beneficios en mercados competitivos; función de producción y equilibrio.</td><td>—</td></tr>
+    <tr><td>Competencia imperfecta</td><td>Robinson, Chamberlin</td><td>Diferenciación, poder de mercado y beneficios extraordinarios.</td><td>Reconoce poder de mercado y barreras a la competencia.</td></tr>
+    <tr><td>Austríaca</td><td>Schumpeter, Kirzner, Mises, Hayek</td><td>Empresa dinámica impulsada por la innovación y el descubrimiento empresarial.</td><td>Incertidumbre y desequilibrio en lugar de equilibrio.</td></tr>
+    <tr><td>Separación propiedad–control</td><td>Berle y Means, Larner</td><td>Los administradores persiguen objetivos propios.</td><td>Distingue propiedad y control.</td></tr>
+    <tr><td>Gerencial</td><td>Baumol, Marris, Williamson</td><td>Maximización de ventas, crecimiento o utilidad gerencial.</td><td>Objetivos distintos del beneficio.</td></tr>
+    <tr><td>Comportamiento organizacional</td><td>Simon; Cyert y March</td><td>La firma «satisface»: racionalidad limitada y negociación entre grupos.</td><td>Decisiones como acuerdos con información imperfecta.</td></tr>
+    <tr><td>Costos de transacción</td><td>Coase, Williamson</td><td>La firma minimiza los costos de usar el mercado.</td><td>Explica por qué existen las empresas.</td></tr>
+    <tr><td>Derechos de propiedad</td><td>Grossman y Hart; Hart y Moore</td><td>La propiedad de los activos determina el control y los incentivos a invertir.</td><td>La estructura de propiedad importa.</td></tr>
+    <tr><td>Basada en recursos</td><td>Penrose, Barney, Rumelt</td><td>Ventajas a partir de recursos únicos y difíciles de imitar.</td><td>Heterogeneidad de recursos y capacidades.</td></tr>
+    <tr><td>Basada en el conocimiento</td><td>Conner y Prahalad, Grant, Kogut y Zander</td><td>El conocimiento, tácito y explícito, es el recurso estratégico clave.</td><td>El conocimiento como activo diferencial.</td></tr>
+    <tr><td>Estratégica</td><td>Porter, Rumelt</td><td>La estrategia define límites, recursos y posicionamiento.</td><td>La empresa como agente activo, no pasivo.</td></tr>
+  </table>
+
+  <h3 id="s42"><span class="tag" style="background:var(--b4)">4.2</span>Teorías gerenciales y conductuales</h3>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski et al. presentan con detalle las alternativas a la maximización del beneficio (cap. 3):
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li><b>Baumol:</b> la firma maximiza el ingreso por ventas sujeta a un beneficio mínimo que satisfaga a los accionistas; produce más y a menor precio que el maximizador de beneficios.</li>
+      <li><b>Marris:</b> la gerencia maximiza la tasa de crecimiento, limitada por la amenaza de toma de control si la valoración de la empresa cae demasiado.</li>
+      <li><b>Williamson:</b> los gerentes maximizan una utilidad que incluye personal a cargo, beneficios discrecionales y gastos de representación.</li>
+      <li><b>Simon; Cyert y March:</b> con racionalidad limitada, la firma fija niveles de aspiración y busca resultados «satisfactorios»; sus decisiones surgen de la negociación entre coaliciones.</li>
+    </ul>
+    Belleflamme y Peitz mantienen la maximización de beneficios como supuesto de trabajo porque es el estándar que usan las autoridades de competencia, aunque reconocen que «abrir la caja negra» de la empresa muestra conflictos de agencia entre propietarios y gerentes (cap. 2).</div>
+
+  <h3 id="s43"><span class="tag" style="background:var(--b4)">4.3</span>Coase y los costos de transacción</h3>
+  <p>En «La naturaleza de la firma» (1937), Ronald Coase se preguntó <b>por qué existen las empresas</b> si los mercados asignan recursos eficientemente mediante el sistema de precios. Su respuesta: usar el mercado tiene costos, los <b>costos de transacción</b>. Dentro de la empresa, la asignación no se rige por precios sino por órdenes y planificación. Los costos de transacción incluyen:</p>
+  <ol>
+    <li>costos de búsqueda e información sobre proveedores y clientes;</li>
+    <li>costos de negociación y redacción de contratos;</li>
+    <li>costos de supervisión y cumplimiento, para evitar el oportunismo;</li>
+    <li>costos impuestos por el gobierno (impuestos y regulaciones sobre las transacciones).</li>
+  </ol>
+  <p>La empresa crece mientras internalizar actividades reduzca costos de transacción, y se contrae si los costos internos de coordinación aumentan demasiado. Limitan su tamaño la complejidad de gestionar grandes estructuras, los rendimientos decrecientes de la función empresarial y la comparación constante con el mercado: si este ofrece una solución más eficiente, conviene subcontratar.</p>
+
+  <h3 id="s44"><span class="tag" style="background:var(--b4)">4.4</span>Williamson: oportunismo, especificidad de activos y gobernanza</h3>
+  <p>Williamson (1975, 1985) profundizó el enfoque con tres conceptos: el <b>oportunismo</b>, la <b>especificidad de activos</b> (inversiones muy especializadas, de difícil reutilización) y la <b>gobernanza contractual</b> (formas de estructurar los contratos para minimizar incumplimientos). Cowling y Sugden (1998) advirtieron que la dicotomía mercado–jerarquía es insuficiente, porque muchas empresas crean mercados internos.</p>
+  <div class="box"><b class="h">Desde la bibliografía</b>Lipczynski et al. sintetizan la lógica de Williamson en una relación entre <b>especificidad de activos y modo de gobernanza</b> (cap. 3). Con baja especificidad conviene el <b>mercado</b>, porque hay muchos proveedores alternativos y la competencia disciplina. Con especificidad intermedia aparecen las <b>formas híbridas</b> (contratos de largo plazo, alianzas). Con alta especificidad conviene la <b>jerarquía</b> (integración vertical), porque la parte que invirtió queda expuesta al «secuestro» de la otra (<i>hold-up</i>). Williamson explica también el paso de la organización unitaria (forma U) a la <b>multidivisional</b> (forma M) como respuesta a las deseconomías de la gestión centralizada.</div>
+  <div class="btns"><a class="btn pri" href="#simuladores">Experimentar con los simuladores →</a><a class="btn" href="#simulacro">Hacer el simulacro</a></div>
+</article>
+</div>
+</section>
+
+<!-- ================= SIMULADORES ================= -->
+<section class="view" id="v-simuladores">
+  <div class="eyebrow">Aprender manipulando</div>
+  <h2>Simuladores</h2>
+  <p class="lead">Cuatro herramientas para visualizar los fundamentos de la unidad. Mové los controles y observá cómo cambian las curvas y los resultados.</p>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b2)">1 · Curvas de costos y decisión de producir (competencia perfecta)</h3>
+    <p style="font-size:15px;color:var(--ink2)">Costo total \(CT(q)=F+10q-2q^2+0{,}2q^3\). La empresa toma el precio como dado.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Precio de mercado, \(P\)<span class="v" id="pv"></span></label><input type="range" id="pp" min="2" max="25" step="0.1" value="10">
+        <label>Costo fijo, \(F\)<span class="v" id="fv"></span></label><input type="range" id="ff" min="0" max="60" step="1" value="20">
+        <div class="out" id="o1"></div><div class="note" id="n1"></div>
+      </div>
+      <div><svg class="plot" id="p1" viewBox="0 0 520 420"></svg>
+        <div class="legend"><span><i style="background:var(--b2)"></i>CMg</span><span><i style="background:var(--b1)"></i>CMe</span><span><i style="background:var(--b3)"></i>CVMe</span><span><i style="background:#999"></i>Precio</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b3)">2 · Elasticidad, ingreso total e ingreso marginal</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda lineal \(P=100-Q\). Desplazá el punto sobre la curva.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Cantidad, \(Q\)<span class="v" id="qv"></span></label><input type="range" id="qq" min="2" max="98" step="1" value="30">
+        <div class="out" id="o2"></div><div class="note" id="n2"></div>
+      </div>
+      <div><svg class="plot" id="p2a" viewBox="0 0 520 260"></svg><svg class="plot" id="p2b" viewBox="0 0 520 220" style="margin-top:8px"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Demanda</span><span><i style="background:var(--b2)"></i>Ingreso marginal</span><span><i style="background:var(--b1)"></i>Ingreso total</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b4)">3 · Monopolio frente a competencia: excedentes y pérdida de bienestar</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda \(P=100-Q\) y costo marginal constante \(c\). Opcionalmente, el monopolista opera con un sobrecosto (ineficiencia X).</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Costo marginal eficiente, \(c\)<span class="v" id="cv"></span></label><input type="range" id="cc" min="0" max="80" step="1" value="20">
+        <label>Sobrecosto del monopolista<span class="v" id="xv"></span></label><input type="range" id="xx" min="0" max="30" step="1" value="0">
+        <div class="out" id="o3"></div><div class="note" id="n3"></div>
+      </div>
+      <div><svg class="plot" id="p3" viewBox="0 0 520 420"></svg>
+        <div class="legend"><span><i style="background:#9fd3c4"></i>Excedente del consumidor</span><span><i style="background:#f2c4a8"></i>Excedente del productor</span><span><i style="background:#c9cdea"></i>Exceso de costos</span><span><i style="background:#e6a6a6"></i>Pérdida irrecuperable</span></div></div>
+    </div>
+  </div>
+
+  <div class="sim">
+    <h3 style="margin-top:0;color:var(--b1)">4 · Regulación del monopolio natural</h3>
+    <p style="font-size:15px;color:var(--ink2)">Demanda \(P=100-Q\), costo \(CT=F+20q\): el costo medio es decreciente en todo el rango.</p>
+    <div class="simgrid">
+      <div class="ctrl">
+        <label>Costo fijo, \(F\)<span class="v" id="nfv"></span></label><input type="range" id="nf" min="100" max="1500" step="20" value="900">
+        <label>Régimen</label>
+        <select id="reg"><option value="m">Sin regulación (IMg = CMg)</option><option value="a">Precio = costo medio</option><option value="c">Precio = costo marginal</option></select>
+        <div class="out" id="o4"></div><div class="note" id="n4"></div>
+      </div>
+      <div><svg class="plot" id="p4" viewBox="0 0 520 420"></svg>
+        <div class="legend"><span><i style="background:var(--b3)"></i>Demanda</span><span><i style="background:var(--b2)"></i>IMg</span><span><i style="background:var(--b1)"></i>CMe</span><span><i style="background:#999"></i>CMg</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GLOSARIO ================= -->
+<section class="view" id="v-glosario">
+  <div class="eyebrow">Conceptos clave</div>
+  <h2>Glosario de la unidad</h2>
+  <input id="gsearch" type="search" placeholder="Buscar un concepto…">
+  <dl class="gl" id="gl"></dl>
+</section>
+
+<!-- ================= SIMULACRO ================= -->
+<section class="view" id="v-simulacro">
+  <div class="score" id="score">0 / 12</div>
+  <div class="eyebrow">Autoevaluación</div>
+  <h2>Simulacro de examen</h2>
+  <p>Doce preguntas de opción múltiple con corrección inmediata, seguidas de dos preguntas de desarrollo con su guion de respuesta.</p>
+  <div class="quiz" id="quiz"></div>
+  <button class="btn" id="reset">Reiniciar el simulacro</button>
+  <h3>Preguntas de desarrollo</h3>
+  <details class="dev"><summary>A. Del enfoque ECR a la Nueva Organización Industrial</summary>
+    <p><b>Consigna.</b> Presente el enfoque Estructura–Conducta–Resultados, sus principales críticas y el modo en que la Nueva Organización Industrial respondió a ellas. Incluya el debate entre las hipótesis de colusión y de eficiencia.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>Origen (Mason, Bain) y lógica: las condiciones básicas determinan la estructura, que determina la conducta, que determina los resultados. Variables de cada categoría.</li>
+      <li>Rol del Estado según el enfoque: actuar sobre la estructura, la conducta o los resultados.</li>
+      <li>Retroalimentaciones: la conducta y los resultados modifican la estructura.</li>
+      <li>Críticas: indeterminación teórica, clasificación ambigua de variables, sesgo hacia la concentración, relaciones empíricas débiles, visión estática.</li>
+      <li>Colusión frente a eficiencia: la escuela de Chicago y sus implicancias para la política de competencia.</li>
+      <li>Nueva OI: firmas activas y heterogéneas, decisiones tácticas y estratégicas, teoría de juegos (y la crítica de Schmalensee).</li>
+    </ol>
+  </details>
+  <details class="dev"><summary>B. ¿Por qué existen las empresas y qué determina sus límites?</summary>
+    <p><b>Consigna.</b> Explique la respuesta de Coase a la pregunta sobre la existencia de la firma y los factores que limitan su tamaño. Analice cómo Williamson amplía el enfoque y aplíquelo a una decisión de «hacer o comprar» de una empresa de la región.</p>
+    <p><b>Guion de respuesta.</b></p>
+    <ol>
+      <li>La paradoja: si el mercado es eficiente, ¿por qué existe la jerarquía? Los costos de transacción como respuesta.</li>
+      <li>Tipos de costos de transacción: búsqueda, negociación, supervisión, impuestos.</li>
+      <li>Límites al tamaño: costos de organización interna, rendimientos decrecientes de la gestión, comparación con el mercado.</li>
+      <li>Williamson: oportunismo, racionalidad limitada, especificidad de activos y formas de gobernanza (mercado, híbridos, jerarquía).</li>
+      <li>Aplicación: identificar la especificidad del activo, la frecuencia y la incertidumbre de la transacción, y justificar la elección.</li>
+      <li>Matices: Cowling y Sugden, teorías de derechos de propiedad y basadas en recursos.</li>
+    </ol>
+  </details>
+</section>
+
+<!-- ================= BIBLIOGRAFÍA ================= -->
+<section class="view" id="v-bibliografia">
+  <div class="eyebrow">Para profundizar</div>
+  <h2>Bibliografía recomendada</h2>
+  <p class="lead">Todos los textos están disponibles en la carpeta de la cátedra.</p>
+  <div class="btns"><a class="btn drive" href="https://drive.google.com/drive/folders/1XRmINZoAQMtfHsMg0Bx8hWVbH9HfLqa2?usp=sharing" target="_blank" rel="noopener">📚 Abrir la carpeta de bibliografía en Google Drive</a></div>
+  <table class="t">
+    <tr><th>Texto</th><th>Capítulos para esta unidad</th><th>Bloques</th></tr>
+    <tr><td>Lipczynski, J., Wilson, J. y Goddard, J. <i>Industrial Organization: Competition, Strategy, Policy</i> (2.ª ed.)</td><td>Cap. 1: introducción, competencia estática y dinámica, enfoque ECR, escuela de Chicago, estrategia (Porter, Kay). Cap. 2: fundamentos microeconómicos (costos, economías de escala, demanda, estructuras de mercado, bienestar). Cap. 3: teorías de la firma.</td><td>1 · 2 · 3 · 4</td></tr>
+    <tr><td>Belleflamme, P. y Peitz, M. <i>Organización industrial: mercados y estrategias</i> (2.ª ed. en español, 2021)</td><td>Cap. 1: mercados, estrategias y poder de mercado; monopolio natural y patrocinado por el gobierno. Cap. 2: costos económicos, maximización de beneficios, monopolio multiproducto, empresa dominante, definición del mercado y medición del poder de mercado.</td><td>1 · 2 · 3 · 4</td></tr>
+    <tr><td>Tarziján, J. y Paredes, R. <i>Organización industrial para la estrategia empresarial</i> (2.ª ed.)</td><td>Lectura complementaria en español para estructuras de mercado y estrategia empresarial.</td><td>1 · 3</td></tr>
+    <tr><td>Pepall, L., Richards, D. y Norman, G. <i>Industrial Organization: Contemporary Theory and Empirical Applications</i></td><td>Lectura complementaria para competencia perfecta, monopolio y bienestar.</td><td>2 · 3</td></tr>
+    <tr><td>Church, J. y Ware, R. <i>Industrial Organization: A Strategic Approach</i></td><td>Lectura complementaria para teoría de la firma y enfoque estratégico.</td><td>1 · 4</td></tr>
+    <tr><td><i>Industrial Organization: Practice Exercises with Answer Keys</i> (2.ª ed.)</td><td>Ejercicios de monopolio, elasticidad y bienestar.</td><td>3</td></tr>
+  </table>
+  <p style="font-size:15px;color:var(--muted)">Lecturas clásicas citadas: Coase, R. (1937), «The Nature of the Firm»; Williamson, O. (1975), <i>Markets and Hierarchies</i>; Williamson, O. (1985), <i>The Economic Institutions of Capitalism</i>; Bain, J. (1956), <i>Barriers to New Competition</i>.</p>
+</section>
+</main>
+<footer>Organización Industrial · FCE-UNICEN · Unidad I — Apuntes elaborados a partir de las notas de clase de la cátedra y de la bibliografía del curso.</footer>
+
+<script>
+/* ---------- router ---------- */
+const views=['inicio','esquema','lectura','simuladores','glosario','simulacro','bibliografia'];
+function route(){
+  let h=(location.hash||'#inicio').slice(1); if(!views.includes(h)) h='inicio';
+  views.forEach(v=>document.getElementById('v-'+v).classList.toggle('on',v===h));
+  document.querySelectorAll('#tabs a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+h));
+  window.scrollTo(0,0);
+  if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise().catch(()=>{});}
+}
+window.addEventListener('hashchange',route); route();
+const firstSec={b1:'s11',b2:'s21',b3:'s31',b4:'s41'};
+document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{location.hash='#lectura';setTimeout(()=>document.getElementById(firstSec[el.dataset.go]).scrollIntoView({behavior:'smooth'}),60);}));
+document.querySelectorAll('#toc a').forEach(a=>a.addEventListener('click',()=>document.getElementById(a.dataset.s).scrollIntoView({behavior:'smooth'})));
+
+/* ---------- helpers ---------- */
+const NS='http://www.w3.org/2000/svg';
+const col=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function frame(svg,W,H,xr,yr,xl,yl,ticks){
+  svg.innerHTML=''; const m={l:52,r:18,t:16,b:44};
+  const X=v=>m.l+(v-xr[0])/(xr[1]-xr[0])*(W-m.l-m.r), Y=v=>H-m.b-(v-yr[0])/(yr[1]-yr[0])*(H-m.t-m.b);
+  const g=(tag,at,txt)=>{const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  const tx=ticks&&ticks.x||5, ty=ticks&&ticks.y||5;
+  for(let i=0;i<=tx;i++){const v=xr[0]+(xr[1]-xr[0])*i/tx;g('line',{x1:X(v),x2:X(v),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#EEEBE5'});g('text',{x:X(v),y:H-m.b+16,'text-anchor':'middle'},+v.toFixed(1));}
+  for(let i=0;i<=ty;i++){const v=yr[0]+(yr[1]-yr[0])*i/ty;g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(v),y2:Y(v),stroke:'#EEEBE5'});g('text',{x:m.l-8,y:Y(v)+4,'text-anchor':'end'},+v.toFixed(1));}
+  g('line',{x1:X(xr[0]),x2:X(xr[1]),y1:Y(yr[0]),y2:Y(yr[0]),stroke:'#9AA0A6'});g('line',{x1:X(xr[0]),x2:X(xr[0]),y1:Y(yr[0]),y2:Y(yr[1]),stroke:'#9AA0A6'});
+  g('text',{x:(m.l+W-m.r)/2,y:H-8,'text-anchor':'middle','font-weight':'700'},xl);
+  g('text',{x:14,y:(m.t+H-m.b)/2,'text-anchor':'middle','font-weight':'700',transform:`rotate(-90 14 ${(m.t+H-m.b)/2})`},yl);
+  return {X,Y,g,xr,yr};
+}
+function path(P,pts,stroke,w=2.5,dash){const v=pts.filter(p=>isFinite(p[1])&&p[1]>=P.yr[0]-1e-9&&p[1]<=P.yr[1]+1e-9);if(v.length<2)return;const d=v.map((p,i)=>(i?'L':'M')+P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join('');const at={d,fill:'none',stroke,'stroke-width':w};if(dash)at['stroke-dasharray']=dash;return P.g('path',at);}
+function poly(P,pts,fill){P.g('polygon',{points:pts.map(p=>P.X(p[0]).toFixed(1)+','+P.Y(p[1]).toFixed(1)).join(' '),fill,opacity:.85});}
+function dot(P,x,y,fill,r=6,label){P.g('circle',{cx:P.X(x),cy:P.Y(y),r,fill,stroke:'#fff','stroke-width':2});if(label)P.g('text',{x:P.X(x)+9,y:P.Y(y)-9,'font-weight':'700',fill},label);}
+const f=(v,d=2)=>(Math.abs(v)<1e-12?0:v).toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const out=(id,arr)=>document.getElementById(id).innerHTML=arr.map(([k,v])=>`<div><small>${k}</small><b>${v}</b></div>`).join('');
+const $=id=>document.getElementById(id);
+const tset=el=>{if(window.MathJax&&MathJax.typesetPromise)MathJax.typesetPromise([el]).catch(()=>{});};
+
+/* ---------- Sim 1: costos ---------- */
+function sim1(){
+  const P=+$('pp').value,F=+$('ff').value; $('pv').textContent=f(P,1); $('fv').textContent=F;
+  const CMg=q=>10-4*q+0.6*q*q, CVMe=q=>10-2*q+0.2*q*q, CMe=q=>F/q+CVMe(q);
+  const G=frame($('p1'),520,420,[0,12],[0,30],'q','$ por unidad',{x:6,y:6});
+  const a=[],b=[],c=[];for(let q=0.2;q<=12;q+=0.05){a.push([q,CMg(q)]);b.push([q,CVMe(q)]);c.push([q,CMe(q)]);}
+  path(G,c,col('--b1'));path(G,b,col('--b3'));path(G,a,col('--b2'));path(G,[[0,P],[12,P]],'#999',1.6,'6 4');
+  let q=0; if(P>=5) q=(4+Math.sqrt(16-2.4*(10-P)))/1.2;
+  const pi=P*q-(F+10*q-2*q*q+0.2*q*q*q);
+  // breakeven: min CMe
+  let qbe=5,mb=1e9;for(let x=0.5;x<=12;x+=0.01){const v=CMe(x);if(v<mb){mb=v;qbe=x;}}
+  dot(G,5,5,col('--b3'),5); G.g('text',{x:G.X(5)-6,y:G.Y(5)+20,'text-anchor':'end','font-weight':'700',fill:col('--b3')},'cierre'); dot(G,qbe,mb,col('--b1'),5); G.g('text',{x:G.X(qbe)-6,y:G.Y(mb)+20,'text-anchor':'end','font-weight':'700',fill:col('--b1')},'nivelación');
+  if(q>0){dot(G,q,P,col('--b2'),7,'q*');path(G,[[q,0],[q,P]],'#bbb',1,'3 3');}
+  out('o1',[['q* óptimo',f(q)],['Ingreso total',f(P*q)],['Costo total',f(q>0?F+10*q-2*q*q+0.2*q*q*q:F)],['Beneficio',f(q>0?pi:-F)],['Mín. CVMe (cierre)','5,00'],['Mín. CMe',f(mb)]]);
+  $('n1').innerHTML= P<5?'❌ El precio no cubre el mínimo del costo variable medio: la empresa minimiza su pérdida cerrando y pierde solo el costo fijo.':
+    P<mb?'⚠️ La empresa produce con pérdidas: el precio cubre el costo variable medio pero no el costo medio. Le conviene seguir operando en el corto plazo porque cubre parte del costo fijo.':
+    '✅ El precio supera el costo medio mínimo: hay beneficio extraordinario, que en el largo plazo atraerá nuevas empresas hasta que \\(P=CMe_{\\min}\\).';
+  tset($('n1'));
+}
+['pp','ff'].forEach(i=>$(i).addEventListener('input',sim1));
+
+/* ---------- Sim 2: elasticidad ---------- */
+function sim2(){
+  const Q=+$('qq').value,P=100-Q,e=P/Q,IMg=100-2*Q,IT=P*Q; $('qv').textContent=Q;
+  const A=frame($('p2a'),520,260,[0,100],[-100,100],'Q','$',{x:5,y:4});
+  path(A,[[0,100],[100,0]],col('--b3'));path(A,[[0,100],[100,-100]],col('--b2'));path(A,[[0,0],[100,0]],'#9AA0A6',1);
+  path(A,[[50,-100],[50,100]],'#bbb',1,'4 4');
+  dot(A,Q,P,col('--b3'),6,'P');dot(A,Q,IMg,col('--b2'),6,'IMg');
+  const B=frame($('p2b'),520,220,[0,100],[0,2600],'Q','Ingreso total',{x:5,y:4});
+  const pts=[];for(let x=0;x<=100;x+=1)pts.push([x,x*(100-x)]);path(B,pts,col('--b1'));dot(B,Q,IT,col('--b1'),6);
+  out('o2',[['Precio',f(P,0)],['|η|',f(e)],['Ingreso total',f(IT,0)],['Ingreso marginal',f(IMg,0)],['P(1 − 1/|η|)',f(P*(1-1/e),0)]]);
+  $('n2').innerHTML=e>1.0001?'Tramo <b>elástico</b> (|η| > 1): bajar el precio aumenta el ingreso total y el ingreso marginal es positivo. Un monopolista siempre opera en este tramo.':
+    e<0.9999?'Tramo <b>inelástico</b> (|η| < 1): bajar el precio reduce el ingreso total y el ingreso marginal es negativo.':
+    '<b>Elasticidad unitaria</b>: el ingreso total es máximo y el ingreso marginal es cero.';
+}
+$('qq').addEventListener('input',sim2);
+
+/* ---------- Sim 3: bienestar ---------- */
+function sim3(){
+  const c=+$('cc').value,x=+$('xx').value; $('cv').textContent=c;$('xv').textContent=x;
+  const Qc=100-c, Qm=(100-c-x)/2, Pm=(100+c+x)/2;
+  const G=frame($('p3'),520,420,[0,100],[0,100],'Q','P',{x:5,y:5});
+  poly(G,[[0,100],[0,Pm],[Qm,Pm]],'#9fd3c4');
+  poly(G,[[0,Pm],[Qm,Pm],[Qm,c+x],[0,c+x]],'#f2c4a8');
+  if(x>0)poly(G,[[0,c+x],[Qm,c+x],[Qm,c],[0,c]],'#c9cdea');
+  poly(G,[[Qm,Pm],[Qc,c],[Qm,c]],'#e6a6a6');
+  path(G,[[0,100],[100,0]],col('--b3'));path(G,[[0,100],[50,0]],col('--b2'),1.8);
+  path(G,[[0,c],[100,c]],'#666',1.6);if(x>0)path(G,[[0,c+x],[100,c+x]],'#666',1.2,'5 4');
+  dot(G,Qm,Pm,col('--b4'),6,'Monopolio');dot(G,Qc,c,col('--b1'),6,'Competencia');
+  const CS=0.5*Qm*(100-Pm),PS=(Pm-c-x)*Qm,W=x*Qm,DWL=0.5*(Pm-c)*(Qc-Qm),Wc=0.5*Qc*Qc;
+  const L=(Pm-c-x)/Pm, el=Pm/Qm;
+  out('o3',[['Q competencia',f(Qc,1)],['Q monopolio',f(Qm,1)],['P monopolio',f(Pm,1)],['Exc. consumidor',f(CS,0)],['Exc. productor',f(PS,0)],['Exceso de costos',f(W,0)],['Pérdida irrecuperable',f(DWL,0)],['Lerner',f(L)],['1/|η| en Pm',f(1/el)]]);
+  $('n3').innerHTML=`En competencia el excedente total sería ${f(Wc,0)}. Con monopolio se pierden ${f(DWL+W,0)} (${f(100*(DWL+W)/Wc,1)} %): ${f(DWL,0)} de pérdida irrecuperable${x>0?` y ${f(W,0)} por ineficiencia X`:''}. El índice de Lerner coincide con la inversa de la elasticidad en el punto elegido por el monopolista${x>0?' (calculado con su propio costo marginal)':''}.`;
+}
+['cc','xx'].forEach(i=>$(i).addEventListener('input',sim3));
+
+/* ---------- Sim 4: monopolio natural ---------- */
+function sim4(){
+  const F=+$('nf').value,r=$('reg').value,c=20; $('nfv').textContent=F;
+  const G=frame($('p4'),520,420,[0,100],[0,100],'Q','P',{x:5,y:5});
+  path(G,[[0,100],[100,0]],col('--b3'));path(G,[[0,100],[50,0]],col('--b2'),1.8);path(G,[[0,c],[100,c]],'#999',1.6);
+  const ac=[];for(let q=2;q<=100;q+=0.5)ac.push([q,c+F/q]);path(G,ac,col('--b1'));
+  let Q,P,lab;
+  if(r==='m'){Q=40;P=60;lab='Sin regulación';}
+  else if(r==='a'){const d=1600-F; if(d<0){Q=NaN;P=NaN;} else {Q=40+Math.sqrt(d);P=100-Q;} lab='P = CMe';}
+  else {Q=80;P=20;lab='P = CMg';}
+  const pi=isFinite(Q)?(P-c)*Q-F:NaN, CS=isFinite(Q)?0.5*Q*Q:NaN, W=CS+pi, Wmax=0.5*80*80-F;
+  if(isFinite(Q))dot(G,Q,P,col('--b4'),7,lab);
+  out('o4',[['Cantidad',isFinite(Q)?f(Q,1):'—'],['Precio',isFinite(P)?f(P,1):'—'],['Beneficio',isFinite(pi)?f(pi,0):'—'],['Exc. consumidor',isFinite(CS)?f(CS,0):'—'],['Bienestar total',isFinite(W)?f(W,0):'—'],['Bienestar máximo',f(Wmax,0)]]);
+  $('n4').innerHTML=!isFinite(Q)?'Con este costo fijo ningún precio cubre el costo medio: la demanda está siempre por debajo del CMe y el servicio solo es viable con subsidio.':
+    r==='m'?'El monopolista no regulado obtiene beneficio extraordinario y genera una pérdida irrecuperable.':
+    r==='a'?'Con precio igual al costo medio la empresa cubre sus costos (beneficio nulo) y produce más, pero el precio sigue por encima del costo marginal.':
+    `Con precio igual al costo marginal se alcanza el máximo bienestar, pero la empresa pierde exactamente su costo fijo (${F}). Necesita un subsidio o una tarifa en dos partes.`;
+}
+['nf','reg'].forEach(i=>$(i).addEventListener('input',sim4));
+sim1();sim2();sim3();sim4();
+
+/* ---------- Glosario ---------- */
+const GL=[
+['Organización Industrial',1,'Rama de la economía que estudia por qué los mercados se organizan como lo hacen y cómo esa organización afecta la conducta de las empresas y el bienestar.'],
+['Estructura–Conducta–Resultados (ECR)',1,'Enfoque de Mason y Bain según el cual la estructura del mercado condiciona la conducta de las firmas, y esta los resultados.'],
+['Nueva Organización Industrial',1,'Enfoque centrado en la conducta estratégica de empresas heterogéneas y activas, que usa la teoría de juegos.'],
+['Escuela de Chicago',1,'Corriente que interpreta la concentración como resultado de la eficiencia y desconfía de la intervención antimonopolio.'],
+['Hipótesis de colusión',1,'Interpretación de la correlación entre concentración y rentabilidad como evidencia de coordinación o abuso de poder de mercado.'],
+['Hipótesis de eficiencia',1,'Interpretación de esa misma correlación como resultado de que las empresas más eficientes crecen y dominan.'],
+['Destrucción creativa',1,'Proceso schumpeteriano por el cual la innovación reemplaza productos y procesos existentes; el beneficio del innovador es temporal.'],
+['Cinco fuerzas de Porter',1,'Rivalidad, amenaza de entrantes, amenaza de sustitutos, poder de compradores y poder de proveedores.'],
+['Ley de rendimientos decrecientes',2,'Al agregar unidades de un factor variable a un factor fijo, el producto marginal termina disminuyendo.'],
+['Costo de oportunidad',2,'Valor del mejor uso alternativo de un recurso; es el concepto de costo relevante para las decisiones económicas.'],
+['Costo irrecuperable (hundido)',2,'Costo que no puede recuperarse si se revierte la decisión; es clave en el análisis de las barreras de entrada.'],
+['Economías de escala',2,'Reducción del costo medio de largo plazo al aumentar la escala de producción; pueden ser reales o pecuniarias, internas o externas.'],
+['Escala mínima eficiente',2,'Nivel de producción a partir del cual se agotan las economías de escala.'],
+['Economías de alcance',2,'Ahorro de costos por producir conjuntamente varios bienes: C(q₁,q₂) < C(q₁,0) + C(0,q₂).'],
+['Elasticidad precio de la demanda',3,'Variación porcentual de la cantidad demandada ante una variación porcentual del precio.'],
+['Ingreso marginal',3,'Cambio en el ingreso total al vender una unidad adicional: IMg = P(1 − 1/|η|).'],
+['Índice de Lerner',3,'Margen relativo del precio sobre el costo marginal, (P − CMg)/P; en un monopolio es igual a 1/|η|.'],
+['Pérdida irrecuperable de eficiencia',3,'Excedente total que se pierde porque la producción es menor que la socialmente eficiente.'],
+['Eficiencia X',3,'Eficiencia técnica: obtener el máximo producto posible con los factores empleados.'],
+['Monopolio natural',3,'Mercado en el que el costo medio de largo plazo decrece en todo el rango relevante de la demanda, de modo que una sola empresa produce más barato que varias.'],
+['Solución de tangencia',3,'Equilibrio de largo plazo de la competencia monopolística, en el que la demanda de cada firma es tangente a su costo medio.'],
+['Empresa dominante',3,'Empresa que fija el precio enfrentando una franja de pequeñas empresas tomadoras de precios; maximiza sobre la demanda residual.'],
+['Mercado relevante',3,'Menor conjunto de productos y área geográfica en el que un monopolista hipotético podría sostener un aumento de precios pequeño, significativo y no transitorio (SSNIP).'],
+['Índice de Herfindahl–Hirschman',3,'Suma de los cuadrados de las participaciones de mercado de todas las empresas.'],
+['Costos de transacción',4,'Costos de usar el mercado: búsqueda, negociación, supervisión y cumplimiento de contratos.'],
+['Especificidad de activos',4,'Grado en que una inversión pierde valor fuera de una relación particular; a mayor especificidad, más conveniente es la integración.'],
+['Oportunismo',4,'Búsqueda del interés propio con astucia (Williamson): incluye engañar u ocultar información.'],
+['Racionalidad limitada',4,'Capacidad limitada de los agentes para procesar información y prever contingencias (Simon).'],
+['Forma M (multidivisional)',4,'Estructura organizativa en divisiones con autonomía operativa y una dirección central estratégica.']
+];
+function renderGL(q=''){q=q.toLowerCase();const cols=['','--b1','--b2','--b3','--b4'];
+  $('gl').innerHTML=GL.filter(r=>(r[0]+r[2]).toLowerCase().includes(q)).sort((a,b)=>a[0].localeCompare(b[0],'es')).map(r=>`<dt>${r[0]}<span class="bk" style="background:var(${cols[r[1]]})">${r[1]}</span></dt><dd>${r[2]}</dd>`).join('')||'<p>Sin resultados.</p>';}
+$('gsearch').addEventListener('input',e=>renderGL(e.target.value)); renderGL();
+
+/* ---------- Simulacro ---------- */
+const QZ=[
+{q:'Según el enfoque Estructura–Conducta–Resultados, ¿cuál de las siguientes es una variable de conducta?',o:['El número de vendedores','Las barreras de entrada','La política de fijación de precios','La eficiencia asignativa'],a:2,e:'La política de precios es una decisión de las empresas (conducta). El número de vendedores y las barreras de entrada son estructura; la eficiencia asignativa es un resultado.'},
+{q:'La escuela de Chicago interpreta la correlación positiva entre concentración y rentabilidad como evidencia de que:',o:['Las empresas coluden','Las empresas más eficientes crecen y dominan el mercado','El Estado debe dividir a las grandes empresas','Hay barreras de entrada insuperables'],a:1,e:'Es la hipótesis de eficiencia: las empresas son grandes porque son eficientes. La hipótesis de colusión hace la lectura opuesta.'},
+{q:'En el corto plazo, una empresa perfectamente competitiva deja de producir cuando el precio es menor que:',o:['El mínimo del costo medio','El mínimo del costo variable medio','El costo fijo medio','El ingreso marginal'],a:1,e:'Si P < mín CVMe, producir agrega pérdidas a las del costo fijo. Entre el mínimo del CVMe y el del CMe, la empresa produce con pérdidas pero cubre parte del costo fijo.'},
+{q:'Una empresa produce dos bienes y C(q₁,q₂) < C(q₁,0) + C(0,q₂). Se dice que hay:',o:['Economías de escala','Rendimientos crecientes','Economías de alcance','Economías externas'],a:2,e:'Es la definición de economías de alcance: producir conjuntamente cuesta menos que producir por separado.'},
+{q:'Con la demanda P = 100 − Q, en el punto Q = 30:',o:['La demanda es inelástica y el IMg es negativo','La demanda es elástica y el IMg = 40','La elasticidad es unitaria','La demanda es elástica y el IMg = 70'],a:1,e:'P = 70, |η| = 70/30 ≈ 2,33 > 1 (elástica). IMg = 100 − 2·30 = 40 = 70(1 − 1/2,33).'},
+{q:'Un monopolista enfrenta P = 100 − Q con costo marginal 20. ¿Cuál es su índice de Lerner?',o:['0,33','0,50','0,67','0,80'],a:2,e:'IMg = CMg ⇒ 100 − 2Q = 20 ⇒ Q = 40, P = 60. L = (60 − 20)/60 = 0,67 = 1/|η|, con |η| = 60/40 = 1,5.'},
+{q:'En el ejemplo anterior, ¿cuál es la pérdida irrecuperable de eficiencia?',o:['400','800','1.600','3.200'],a:1,e:'En competencia Q = 80. La pérdida es el triángulo ½ · (80 − 40) · (60 − 20) = 800.'},
+{q:'Si a un monopolio natural se le exige fijar el precio igual al costo marginal:',o:['Obtiene beneficio normal','Obtiene beneficio extraordinario','Tiene pérdidas iguales a su costo fijo','Produce la cantidad de monopolio'],a:2,e:'Con costo marginal constante y costo fijo F, P = CMg cubre solo los costos variables: la pérdida es F, y requiere subsidio o tarifa en dos partes.'},
+{q:'En el equilibrio de largo plazo de la competencia monopolística:',o:['P = CMg = CMe mínimo','Hay beneficio extraordinario','La demanda es tangente al costo medio y hay capacidad ociosa','No hay pérdida de bienestar'],a:2,e:'La entrada desplaza la demanda hasta la tangencia con el CMe a la izquierda de su mínimo: beneficio normal, capacidad ociosa y P > CMg.'},
+{q:'Cuatro empresas tienen participaciones de 40 %, 30 %, 20 % y 10 %. El índice HHI es:',o:['1.000','2.500','3.000','10.000'],a:2,e:'HHI = 40² + 30² + 20² + 10² = 1.600 + 900 + 400 + 100 = 3.000.'},
+{q:'Según Coase, las empresas existen porque:',o:['Permiten aprovechar economías de escala','Usar el mercado tiene costos de transacción','Los gerentes buscan maximizar las ventas','El Estado otorga licencias exclusivas'],a:1,e:'Coase (1937): organizar ciertas transacciones dentro de la firma, mediante órdenes en lugar de precios, ahorra costos de búsqueda, negociación y cumplimiento de contratos.'},
+{q:'Según Williamson, cuando una transacción requiere activos muy específicos, la forma de gobernanza más adecuada suele ser:',o:['El mercado spot','La integración vertical (jerarquía)','La competencia perfecta','La subcontratación con muchos proveedores'],a:1,e:'Con alta especificidad, la parte que invirtió queda expuesta al oportunismo de la otra (hold-up). Internalizar la transacción protege la inversión.'}
+];
+let answered={},right=0;
+function renderQZ(){answered={};right=0;$('score').textContent='0 / '+QZ.length;
+  $('quiz').innerHTML=QZ.map((x,i)=>`<div class="qi"><p class="st">${i+1}. ${x.q}</p>${x.o.map((o,j)=>`<button class="op" data-i="${i}" data-j="${j}">${String.fromCharCode(97+j)}) ${o}</button>`).join('')}<div class="ex" id="ex${i}">${x.e}</div></div>`).join('');
+  document.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i,j=+b.dataset.j;if(answered[i]!=null)return;answered[i]=j;
+    const qq=QZ[i];document.querySelectorAll(`.op[data-i="${i}"]`).forEach(o=>{if(+o.dataset.j===qq.a)o.classList.add('ok');else if(+o.dataset.j===j)o.classList.add('bad');});
+    if(j===qq.a)right++; $('score').textContent=right+' / '+QZ.length; const ex=$('ex'+i); ex.style.display='block'; ex.insertAdjacentHTML('afterbegin',`<b>${j===qq.a?'¡Correcto! ':'No es correcta. '}</b>`);}));}
+$('reset').addEventListener('click',renderQZ); renderQZ();
+
+</script>
+</body>
+</html>

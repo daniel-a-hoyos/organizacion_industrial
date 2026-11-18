@@ -7,4 +7,5 @@ https://daniel-a-hoyos.github.io/organizacion_industrial/
 | Carpeta | Contenido |
 |---|---|
 | `index.html` | Portada del curso |
+| `unidad1/` | Unidad I · Aspectos introductorios y fundamentos |
 | `unidad2/` | Unidad II · Análisis estructural de los mercados |
